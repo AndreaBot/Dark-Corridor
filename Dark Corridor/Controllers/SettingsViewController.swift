@@ -8,7 +8,14 @@
 import UIKit
 import AVFoundation
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITextFieldDelegate {
+    
+
+    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var nameField: UITextField!
+    
+    @IBOutlet weak var redHero: UIButton!
+    @IBOutlet weak var blueHero: UIButton!
     
     var playerName: String?
     var playerBack = ""
@@ -16,22 +23,17 @@ class SettingsViewController: UIViewController {
     var playerRight = ""
     var colorExit = ""
     
-    @IBOutlet weak var continueButton: UIButton!
-    @IBOutlet weak var nameField: UITextField!
-    
-    @IBOutlet weak var redHero: UIButton!
-    @IBOutlet weak var blueHero: UIButton!
-    
     var music: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameField.delegate = self
         redHero.alpha = 0.6
         blueHero.alpha = 0.6
         continueButton.isEnabled = false
         
         let exitKeyboard = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
-               view.addGestureRecognizer(exitKeyboard)
+        view.addGestureRecognizer(exitKeyboard)
     }
     
     
@@ -65,6 +67,19 @@ class SettingsViewController: UIViewController {
 
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameField.endEditing(true)
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField.text != "" {
+            return true
+        } else {
+            textField.placeholder = "Type the hero's name"
+            return false
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToGame" {
