@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class TableViewController: UIViewController {
+class InventoryViewController: UIViewController {
     
     
     @IBOutlet weak var messageLabel: UILabel!
@@ -38,8 +38,7 @@ class TableViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        tableView.register(CustomCell.self, forCellReuseIdentifier: "CustomCell")
+        tableView.register(UINib(nibName: "InventoryCell", bundle: nil), forCellReuseIdentifier: "inventoryCell")
     }
     
     @IBAction func usePotionIsPressed(_ sender: UIButton) {
@@ -81,17 +80,14 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
 }
 
-extension TableViewController: UITableViewDelegate {
+extension InventoryViewController: UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    }
 }
 
-extension TableViewController: UITableViewDataSource {
+extension InventoryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
@@ -101,13 +97,14 @@ extension TableViewController: UITableViewDataSource {
     }
  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath) as! InventoryCell
         
         let itemsWithQuantity = items.allItems.filter { $0.qty > 0 }
-        let itemName = itemsWithQuantity[indexPath.row].text
+        let itemName = itemsWithQuantity[indexPath.row].name
         let quantity = itemsWithQuantity[indexPath.row].qty
-        cell.itemNameLabel.text = itemName
-        cell.quantityLabel.text = "\(quantity)"
+        cell.itemName.text = itemName
+        cell.itemQuantity.text = "x\(quantity)"
+        cell.itemImage.image = UIImage(named: itemName)
         return cell
     }
 }

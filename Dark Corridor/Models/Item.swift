@@ -5,7 +5,7 @@
 //  Created by Andrea Bottino on 26/03/2023.
 //
 
-import Foundation
+import UIKit
 import AVFoundation
 
 struct Items {
@@ -14,10 +14,10 @@ struct Items {
     
     var potionPower = 15
     
-    var allItems = [ ItemStruct(t: "Soul", q: 0, v: 5),
-                     ItemStruct(t: "Diamond", q: 0, v: 10),
-                     ItemStruct(t: "Gold", q: 0, v: 3),
-                     ItemStruct(t: "Dirt", q: 0, v: 1)
+    var allItems = [ ItemStruct(n: "Soul", q: 0, v: 5),
+                     ItemStruct(n: "Diamond", q: 0, v: 10),
+                     ItemStruct(n: "Gold", q: 0, v: 3),
+                     ItemStruct(n: "Dirt", q: 0, v: 1)
     ]
     
     var foundText = ""

@@ -36,8 +36,9 @@
 		62AC70452AB39DE9006306CA /* EnemyStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC70442AB39DE9006306CA /* EnemyStruct.swift */; };
 		62AC70482AB3B491006306CA /* AllEnemies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC70472AB3B491006306CA /* AllEnemies.swift */; };
 		62AC704A2AB3BCF5006306CA /* AttackStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC70492AB3BCF5006306CA /* AttackStruct.swift */; };
-		62D218DB29E1B0110027ACD5 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D218DA29E1B0110027ACD5 /* CustomCell.swift */; };
-		62D218DD29E1B0560027ACD5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D218DC29E1B0560027ACD5 /* TableViewController.swift */; };
+		62AC704D2AB63172006306CA /* InventoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC704B2AB63172006306CA /* InventoryCell.swift */; };
+		62AC704E2AB63172006306CA /* InventoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62AC704C2AB63172006306CA /* InventoryCell.xib */; };
+		62D218DD29E1B0560027ACD5 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D218DC29E1B0560027ACD5 /* InventoryViewController.swift */; };
 		62D218DF29E1D4690027ACD5 /* ItemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D218DE29E1D4690027ACD5 /* ItemStruct.swift */; };
 		62DADA1A29EAB5FD0080002F /* Spellbook Cry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62DADA1829EAB5FD0080002F /* Spellbook Cry.mp3 */; };
 		62DADA1B29EAB5FD0080002F /* Pig Cry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62DADA1929EAB5FD0080002F /* Pig Cry.mp3 */; };
@@ -77,8 +78,9 @@
 		62AC70442AB39DE9006306CA /* EnemyStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyStruct.swift; sourceTree = "<group>"; };
 		62AC70472AB3B491006306CA /* AllEnemies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEnemies.swift; sourceTree = "<group>"; };
 		62AC70492AB3BCF5006306CA /* AttackStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackStruct.swift; sourceTree = "<group>"; };
-		62D218DA29E1B0110027ACD5 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		62D218DC29E1B0560027ACD5 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		62AC704B2AB63172006306CA /* InventoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCell.swift; sourceTree = "<group>"; };
+		62AC704C2AB63172006306CA /* InventoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryCell.xib; sourceTree = "<group>"; };
+		62D218DC29E1B0560027ACD5 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		62D218DE29E1D4690027ACD5 /* ItemStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStruct.swift; sourceTree = "<group>"; };
 		62DADA1829EAB5FD0080002F /* Spellbook Cry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Spellbook Cry.mp3"; sourceTree = "<group>"; };
 		62DADA1929EAB5FD0080002F /* Pig Cry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Pig Cry.mp3"; sourceTree = "<group>"; };
@@ -103,7 +105,7 @@
 				62AA037B29DCCE8800AF660F /* StartViewController.swift */,
 				62AA037929DCCE5E00AF660F /* SettingsViewController.swift */,
 				629CD94529D0F06100489210 /* MainViewController.swift */,
-				62D218DC29E1B0560027ACD5 /* TableViewController.swift */,
+				62D218DC29E1B0560027ACD5 /* InventoryViewController.swift */,
 				6234FB7F29D8CC3C008A23F8 /* BattleViewController.swift */,
 				62AA037729DCCD9700AF660F /* ResultViewController.swift */,
 			);
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				629CD94729D0F06100489210 /* Main.storyboard */,
+				62AC704C2AB63172006306CA /* InventoryCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,7 +181,7 @@
 		629CD95B29D0F45A00489210 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				62D218DA29E1B0110027ACD5 /* CustomCell.swift */,
+				62AC704B2AB63172006306CA /* InventoryCell.swift */,
 				629CD95929D0F3F500489210 /* Character.swift */,
 				62D218DE29E1D4690027ACD5 /* ItemStruct.swift */,
 				62AC70492AB3BCF5006306CA /* AttackStruct.swift */,
@@ -263,6 +266,7 @@
 				625BE5A129E896FB00BC63F1 /* Win Screen.mp3 in Resources */,
 				629CD94B29D0F06200489210 /* Assets.xcassets in Resources */,
 				62DADA2729EAB7F40080002F /* Slash.mp3 in Resources */,
+				62AC704E2AB63172006306CA /* InventoryCell.xib in Resources */,
 				629CD94929D0F06100489210 /* Main.storyboard in Resources */,
 				6222C82829EB0A320090671F /* Battle Music.mp3 in Resources */,
 				625BE5AE29E9ECE400BC63F1 /* Diamond.mp3 in Resources */,
@@ -294,8 +298,8 @@
 				62AA037C29DCCE8800AF660F /* StartViewController.swift in Sources */,
 				629CD94229D0F06100489210 /* AppDelegate.swift in Sources */,
 				629CD94429D0F06100489210 /* SceneDelegate.swift in Sources */,
-				62D218DB29E1B0110027ACD5 /* CustomCell.swift in Sources */,
-				62D218DD29E1B0560027ACD5 /* TableViewController.swift in Sources */,
+				62D218DD29E1B0560027ACD5 /* InventoryViewController.swift in Sources */,
+				62AC704D2AB63172006306CA /* InventoryCell.swift in Sources */,
 				62AC70452AB39DE9006306CA /* EnemyStruct.swift in Sources */,
 				62AA037829DCCD9700AF660F /* ResultViewController.swift in Sources */,
 				62D218DF29E1D4690027ACD5 /* ItemStruct.swift in Sources */,

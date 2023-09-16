@@ -20,7 +20,6 @@ struct AllEnemies {
         crySoundName: "Pig Cry",
         souls: 1)
     
-
     static var spellbook = EnemyStruct(
         name: "Possessed Spellbook",
         totalHealth: 25,
@@ -31,9 +30,6 @@ struct AllEnemies {
         enemyImage: UIImage(named: "SpellbookBig")!,
         crySoundName: "Spellbook Cry",
         souls: 2)
-    
-    
-    
 }
 
 

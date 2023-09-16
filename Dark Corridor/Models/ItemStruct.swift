@@ -8,14 +8,14 @@
 import Foundation
 
 struct ItemStruct {
-    let text: String
+    let name: String
     var qty: Int
     let value: Int
     
-    init(t: String, q: Int, v: Int) {
-        text = t
-        qty = q
-        value = v
+    init(n: String, q: Int, v: Int) {
+        self.name = n
+        self.qty = q
+        self.value = v
     }
 }
 

@@ -98,10 +98,9 @@ class MainViewController: UIViewController {
         rightButton.isEnabled = false
         upButton.isEnabled = false
         exitButton.isEnabled = true
-        
-        let randomRoom = ["item", "enemy", "empty"]
-        
+
         func randomFound() {
+            let randomRoom = ["item", "enemy", "empty"]
             let randomResult = randomRoom.randomElement()
             if randomResult == "item" {
                 items.itemFound()
@@ -109,6 +108,7 @@ class MainViewController: UIViewController {
                 
             } else if randomResult == "enemy" {
                 messageLabel.text = "An enemy attacks you!"
+                exitButton.isEnabled = false
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) { [self] in
                     self.performSegue(withIdentifier: "goToBattle", sender: self)
                 }
@@ -169,7 +169,7 @@ class MainViewController: UIViewController {
             music.stop()
             
         } else if segue.identifier == "goToInventory" {
-            let destinationVC = segue.destination as! TableViewController
+            let destinationVC = segue.destination as! InventoryViewController
             destinationVC.items.allItems[0].qty = items.allItems[0].qty
             destinationVC.items.allItems[1].qty = items.allItems[1].qty
             destinationVC.items.allItems[2].qty = items.allItems[2].qty
