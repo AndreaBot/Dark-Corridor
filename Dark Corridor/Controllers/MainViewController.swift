@@ -25,12 +25,7 @@ class MainViewController: UIViewController {
     var playerName: String?
     var character1 = Character()
     var items = Items()
-    var enemy = Enemy()
-    var bigEnemy = BigEnemy()
-    var empty = Nothing()
-    
-    var exits = 0
-    
+
     var soul = 0
     
     var updatedHealth = 20
@@ -113,21 +108,12 @@ class MainViewController: UIViewController {
                 messageLabel.text = items.foundText
                 
             } else if randomResult == "enemy" {
-                let actualEnemy = enemy.enemyFound()
-                exitButton.isEnabled = false
-                if actualEnemy == "pig"{
-                    messageLabel.text = enemy.enemyTxt
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) { [self] in
-                        self.performSegue(withIdentifier: "goToPig", sender: self)
-                    }
-                } else if actualEnemy == "book" {
-                    messageLabel.text = bigEnemy.enemyTxt
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) { [self] in
-                        self.performSegue(withIdentifier: "goToBook", sender: self)
-                    }
+                messageLabel.text = "An enemy attacks you!"
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) { [self] in
+                    self.performSegue(withIdentifier: "goToBattle", sender: self)
                 }
             } else {
-                messageLabel.text = empty.foundText
+                messageLabel.text = "Nothing to see here..."
             }
         }
         randomFound()
@@ -135,7 +121,6 @@ class MainViewController: UIViewController {
     
     @IBAction func exitRoom(_ sender: UIButton) {
         
-        exits += 1
         messageLabel.text = ""
         upButton.isEnabled = true
         path[character1.up].image = UIImage(named: playerBack)
@@ -170,21 +155,8 @@ class MainViewController: UIViewController {
             destinationVC.song = "Win Screen"
             music.stop()
     
-        } else if segue.identifier == "goToPig" {
-            let destinationVC = segue.destination as! PigViewController
-            destinationVC.items.allItems[0].qty = items.allItems[0].qty
-            destinationVC.character1.currentHealth = updatedHealth
-            destinationVC.potionQty = potionQty
-            destinationVC.playerName = playerName!
-            if playerBack == "RedHeroBack" {
-                destinationVC.battleImage = "RedHeroBackBig"
-            } else if playerBack == "BlueHeroBack" {
-                destinationVC.battleImage = "BlueHeroBackBig"
-            }
-            music.stop()
-            
-        } else if segue.identifier == "goToBook" {
-            let destinationVC = segue.destination as! BookViewController
+        } else if segue.identifier == "goToBattle" {
+            let destinationVC = segue.destination as! BattleViewController
             destinationVC.items.allItems[0].qty = items.allItems[0].qty
             destinationVC.character1.currentHealth = updatedHealth
             destinationVC.potionQty = potionQty

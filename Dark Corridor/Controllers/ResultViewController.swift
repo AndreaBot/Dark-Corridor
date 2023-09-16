@@ -52,9 +52,7 @@ class ResultViewController: UIViewController {
         
         totDirtPts = finalDirtQty * items.allItems[3].value
         finalDirtQtyLabel.text = "\(finalDirtQty) x \(items.allItems[3].value) = \(totDirtPts)"
-        
-        
-        
+
         let result = totSoulPts + totDiamondPts + totGoldPts + totDirtPts
         
         resultLabel.text = String(result)

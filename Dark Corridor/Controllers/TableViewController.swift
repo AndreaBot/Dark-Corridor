@@ -10,19 +10,16 @@ import AVFoundation
 
 class TableViewController: UIViewController {
     
-   var items = Items()
-   var character1 = Character()
-
+    
     @IBOutlet weak var messageLabel: UILabel!
-    
     @IBOutlet weak var potionQtyLabel: UILabel!
-    
     @IBOutlet weak var usePotionButton: UIButton!
-    
     @IBOutlet weak var tableView: UITableView!
     
-   var potionQty = 0
-   var playerName: String?
+    var items = Items()
+    var character1 = Character()
+    var potionQty = 0
+    var playerName: String?
     
     var music: AVAudioPlayer!
     

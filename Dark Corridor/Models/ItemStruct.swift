@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ItemData {
+struct ItemStruct {
     let text: String
     var qty: Int
     let value: Int

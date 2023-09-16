@@ -9,21 +9,20 @@ import Foundation
 import AVFoundation
 
 struct Items {
-
+    
     var player2: AVAudioPlayer!
     
     var potionPower = 15
     
-    var allItems = [ ItemData(t: "Soul", q: 0, v: 5),
-                     ItemData(t: "Diamond", q: 0, v: 10),
-                     ItemData(t: "Gold", q: 0, v: 3),
-                     ItemData(t: "Dirt", q: 0, v: 1)
-        ]
-
- 
-   var foundText = ""
+    var allItems = [ ItemStruct(t: "Soul", q: 0, v: 5),
+                     ItemStruct(t: "Diamond", q: 0, v: 10),
+                     ItemStruct(t: "Gold", q: 0, v: 3),
+                     ItemStruct(t: "Dirt", q: 0, v: 1)
+    ]
     
-   mutating func plusSoul() {
+    var foundText = ""
+    
+    mutating func plusSoul() {
         allItems[0].qty += 1
     }
     

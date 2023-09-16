@@ -10,7 +10,6 @@ import UIKit
  struct Character {
         
         var up = 0
-
         var health = 20
         var currentHealth = 20
         var damage = 0

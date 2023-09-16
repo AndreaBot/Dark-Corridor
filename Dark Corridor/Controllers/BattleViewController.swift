@@ -1,34 +1,31 @@
 //
-//  OrcViewController.swift
+//  BattleViewController.swift
 //  Dark Corridor
 //
-//  Created by Andrea Bottino on 03/04/2023.
+//  Created by Andrea Bottino on 01/04/2023.
 //
 
 import UIKit
 import AVFoundation
 
-class BookViewController: UIViewController {
-
+class BattleViewController: UIViewController {
+    
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var slashButton: UIButton!
     @IBOutlet weak var chargeButton: UIButton!
     @IBOutlet weak var exitButton: UIButton!
-    
-    @IBOutlet weak var potionButton: UIButton!
-    
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var enemyNameLabel: UILabel!
     @IBOutlet weak var playerBattleImage: UIImageView!
-    
     @IBOutlet weak var playerHP: UILabel!
     @IBOutlet weak var enemyHP: UILabel!
-    
     @IBOutlet weak var enemyImage: UIImageView!
+    @IBOutlet weak var potionButton: UIButton!
     
     var playerName = ""
     var battleImage = ""
+    var spawnedEnemy: EnemyStruct?
     var character1 = Character()
-    var book = BigEnemy()
     var items = Items()
     var potionQty = 0
     var attackName = ""
@@ -37,24 +34,32 @@ class BookViewController: UIViewController {
     var music: AVAudioPlayer!
     var music2: AVAudioPlayer!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        playSound(soundName: "Battle Music")
         
+        spawnedEnemy = [AllEnemies.pig, AllEnemies.spellbook].randomElement()!
+        spawnedEnemy!.currentHealth = spawnedEnemy!.totalHealth
+        enemyNameLabel.text = spawnedEnemy!.name
+        
+        playSound(soundName: "Battle Music")
         messageLabel.text = "Prepare to fight! Choose an Attack"
         exitButton.isEnabled = false
         name.text = playerName
         playerBattleImage.image = UIImage(named: battleImage)
         playerHP.text = "HP: \(character1.currentHealth) / \(character1.health)"
-        enemyHP.text = "HP: \(book.currentHealth) / \(book.health)"
-        if character1.currentHealth == character1.health {
+        
+        enemyHP.text = "HP: \(spawnedEnemy!.currentHealth) / \(spawnedEnemy!.totalHealth)"
+        enemyImage.image = spawnedEnemy!.enemyImage
+        
+        if character1.currentHealth == character1.health || potionQty == 0 {
             potionButton.isEnabled = false
-        } else {
+        } else if character1.currentHealth < character1.health && potionQty > 0 {
             potionButton.isEnabled = true
         }
         potionButton.setTitle("USE POTION: \(potionQty)", for: .normal)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
-            playSoundFx(soundname: "Spellbook Cry")
+            playSoundFx(soundname: spawnedEnemy!.crySoundName)
         }
     }
     
@@ -82,14 +87,14 @@ class BookViewController: UIViewController {
             
             if character1.attackWorks() {
                 playSoundFx(soundname: playerAtk)
-                book.currentHealth -= character1.damage
-                enemyHP.text = "HP: \(book.currentHealth) / \(book.health)"
-                character1.animateText(enemyHP, .red)
-                if book.currentHealth <= 0 {
-                    
+                spawnedEnemy?.currentHealth -= character1.damage
+                enemyHP.text = "HP: \(String(describing: spawnedEnemy!.currentHealth)) / \(String(describing: spawnedEnemy!.totalHealth))"
+                animateText(enemyHP, .red)
+                if spawnedEnemy!.currentHealth <= 0 {
+
                     battleWin()
-                    
-                } else if book.currentHealth > 0 {
+                        
+                } else if spawnedEnemy!.currentHealth > 0 {
 
                         enemyAttacks()
                     }
@@ -106,7 +111,7 @@ class BookViewController: UIViewController {
         }
         
     }
-    
+
     func usePotion() {
         playSoundFx(soundname: "Potion")
         potionQty -= 1
@@ -119,7 +124,7 @@ class BookViewController: UIViewController {
             character1.currentHealth = character1.health
         }
         playerHP.text = "HP: \(character1.currentHealth) / \(character1.health)"
-        character1.animateText(playerHP, .green)
+        animateText(playerHP, .green)
     }
     
     func loopFight() {
@@ -135,13 +140,13 @@ class BookViewController: UIViewController {
     }
     
     func enemyAttacks() {
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
-            messageLabel.text = "The spellbook prepares to attack..."
+            messageLabel.text = "The \(spawnedEnemy!.name) prepares to attack..."
         }
-        if book.attackMissed() {
+        if spawnedEnemy!.attackMissed(spawnedEnemy!.missChance) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [self] in
-                messageLabel.text = "The spellbook tried to attack but failed!"
+                messageLabel.text = "The \(spawnedEnemy!.name) tried to attack but failed!"
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) { [self] in
                 loopFight()
@@ -149,19 +154,19 @@ class BookViewController: UIViewController {
         } else {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [self] in
-                let enemyDamage = book.fight()
-                if enemyDamage == book.attacks["Spectral Force"] {
-                    attackName = "Spectral Force"
-                    playSoundFx(soundname: "Spectral Force")
-                } else if enemyDamage == book.attacks["Eerie Spell"] {
-                    attackName = "Eerie Spell"
-                    playSoundFx(soundname: "Eerie Spell")
+                let enemyDamage = spawnedEnemy!.fight()
+                if enemyDamage == spawnedEnemy!.attack1.damage {
+                    attackName = spawnedEnemy!.attack1.name
+                    playSoundFx(soundname: attackName)
+                } else if enemyDamage == spawnedEnemy!.attack2.damage {
+                    attackName = spawnedEnemy!.attack2.name
+                    playSoundFx(soundname: attackName)
                 }
                 
-                messageLabel.text = "The spellbook used \(attackName) for \(enemyDamage) damage!"
+                messageLabel.text = "The \(spawnedEnemy!.name) used \(attackName) for \(enemyDamage) damage!"
                 character1.currentHealth -= enemyDamage
                 playerHP.text = "HP: \(character1.currentHealth) / \(character1.health)"
-                character1.animateText(playerHP, .red)
+                animateText(playerHP, .red)
                 
                 if character1.currentHealth <= 0 {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
@@ -169,6 +174,7 @@ class BookViewController: UIViewController {
                         messageLabel.text = "You're dead..."
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [self] in
+                        
                         self.performSegue(withIdentifier: "goToResult", sender: self)
                     }
                     
@@ -180,19 +186,20 @@ class BookViewController: UIViewController {
             }
         }
     }
-    
+        
     func battleWin() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
+            music.stop()
             playSound(soundName: "Battle Win")
             enemyImage.alpha = 0
-            messageLabel.text = "Woo-hoo! You defeated the possessed spellbook!"
-            items.allItems[0].qty += 2
+            messageLabel.text = "Woo-hoo! You defeated the \(spawnedEnemy!.name)!"
+            items.allItems[0].qty += spawnedEnemy!.souls
             slashButton.isEnabled = false
             chargeButton.isEnabled = false
             potionButton.isEnabled = false
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [self] in
-            messageLabel.text = "You got the spellbook's soul!"
+            messageLabel.text = "You got the \(spawnedEnemy!.name)'s soul!"
             exitButton.isEnabled = true
         }
     }
@@ -202,18 +209,25 @@ class BookViewController: UIViewController {
         music = try! AVAudioPlayer(contentsOf: url!)
         music.play()
     }
-   
+    
     func playSoundFx(soundname: String) {
         let url = Bundle.main.url(forResource: soundname, withExtension: "mp3")
         music2 = try! AVAudioPlayer(contentsOf: url!)
         music2.play()
     }
     
+    func animateText(_ UILabel: UILabel, _ color: UIColor)  {
+        UILabel.textColor = color
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            UILabel.textColor = .white
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "goToResult" {
             let destinationVC = segue.destination as! ResultViewController
-            destinationVC.message = "You died..."
+            destinationVC.message = "You died"
             destinationVC.finalSoulQty = 0
             destinationVC.finalDiamondQty = 0
             destinationVC.finalGoldQty = 0
@@ -233,6 +247,3 @@ class BookViewController: UIViewController {
         }
     }
 }
-
-
-
