@@ -67,16 +67,15 @@ class BattleViewController: UIViewController {
         
         if sender.currentTitle == "SLASH" {
             messageLabel.text = "You used slash for 5 damage!"
-            character1.damage = character1.attacks["Slash"]!
+            character1.damage = character1.attack1.damage
             playerAtk =  "Slash"
  
         } else if sender.currentTitle == "CHARGE" {
             messageLabel.text = "You charged for 3 damage!"
-            character1.damage = character1.attacks["Charge"]!
+            character1.damage = character1.attack2.damage
             playerAtk =  "Charge"
           
         } else {
-            
             character1.damage = 0
         }
         slashButton.isEnabled = false
@@ -91,11 +90,11 @@ class BattleViewController: UIViewController {
                 enemyHP.text = "HP: \(String(describing: spawnedEnemy!.currentHealth)) / \(String(describing: spawnedEnemy!.totalHealth))"
                 animateText(enemyHP, .red)
                 if spawnedEnemy!.currentHealth <= 0 {
-
+                    enemyHP.text = "HP: 0 / \(spawnedEnemy!.totalHealth)"
                     battleWin()
                         
                 } else if spawnedEnemy!.currentHealth > 0 {
-
+                
                         enemyAttacks()
                     }
                 
