@@ -35,10 +35,13 @@ class ResultViewController: UIViewController {
     var music: AVAudioPlayer!
     var song = ""
     
+    let defaults = UserDefaults.standard
+    
 
     override func viewDidLoad() {
-        playSound(soundName: song)
         super.viewDidLoad()
+        loadStats()
+        playSound(soundName: song)
         messageLabel.text = message
         
         totSoulPts = finalSoulQty * items.allItems[0].value
@@ -59,6 +62,27 @@ class ResultViewController: UIViewController {
         resultLabel.layer.borderColor = CGColor(gray: 1, alpha: 1)
         resultLabel.layer.borderWidth = 4
         resultLabel.layer.cornerRadius = 50
+        
+        PlayerStats.overallStats["Points"] = result + PlayerStats.overallStats["Points"]!
+        PlayerStats.overallStats["Total souls collected"] = finalSoulQty + PlayerStats.overallStats["Total souls collected"]!
+        PlayerStats.overallStats["Total diamonds collected"] = finalDiamondQty + PlayerStats.overallStats["Total diamonds collected"]!
+        PlayerStats.overallStats["Total gold collected"] = finalGoldQty + PlayerStats.overallStats["Total gold collected"]!
+        PlayerStats.overallStats["Total dirt collected"] = finalDirtQty + PlayerStats.overallStats["Total dirt collected"]!
+        PlayerStats.overallStats["Mutant Pigs defeated"] = AllEnemies.pig.timesDefeated + PlayerStats.overallStats["Mutant Pigs defeated"]!
+        PlayerStats.overallStats["Possessed Spellbooks defeated"] = AllEnemies.spellbook.timesDefeated + PlayerStats.overallStats["Possessed Spellbooks defeated"]!
+        
+        if song == "Win Screen" {
+            PlayerStats.overallStats["Successful escapes"]! += 1
+        } else {
+            PlayerStats.overallStats["Deaths"]! += 1
+        }
+        
+        if result > PlayerStats.overallStats["Highest score"]! {
+            PlayerStats.overallStats["Highest score"] = result
+        }
+        
+        defaults.set(PlayerStats.overallStats, forKey: "playerStats")
+
     
     }
     
@@ -66,5 +90,11 @@ class ResultViewController: UIViewController {
         let url = Bundle.main.url(forResource: soundName, withExtension: "mp3")
         music = try! AVAudioPlayer(contentsOf: url!)
         music.play()
+    }
+    
+    func loadStats() {
+        if let playerStats = defaults.object(forKey: "playerStats") as? [String : Int] {
+            PlayerStats.overallStats = playerStats
+        }
     }
 }

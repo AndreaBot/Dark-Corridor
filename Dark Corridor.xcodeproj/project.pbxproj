@@ -28,7 +28,7 @@
 		629CD94929D0F06100489210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629CD94729D0F06100489210 /* Main.storyboard */; };
 		629CD94B29D0F06200489210 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629CD94A29D0F06200489210 /* Assets.xcassets */; };
 		629CD94E29D0F06200489210 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629CD94C29D0F06200489210 /* LaunchScreen.storyboard */; };
-		629CD95829D0F3D600489210 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD95729D0F3D600489210 /* Item.swift */; };
+		629CD95829D0F3D600489210 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD95729D0F3D600489210 /* Items.swift */; };
 		629CD95A29D0F3F500489210 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD95929D0F3F500489210 /* Character.swift */; };
 		62AA037829DCCD9700AF660F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AA037729DCCD9700AF660F /* ResultViewController.swift */; };
 		62AA037A29DCCE5E00AF660F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AA037929DCCE5E00AF660F /* SettingsViewController.swift */; };
@@ -38,6 +38,7 @@
 		62AC704A2AB3BCF5006306CA /* AttackStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC70492AB3BCF5006306CA /* AttackStruct.swift */; };
 		62AC704D2AB63172006306CA /* InventoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC704B2AB63172006306CA /* InventoryCell.swift */; };
 		62AC704E2AB63172006306CA /* InventoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62AC704C2AB63172006306CA /* InventoryCell.xib */; };
+		62AC70502AB7363E006306CA /* PlayerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC704F2AB7363E006306CA /* PlayerStats.swift */; };
 		62D218DD29E1B0560027ACD5 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D218DC29E1B0560027ACD5 /* InventoryViewController.swift */; };
 		62D218DF29E1D4690027ACD5 /* ItemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D218DE29E1D4690027ACD5 /* ItemStruct.swift */; };
 		62DADA1A29EAB5FD0080002F /* Spellbook Cry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62DADA1829EAB5FD0080002F /* Spellbook Cry.mp3 */; };
@@ -70,7 +71,7 @@
 		629CD94A29D0F06200489210 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		629CD94D29D0F06200489210 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		629CD94F29D0F06200489210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		629CD95729D0F3D600489210 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		629CD95729D0F3D600489210 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		629CD95929D0F3F500489210 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		62AA037729DCCD9700AF660F /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		62AA037929DCCE5E00AF660F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 		62AC70492AB3BCF5006306CA /* AttackStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackStruct.swift; sourceTree = "<group>"; };
 		62AC704B2AB63172006306CA /* InventoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCell.swift; sourceTree = "<group>"; };
 		62AC704C2AB63172006306CA /* InventoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryCell.xib; sourceTree = "<group>"; };
+		62AC704F2AB7363E006306CA /* PlayerStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStats.swift; sourceTree = "<group>"; };
 		62D218DC29E1B0560027ACD5 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		62D218DE29E1D4690027ACD5 /* ItemStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStruct.swift; sourceTree = "<group>"; };
 		62DADA1829EAB5FD0080002F /* Spellbook Cry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Spellbook Cry.mp3"; sourceTree = "<group>"; };
@@ -186,8 +188,9 @@
 				62D218DE29E1D4690027ACD5 /* ItemStruct.swift */,
 				62AC70492AB3BCF5006306CA /* AttackStruct.swift */,
 				62AC70442AB39DE9006306CA /* EnemyStruct.swift */,
-				629CD95729D0F3D600489210 /* Item.swift */,
+				629CD95729D0F3D600489210 /* Items.swift */,
 				62AC70472AB3B491006306CA /* AllEnemies.swift */,
+				62AC704F2AB7363E006306CA /* PlayerStats.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -291,11 +294,12 @@
 				62AA037A29DCCE5E00AF660F /* SettingsViewController.swift in Sources */,
 				62AC704A2AB3BCF5006306CA /* AttackStruct.swift in Sources */,
 				6234FB8029D8CC3C008A23F8 /* BattleViewController.swift in Sources */,
-				629CD95829D0F3D600489210 /* Item.swift in Sources */,
+				629CD95829D0F3D600489210 /* Items.swift in Sources */,
 				629CD94629D0F06100489210 /* MainViewController.swift in Sources */,
 				62AC70482AB3B491006306CA /* AllEnemies.swift in Sources */,
 				629CD95A29D0F3F500489210 /* Character.swift in Sources */,
 				62AA037C29DCCE8800AF660F /* StartViewController.swift in Sources */,
+				62AC70502AB7363E006306CA /* PlayerStats.swift in Sources */,
 				629CD94229D0F06100489210 /* AppDelegate.swift in Sources */,
 				629CD94429D0F06100489210 /* SceneDelegate.swift in Sources */,
 				62D218DD29E1B0560027ACD5 /* InventoryViewController.swift in Sources */,

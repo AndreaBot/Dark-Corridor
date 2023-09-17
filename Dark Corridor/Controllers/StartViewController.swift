@@ -17,6 +17,12 @@ class StartViewController: UIViewController {
         playSound()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        AllEnemies.pig.timesDefeated = 0
+        AllEnemies.spellbook.timesDefeated = 0
+    }
+    
     @IBAction func startPressed(_ sender: UIButton) {
         
         self.performSegue(withIdentifier: "goToStory", sender: self)

@@ -60,6 +60,7 @@ class BattleViewController: UIViewController {
         potionButton.setTitle("USE POTION: \(potionQty)", for: .normal)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
             playSoundFx(soundname: spawnedEnemy!.crySoundName)
+            
         }
     }
     
@@ -196,6 +197,13 @@ class BattleViewController: UIViewController {
             slashButton.isEnabled = false
             chargeButton.isEnabled = false
             potionButton.isEnabled = false
+            
+            if spawnedEnemy?.name == "Mutant Pig" {
+                AllEnemies.pig.timesDefeated += 1
+            } else if spawnedEnemy?.name == "Possessed Spellbook" {
+                AllEnemies.spellbook.timesDefeated += 1
+            }
+           
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [self] in
             messageLabel.text = "You got the \(spawnedEnemy!.name)'s soul!"
@@ -233,6 +241,7 @@ class BattleViewController: UIViewController {
             destinationVC.finalDirtQty = 0
             destinationVC.song = "Dead Screen"
             music.stop()
+            
             
         } else {
             let destinationVC = segue.destination as! MainViewController

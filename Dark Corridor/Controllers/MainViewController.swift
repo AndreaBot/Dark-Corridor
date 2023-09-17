@@ -41,6 +41,9 @@ class MainViewController: UIViewController {
     
     var music: AVAudioPlayer!
     
+    var pigsDefeated = 0
+    var spellbooksDefeated = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,6 +156,7 @@ class MainViewController: UIViewController {
             destinationVC.finalGoldQty = items.allItems[2].qty
             destinationVC.finalDirtQty = items.allItems[3].qty
             destinationVC.song = "Win Screen"
+            
             music.stop()
     
         } else if segue.identifier == "goToBattle" {

@@ -19,7 +19,7 @@ struct Items {
                      ItemStruct(n: "Gold", q: 0, v: 3),
                      ItemStruct(n: "Dirt", q: 0, v: 1)
     ]
-    
+
     var foundText = ""
     
     mutating func plusSoul() {
