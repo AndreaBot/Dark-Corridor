@@ -39,6 +39,7 @@
 		62AC704D2AB63172006306CA /* InventoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC704B2AB63172006306CA /* InventoryCell.swift */; };
 		62AC704E2AB63172006306CA /* InventoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62AC704C2AB63172006306CA /* InventoryCell.xib */; };
 		62AC70502AB7363E006306CA /* PlayerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC704F2AB7363E006306CA /* PlayerStats.swift */; };
+		62AC70522AB8A582006306CA /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC70512AB8A582006306CA /* StatsViewController.swift */; };
 		62D218DD29E1B0560027ACD5 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D218DC29E1B0560027ACD5 /* InventoryViewController.swift */; };
 		62D218DF29E1D4690027ACD5 /* ItemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D218DE29E1D4690027ACD5 /* ItemStruct.swift */; };
 		62DADA1A29EAB5FD0080002F /* Spellbook Cry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62DADA1829EAB5FD0080002F /* Spellbook Cry.mp3 */; };
@@ -82,6 +83,7 @@
 		62AC704B2AB63172006306CA /* InventoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCell.swift; sourceTree = "<group>"; };
 		62AC704C2AB63172006306CA /* InventoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryCell.xib; sourceTree = "<group>"; };
 		62AC704F2AB7363E006306CA /* PlayerStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStats.swift; sourceTree = "<group>"; };
+		62AC70512AB8A582006306CA /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		62D218DC29E1B0560027ACD5 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		62D218DE29E1D4690027ACD5 /* ItemStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStruct.swift; sourceTree = "<group>"; };
 		62DADA1829EAB5FD0080002F /* Spellbook Cry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Spellbook Cry.mp3"; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				62AA037B29DCCE8800AF660F /* StartViewController.swift */,
+				62AC70512AB8A582006306CA /* StatsViewController.swift */,
 				62AA037929DCCE5E00AF660F /* SettingsViewController.swift */,
 				629CD94529D0F06100489210 /* MainViewController.swift */,
 				62D218DC29E1B0560027ACD5 /* InventoryViewController.swift */,
@@ -302,6 +305,7 @@
 				62AC70502AB7363E006306CA /* PlayerStats.swift in Sources */,
 				629CD94229D0F06100489210 /* AppDelegate.swift in Sources */,
 				629CD94429D0F06100489210 /* SceneDelegate.swift in Sources */,
+				62AC70522AB8A582006306CA /* StatsViewController.swift in Sources */,
 				62D218DD29E1B0560027ACD5 /* InventoryViewController.swift in Sources */,
 				62AC704D2AB63172006306CA /* InventoryCell.swift in Sources */,
 				62AC70452AB39DE9006306CA /* EnemyStruct.swift in Sources */,

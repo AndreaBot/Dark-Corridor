@@ -9,6 +9,7 @@ import UIKit
 
 class InventoryCell: UITableViewCell {
 
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var itemQuantity: UILabel!

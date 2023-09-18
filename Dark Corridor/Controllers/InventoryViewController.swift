@@ -105,6 +105,10 @@ extension InventoryViewController: UITableViewDataSource {
         cell.itemName.text = itemName
         cell.itemQuantity.text = "x\(quantity)"
         cell.itemImage.image = UIImage(named: itemName)
+        cell.itemName.textAlignment = .left
+
+        cell.stackView.distribution = .fillEqually
+        
         return cell
     }
 }
