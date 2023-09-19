@@ -69,7 +69,8 @@ struct Items {
             messageLabel.text = "You drank a potion for \(Character.health - Character.currentHealth) HP"
             Character.currentHealth = Character.health
         }
-        hpLabel.text = "HP \(Character.currentHealth) / \(Character.health)"
+        hpLabel.text?.append(contentsOf: " HP \(Character.currentHealth) / \(Character.health)")
+        
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             messageLabel.text = ""

@@ -103,6 +103,7 @@ class BattleViewController: UIViewController {
                 enemyAttacks()
             }
         } else {
+            playerHP.text = ""
             item.usePotion(messageLabel, playerHP, nil, potionButton)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
                 enemyAttacks()

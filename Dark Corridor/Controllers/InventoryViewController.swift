@@ -27,7 +27,7 @@ class InventoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        hpLabel.text = "HP \(Character.currentHealth) / \(Character.health)"
+        hpLabel.text = "\(Character.playerName!)'s HP \(Character.currentHealth) / \(Character.health)"
         potionQtyLabel.text = "Potions: \(Items.potion.qty)"
         
         if Items.potion.qty == 0 || Character.currentHealth == Character.health {
@@ -44,6 +44,7 @@ class InventoryViewController: UIViewController {
     
     @IBAction func usePotionIsPressed(_ sender: UIButton) {
         
+        hpLabel.text = "\(Character.playerName!)'s"
         item.usePotion(messageLabel, hpLabel, potionQtyLabel, nil)
         if Items.potion.qty < 0 || Character.currentHealth == Character.health {
             usePotionButton.isEnabled = false
