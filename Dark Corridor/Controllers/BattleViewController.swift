@@ -22,12 +22,11 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var enemyImage: UIImageView!
     @IBOutlet weak var potionButton: UIButton!
     
-    var playerName = ""
+    var item = Items()
     var battleImage = ""
     var spawnedEnemy: EnemyStruct?
     var character1 = Character()
     var items = Items()
-    var potionQty = 0
     var attackName = ""
     var playerAtk = ""
     
@@ -45,19 +44,19 @@ class BattleViewController: UIViewController {
         playSound(soundName: "Battle Music")
         messageLabel.text = "Prepare to fight! Choose an Attack"
         exitButton.isEnabled = false
-        name.text = playerName
+        name.text = Character.playerName ?? "Player"
         playerBattleImage.image = UIImage(named: battleImage)
-        playerHP.text = "HP: \(character1.currentHealth) / \(character1.health)"
+        playerHP.text = "HP: \(Character.currentHealth) / \(Character.health)"
         
         enemyHP.text = "HP: \(spawnedEnemy!.currentHealth) / \(spawnedEnemy!.totalHealth)"
         enemyImage.image = spawnedEnemy!.enemyImage
         
-        if character1.currentHealth == character1.health || potionQty == 0 {
+        if Character.currentHealth == Character.health || Items.potion.qty == 0 {
             potionButton.isEnabled = false
-        } else if character1.currentHealth < character1.health && potionQty > 0 {
+        } else if Character.currentHealth < Character.health && Items.potion.qty > 0 {
             potionButton.isEnabled = true
         }
-        potionButton.setTitle("USE POTION: \(potionQty)", for: .normal)
+        potionButton.setTitle("USE POTION: \(Items.potion.qty)", for: .normal)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
             playSoundFx(soundname: spawnedEnemy!.crySoundName)
             
@@ -89,7 +88,7 @@ class BattleViewController: UIViewController {
                 playSoundFx(soundname: playerAtk)
                 spawnedEnemy?.currentHealth -= character1.damage
                 enemyHP.text = "HP: \(String(describing: spawnedEnemy!.currentHealth)) / \(String(describing: spawnedEnemy!.totalHealth))"
-                animateText(enemyHP, .red)
+                Character.animateText(enemyHP, .red)
                 if spawnedEnemy!.currentHealth <= 0 {
                     enemyHP.text = "HP: 0 / \(spawnedEnemy!.totalHealth)"
                     battleWin()
@@ -104,26 +103,11 @@ class BattleViewController: UIViewController {
                 enemyAttacks()
             }
         } else {
-            usePotion()
+            item.usePotion(messageLabel, playerHP, nil, potionButton)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
                 enemyAttacks()
             }
         }
-    }
-
-    func usePotion() {
-        playSoundFx(soundname: "Potion")
-        potionQty -= 1
-        potionButton.setTitle("USE POTION: \(potionQty)", for: .normal)
-        if character1.health - character1.currentHealth >= Items.potionPower {
-            character1.currentHealth += Items.potionPower
-            messageLabel.text = "You drank a potion for \(Items.potionPower) HP"
-        } else {
-            messageLabel.text = "You drank a potion for \(character1.health - character1.currentHealth) HP"
-            character1.currentHealth = character1.health
-        }
-        playerHP.text = "HP: \(character1.currentHealth) / \(character1.health)"
-        animateText(playerHP, .green)
     }
     
     func loopFight() {
@@ -131,9 +115,9 @@ class BattleViewController: UIViewController {
         messageLabel.text = "Choose an attack"
         slashButton.isEnabled = true
         chargeButton.isEnabled = true
-        if potionQty > 0 && character1.currentHealth < character1.health {
+        if Items.potion.qty > 0 && Character.currentHealth < Character.health {
             potionButton.isEnabled = true
-        } else if potionQty == 0 || character1.currentHealth == character1.health {
+        } else if Items.potion.qty == 0 || Character.currentHealth == Character.health {
             potionButton.isEnabled = false
         }
     }
@@ -163,11 +147,11 @@ class BattleViewController: UIViewController {
                 }
                 
                 messageLabel.text = "The \(spawnedEnemy!.name) used \(attackName) for \(enemyDamage) damage!"
-                character1.currentHealth -= enemyDamage
-                playerHP.text = "HP: \(character1.currentHealth) / \(character1.health)"
-                animateText(playerHP, .red)
+                Character.currentHealth -= enemyDamage
+                playerHP.text = "HP: \(Character.currentHealth) / \(Character.health)"
+                Character.animateText(playerHP, .red)
                 
-                if character1.currentHealth <= 0 {
+                if Character.currentHealth <= 0 {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
                         playerBattleImage.alpha = 0
                         messageLabel.text = "You're dead..."
@@ -221,13 +205,7 @@ class BattleViewController: UIViewController {
         music2 = try! AVAudioPlayer(contentsOf: url!)
         music2.play()
     }
-    
-    func animateText(_ UILabel: UILabel, _ color: UIColor)  {
-        UILabel.textColor = color
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-            UILabel.textColor = .white
-        }
-    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -241,9 +219,7 @@ class BattleViewController: UIViewController {
             
         } else {
             let destinationVC = segue.destination as! MainViewController
-            destinationVC.updatedHealth = character1.currentHealth
             destinationVC.exitButton.isEnabled = true
-            destinationVC.potionQty = potionQty
             destinationVC.messageLabel.text = ""
             music.stop()
             destinationVC.playSound()

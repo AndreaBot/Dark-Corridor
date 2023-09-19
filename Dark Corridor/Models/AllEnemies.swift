@@ -13,8 +13,8 @@ struct AllEnemies {
         name: "Mutant Pig",
         totalHealth: 15,
         currentHealth: 15,
-        attack1: AttackStruct(n: "Bite", dmg: 4),
-        attack2: AttackStruct(n: "Tackle", dmg: 2),
+        attack1: AttackStruct(name: "Bite", damage: 4),
+        attack2: AttackStruct(name: "Tackle", damage: 2),
         missChance: 2,
         enemyImage: UIImage(named: "PigBig")!,
         crySoundName: "Pig Cry",
@@ -25,13 +25,15 @@ struct AllEnemies {
         name: "Possessed Spellbook",
         totalHealth: 25,
         currentHealth: 25,
-        attack1: AttackStruct(n: "Spectral Force", dmg: 7),
-        attack2: AttackStruct(n: "Eerie Spell", dmg: 2),
+        attack1: AttackStruct(name: "Spectral Force", damage: 7),
+        attack2: AttackStruct(name: "Eerie Spell", damage: 2),
         missChance: 3,
         enemyImage: UIImage(named: "SpellbookBig")!,
         crySoundName: "Spellbook Cry",
         souls: 2,
         timesDefeated: 0)
 }
+
+
 
 

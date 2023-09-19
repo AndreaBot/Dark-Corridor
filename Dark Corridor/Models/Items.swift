@@ -12,7 +12,7 @@ struct Items {
     
     var player2: AVAudioPlayer!
     
-    static var potionPower = 15
+    static var potion = ItemStruct(name: "Potion", qty: 3, value: 15)
     
     static var soul = ItemStruct(name: "Soul", qty: 0, value: 5)
     static var diamond = ItemStruct(name: "Diamond", qty: 0, value: 10)
@@ -50,11 +50,35 @@ struct Items {
     }
     
     mutating func resetQtys() {
+        Items.potion.qty = 3
         Items.soul.qty = 0
         Items.diamond.qty = 0
         Items.gold.qty = 0
         Items.dirt.qty = 0
     }
+    
+    mutating func usePotion(_ messageLabel: UILabel, _ hpLabel: UILabel, _ potionQtyLabel: UILabel?, _ potionButton: UIButton?) {
+        playSoundFx(soundname: "Potion")
+        Items.potion.qty -= 1
+        Character.animateText(hpLabel, .green)
+        
+        if Character.health - Character.currentHealth >= Items.potion.value {
+            messageLabel.text = "You drank a potion for \(Items.potion.value) HP"
+            Character.currentHealth += Items.potion.value
+        } else {
+            messageLabel.text = "You drank a potion for \(Character.health - Character.currentHealth) HP"
+            Character.currentHealth = Character.health
+        }
+        hpLabel.text = "HP \(Character.currentHealth) / \(Character.health)"
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            messageLabel.text = ""
+        }
+        
+        potionQtyLabel?.text = "Potions: \(Items.potion.qty)"
+        potionButton?.setTitle("USE POTION: \(Items.potion.qty)", for: .normal)
+    }
+    
     
     mutating func playSoundFx(soundname: String) {
         let url = Bundle.main.url(forResource: soundname, withExtension: "mp3")

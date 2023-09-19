@@ -18,12 +18,10 @@ class MainViewController: UIViewController {
     @IBOutlet var path: [UIImageView]!
     @IBOutlet weak var exitTile: UIImageView!
     
-    var playerName: String?
     var character1 = Character()
     var items = Items()
     
     var updatedHealth = 20
-    var potionQty = 3
     
     var tagLeft = 0
     var tagRight = 0
@@ -149,9 +147,6 @@ class MainViewController: UIViewController {
     
         } else if segue.identifier == "goToBattle" {
             let destinationVC = segue.destination as! BattleViewController
-            destinationVC.character1.currentHealth = updatedHealth
-            destinationVC.potionQty = potionQty
-            destinationVC.playerName = playerName!
             if playerBack == "RedHeroBack" {
                 destinationVC.battleImage = "RedHeroBackBig"
             } else if playerBack == "BlueHeroBack" {
@@ -159,12 +154,7 @@ class MainViewController: UIViewController {
             }
             music.stop()
             
-        } else if segue.identifier == "goToInventory" {
-            let destinationVC = segue.destination as! InventoryViewController
-            destinationVC.potionQty = potionQty
-            destinationVC.character1.currentHealth = updatedHealth
-            destinationVC.playerName = playerName
-        }
+        } 
     }
 }
 

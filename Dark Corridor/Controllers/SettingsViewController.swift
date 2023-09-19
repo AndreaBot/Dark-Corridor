@@ -16,7 +16,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var redHero: UIButton!
     @IBOutlet weak var blueHero: UIButton!
     
-    var playerName: String?
     var playerBack = ""
     var playerLeft = ""
     var playerRight = ""
@@ -57,9 +56,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func continuePressed(_ sender: UIButton) {
         
-        playerName = nameField.text
-           if playerName == "" {
-               playerName = "Player"
+        Character.playerName = nameField.text!
+        if Character.playerName == "" {
+            Character.playerName = "Player"
            }
         music.stop()
         self.performSegue(withIdentifier: "goToGame", sender: self)
@@ -88,7 +87,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToGame" {
             let destinationVC = segue.destination as! MainViewController
-            destinationVC.playerName = playerName
             destinationVC.playerBack = playerBack
             destinationVC.playerLeft = playerLeft
             destinationVC.playerRight = playerRight

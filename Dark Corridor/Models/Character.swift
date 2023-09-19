@@ -9,11 +9,12 @@ import UIKit
 
 struct Character {
     
+    static var playerName: String?
     var up = 0
-    var health = 20
-    var currentHealth = 20
+    static var health = 20
+    static var currentHealth = 20
     var damage = 0
-    let attack1 = AttackStruct(name: "Slash", damage: 1)
+    let attack1 = AttackStruct(name: "Slash", damage: 5)
     let attack2 = AttackStruct(name: "Charge", damage: 3)
     
     mutating func moveUp()  {
@@ -29,7 +30,7 @@ struct Character {
         }
     }
     
-    func animateText(_ UILabel: UILabel, _ color: UIColor)  {
+    static func animateText(_ UILabel: UILabel, _ color: UIColor)  {
         UILabel.textColor = color
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             UILabel.textColor = .white

@@ -23,6 +23,7 @@ class StartViewController: UIViewController {
         AllEnemies.pig.timesDefeated = 0
         AllEnemies.spellbook.timesDefeated = 0
         items.resetQtys()
+        Character.currentHealth = Character.health
     }
     
     @IBAction func startPressed(_ sender: UIButton) {

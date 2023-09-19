@@ -11,15 +11,15 @@ import AVFoundation
 class InventoryViewController: UIViewController {
     
     
+    @IBOutlet weak var hpLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
+    
     @IBOutlet weak var potionQtyLabel: UILabel!
     @IBOutlet weak var usePotionButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    var character1 = Character()
-    var potionQty = 0
     let allItems = [Items.soul, Items.diamond, Items.gold, Items.dirt]
-    var playerName: String?
+    var item = Items()
     
     var music: AVAudioPlayer!
     
@@ -27,14 +27,15 @@ class InventoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        messageLabel.text = "\(playerName ?? "Player")'s HP \(character1.currentHealth) / \(character1.health)"
-        potionQtyLabel.text = "Potions: \(potionQty)"
+        hpLabel.text = "HP \(Character.currentHealth) / \(Character.health)"
+        potionQtyLabel.text = "Potions: \(Items.potion.qty)"
         
-        if potionQty == 0 || character1.currentHealth == character1.health {
+        if Items.potion.qty == 0 || Character.currentHealth == Character.health {
             usePotionButton.isEnabled = false
-        } else if potionQty > 0 && character1.currentHealth < character1.health {
+        } else if Items.potion.qty > 0 && Character.currentHealth < Character.health {
             usePotionButton.isEnabled = true
         }
+        messageLabel.text = ""
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -43,42 +44,21 @@ class InventoryViewController: UIViewController {
     
     @IBAction func usePotionIsPressed(_ sender: UIButton) {
         
-        usePotion()
-        if potionQty < 0 || character1.currentHealth == character1.health {
+        item.usePotion(messageLabel, hpLabel, potionQtyLabel, nil)
+        if Items.potion.qty < 0 || Character.currentHealth == Character.health {
             usePotionButton.isEnabled = false
         } else {
             usePotionButton.isEnabled = true
         }
     }
-    
-    func usePotion() {
-        playSoundFx(soundname: "Potion")
-        character1.animateText(messageLabel, .green)
-        potionQty -= 1
-        potionQtyLabel.text = "Potions: \(potionQty)"
-        if character1.health - character1.currentHealth >= Items.potionPower {
-            character1.currentHealth += Items.potionPower
-            messageLabel.text = "\(playerName ?? "Player")'s HP \(character1.currentHealth) / \(character1.health)"
-        } else {
-            character1.currentHealth = character1.health
-            messageLabel.text = "\(playerName ?? "Player")'s HP \(character1.currentHealth) / \(character1.health)"
-        }
-    }
-    
+
     func playSoundFx(soundname: String) {
         let url = Bundle.main.url(forResource: soundname, withExtension: "mp3")
         music = try! AVAudioPlayer(contentsOf: url!)
         music.play()
     }
-    
-    
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    let destinationVC = segue.destination as! MainViewController
-    destinationVC.potionQty = potionQty
-    destinationVC.updatedHealth = character1.currentHealth
-    }
 }
+
 
 extension InventoryViewController: UITableViewDelegate {
     
