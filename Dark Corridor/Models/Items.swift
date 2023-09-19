@@ -12,49 +12,48 @@ struct Items {
     
     var player2: AVAudioPlayer!
     
-    var potionPower = 15
+    static var potionPower = 15
     
-    var allItems = [ ItemStruct(n: "Soul", q: 0, v: 5),
-                     ItemStruct(n: "Diamond", q: 0, v: 10),
-                     ItemStruct(n: "Gold", q: 0, v: 3),
-                     ItemStruct(n: "Dirt", q: 0, v: 1)
-    ]
-
-    var foundText = ""
+    static var soul = ItemStruct(name: "Soul", qty: 0, value: 5)
+    static var diamond = ItemStruct(name: "Diamond", qty: 0, value: 10)
+    static var gold = ItemStruct(name: "Gold", qty: 0, value: 3)
+    static var dirt = ItemStruct(name: "Dirt", qty: 0, value: 1)
     
-    mutating func plusSoul() {
-        allItems[0].qty += 1
-    }
+    static var foundText = ""
     
-    mutating func plusDiamond() {
-        allItems[1].qty += 1
-    }
-    
-    mutating func plusGold() {
-        allItems[2].qty += 1
-    }
-    
-    mutating func plusDirt() {
-        allItems[3].qty += 1
+    func addLoot(_ loot: ItemStruct) {
+        switch loot.name {
+        case "Souls" : Items.soul.qty += 1;
+        case "Diamond" : Items.diamond.qty += 1; Items.foundText = "You found a diamond!";
+        case "Gold" : Items.gold.qty += 1; Items.foundText = "You found gold!";
+        case "Dirt" : Items.dirt.qty += 1; Items.foundText = "You found dirt...";
+            
+        default:
+            print("item qty can't be updated")
+        }
     }
     
     mutating func itemFound()  {
-    
+        
         let itemFound = Int.random(in: 1...10)
         
-       if itemFound <= 6 {
-            plusDirt()
-            foundText = "You found dirt..."
-        playSoundFx(soundname: "Dirt")
+        if itemFound <= 6 {
+            addLoot(Items.dirt)
+            playSoundFx(soundname: "Dirt")
         } else if itemFound > 6 && itemFound <= 9 {
-            plusGold()
-            foundText = "You found gold!"
+            addLoot(Items.gold)
             playSoundFx(soundname: "Coin")
         } else if itemFound == 10 {
-            plusDiamond()
+            addLoot(Items.diamond)
             playSoundFx(soundname: "Diamond")
-            foundText = "You found a diamond!"
         }
+    }
+    
+    mutating func resetQtys() {
+        Items.soul.qty = 0
+        Items.diamond.qty = 0
+        Items.gold.qty = 0
+        Items.dirt.qty = 0
     }
     
     mutating func playSoundFx(soundname: String) {

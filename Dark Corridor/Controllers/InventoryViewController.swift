@@ -16,9 +16,9 @@ class InventoryViewController: UIViewController {
     @IBOutlet weak var usePotionButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    var items = Items()
     var character1 = Character()
     var potionQty = 0
+    let allItems = [Items.soul, Items.diamond, Items.gold, Items.dirt]
     var playerName: String?
     
     var music: AVAudioPlayer!
@@ -56,8 +56,8 @@ class InventoryViewController: UIViewController {
         character1.animateText(messageLabel, .green)
         potionQty -= 1
         potionQtyLabel.text = "Potions: \(potionQty)"
-        if character1.health - character1.currentHealth >= items.potionPower {
-            character1.currentHealth += items.potionPower
+        if character1.health - character1.currentHealth >= Items.potionPower {
+            character1.currentHealth += Items.potionPower
             messageLabel.text = "\(playerName ?? "Player")'s HP \(character1.currentHealth) / \(character1.health)"
         } else {
             character1.currentHealth = character1.health
@@ -91,7 +91,7 @@ extension InventoryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        let itemsWithQuantity = items.allItems.filter { $0.qty > 0 }
+        let itemsWithQuantity = allItems.filter { $0.qty > 0 }
 
         return itemsWithQuantity.count
     }
@@ -99,7 +99,7 @@ extension InventoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath) as! InventoryCell
         
-        let itemsWithQuantity = items.allItems.filter { $0.qty > 0 }
+        let itemsWithQuantity = allItems.filter { $0.qty > 0 }
         let itemName = itemsWithQuantity[indexPath.row].name
         let quantity = itemsWithQuantity[indexPath.row].qty
         cell.itemName.text = itemName

@@ -109,16 +109,15 @@ class BattleViewController: UIViewController {
                 enemyAttacks()
             }
         }
-        
     }
 
     func usePotion() {
         playSoundFx(soundname: "Potion")
         potionQty -= 1
         potionButton.setTitle("USE POTION: \(potionQty)", for: .normal)
-        if character1.health - character1.currentHealth >= items.potionPower {
-            character1.currentHealth += items.potionPower
-            messageLabel.text = "You drank a potion for \(items.potionPower) HP"
+        if character1.health - character1.currentHealth >= Items.potionPower {
+            character1.currentHealth += Items.potionPower
+            messageLabel.text = "You drank a potion for \(Items.potionPower) HP"
         } else {
             messageLabel.text = "You drank a potion for \(character1.health - character1.currentHealth) HP"
             character1.currentHealth = character1.health
@@ -193,7 +192,7 @@ class BattleViewController: UIViewController {
             playSound(soundName: "Battle Win")
             enemyImage.alpha = 0
             messageLabel.text = "Woo-hoo! You defeated the \(spawnedEnemy!.name)!"
-            items.allItems[0].qty += spawnedEnemy!.souls
+            Items.soul.qty += spawnedEnemy!.souls
             slashButton.isEnabled = false
             chargeButton.isEnabled = false
             potionButton.isEnabled = false
@@ -235,17 +234,13 @@ class BattleViewController: UIViewController {
         if segue.identifier == "goToResult" {
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.message = "You died"
-            destinationVC.finalSoulQty = 0
-            destinationVC.finalDiamondQty = 0
-            destinationVC.finalGoldQty = 0
-            destinationVC.finalDirtQty = 0
+            items.resetQtys()
             destinationVC.song = "Dead Screen"
             music.stop()
             
             
         } else {
             let destinationVC = segue.destination as! MainViewController
-            destinationVC.items.allItems[0].qty = items.allItems[0].qty
             destinationVC.updatedHealth = character1.currentHealth
             destinationVC.exitButton.isEnabled = true
             destinationVC.potionQty = potionQty

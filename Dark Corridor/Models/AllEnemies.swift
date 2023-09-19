@@ -9,7 +9,7 @@ import UIKit
 
 struct AllEnemies {
     
-     static var pig = EnemyStruct(
+    static var pig = EnemyStruct(
         name: "Mutant Pig",
         totalHealth: 15,
         currentHealth: 15,
@@ -21,7 +21,7 @@ struct AllEnemies {
         souls: 1,
         timesDefeated: 0)
     
-     static var spellbook = EnemyStruct(
+    static var spellbook = EnemyStruct(
         name: "Possessed Spellbook",
         totalHealth: 25,
         currentHealth: 25,

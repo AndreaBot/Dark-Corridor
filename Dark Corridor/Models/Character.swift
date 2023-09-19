@@ -13,8 +13,8 @@ struct Character {
     var health = 20
     var currentHealth = 20
     var damage = 0
-    let attack1 = AttackStruct(n: "Slash", dmg: 5)
-    let attack2 = AttackStruct(n: "Charge", dmg: 3)
+    let attack1 = AttackStruct(name: "Slash", damage: 1)
+    let attack2 = AttackStruct(name: "Charge", damage: 3)
     
     mutating func moveUp()  {
         up += 1

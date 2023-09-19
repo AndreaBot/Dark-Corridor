@@ -11,6 +11,7 @@ import AVFoundation
 class StartViewController: UIViewController {
     
     var music: AVAudioPlayer!
+    var items = Items()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class StartViewController: UIViewController {
         super.viewDidAppear(true)
         AllEnemies.pig.timesDefeated = 0
         AllEnemies.spellbook.timesDefeated = 0
+        items.resetQtys()
     }
     
     @IBAction func startPressed(_ sender: UIButton) {

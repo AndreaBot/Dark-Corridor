@@ -31,46 +31,45 @@ class StatsViewController: UIViewController {
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
         dismiss(animated: true)
     }
-    
 }
+
+// MARK: - Table view data source
+
+extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
     
-    // MARK: - Table view data source
-    
-    extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            
-            if playerStatsArray == [] {
-                return 1
-            } else {
-                return playerStatsArray.count
-            }
-        }
-        
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath) as! InventoryCell
-            
-            if playerStatsArray == [] {
-                cell.itemName.text = "👻 Oops! Nothing to see here, yet. Start playing to see your stats!"
-                cell.itemName.numberOfLines = 2
-                cell.itemName.adjustsFontSizeToFitWidth = true
-                cell.itemName.textAlignment = .center
-                cell.itemQuantity.isHidden = true
-                cell.itemImage.isHidden = true
-            } else {
-                let stat = playerStatsArray[indexPath.row]
-                
-                cell.stackView.distribution = .fillProportionally
-                cell.itemName.textAlignment = .left
-                cell.itemQuantity.textAlignment = .right
-                
-                cell.itemName.text = stat
-                cell.itemQuantity.text = String(PlayerStats.overallStats[stat]!)
-            }
-            return cell
+        if playerStatsArray == [] {
+            return 1
+        } else {
+            return playerStatsArray.count
         }
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath) as! InventoryCell
+        
+        if playerStatsArray == [] {
+            cell.itemName.text = "👻 Oops! Nothing to see here, yet. Start playing to see your stats!"
+            cell.itemName.numberOfLines = 2
+            cell.itemName.adjustsFontSizeToFitWidth = true
+            cell.itemName.textAlignment = .center
+            cell.itemQuantity.isHidden = true
+            cell.itemImage.isHidden = true
+        } else {
+            let stat = playerStatsArray[indexPath.row]
+            
+            cell.stackView.distribution = .fillProportionally
+            cell.itemName.textAlignment = .left
+            cell.itemQuantity.textAlignment = .right
+            
+            cell.itemName.text = stat
+            cell.itemQuantity.text = String(PlayerStats.overallStats[stat]!)
+        }
+        return cell
+    }
+}
 
 
 

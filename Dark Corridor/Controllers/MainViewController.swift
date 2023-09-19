@@ -13,20 +13,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var upButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
-    
     @IBOutlet weak var exitButton: UIButton!
-
     @IBOutlet weak var messageLabel: UILabel!
-    
     @IBOutlet var path: [UIImageView]!
     @IBOutlet weak var exitTile: UIImageView!
-    
     
     var playerName: String?
     var character1 = Character()
     var items = Items()
-
-    var soul = 0
     
     var updatedHealth = 20
     var potionQty = 3
@@ -107,7 +101,7 @@ class MainViewController: UIViewController {
             let randomResult = randomRoom.randomElement()
             if randomResult == "item" {
                 items.itemFound()
-                messageLabel.text = items.foundText
+                messageLabel.text = Items.foundText
                 
             } else if randomResult == "enemy" {
                 messageLabel.text = "An enemy attacks you!"
@@ -150,18 +144,11 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult" {
             let destinationVC = segue.destination as! ResultViewController
-            destinationVC.message = "You escaped the Dark Corridor! \n\nHere is your loot:"
-            destinationVC.finalSoulQty = items.allItems[0].qty
-            destinationVC.finalDiamondQty = items.allItems[1].qty
-            destinationVC.finalGoldQty = items.allItems[2].qty
-            destinationVC.finalDirtQty = items.allItems[3].qty
             destinationVC.song = "Win Screen"
-            
             music.stop()
     
         } else if segue.identifier == "goToBattle" {
             let destinationVC = segue.destination as! BattleViewController
-            destinationVC.items.allItems[0].qty = items.allItems[0].qty
             destinationVC.character1.currentHealth = updatedHealth
             destinationVC.potionQty = potionQty
             destinationVC.playerName = playerName!
@@ -174,10 +161,6 @@ class MainViewController: UIViewController {
             
         } else if segue.identifier == "goToInventory" {
             let destinationVC = segue.destination as! InventoryViewController
-            destinationVC.items.allItems[0].qty = items.allItems[0].qty
-            destinationVC.items.allItems[1].qty = items.allItems[1].qty
-            destinationVC.items.allItems[2].qty = items.allItems[2].qty
-            destinationVC.items.allItems[3].qty = items.allItems[3].qty
             destinationVC.potionQty = potionQty
             destinationVC.character1.currentHealth = updatedHealth
             destinationVC.playerName = playerName

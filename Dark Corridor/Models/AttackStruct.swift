@@ -10,9 +10,4 @@ import Foundation
 struct AttackStruct {
     let name: String
     var damage: Int
-    
-    init(n: String, dmg: Int) {
-        name = n
-        damage = dmg
-    }
 }

@@ -13,7 +13,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var nameField: UITextField!
-    
     @IBOutlet weak var redHero: UIButton!
     @IBOutlet weak var blueHero: UIButton!
     
