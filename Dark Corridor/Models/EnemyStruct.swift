@@ -12,7 +12,6 @@ struct EnemyStruct: Equatable {
         return true
     }
     
-    
     var name: String
     var totalHealth: Int
     var currentHealth: Int

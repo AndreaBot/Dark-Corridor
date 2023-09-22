@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493239ED104BD2AAF6376E17 /* Pods_Dark_Corridor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A01B1219E8903F80E52827 /* Pods_Dark_Corridor.framework */; };
 		6222C82829EB0A320090671F /* Battle Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6222C82729EB0A320090671F /* Battle Music.mp3 */; };
 		6222C82A29EB0A3F0090671F /* Eerie Spell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6222C82929EB0A3F0090671F /* Eerie Spell.mp3 */; };
 		6222C82C29EB0A460090671F /* Battle Win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6222C82B29EB0A460090671F /* Battle Win.mp3 */; };
@@ -40,6 +41,7 @@
 		62AC704E2AB63172006306CA /* InventoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62AC704C2AB63172006306CA /* InventoryCell.xib */; };
 		62AC70502AB7363E006306CA /* PlayerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC704F2AB7363E006306CA /* PlayerStats.swift */; };
 		62AC70522AB8A582006306CA /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC70512AB8A582006306CA /* StatsViewController.swift */; };
+		62AC70542ABB8451006306CA /* StatClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC70532ABB8451006306CA /* StatClass.swift */; };
 		62D218DD29E1B0560027ACD5 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D218DC29E1B0560027ACD5 /* InventoryViewController.swift */; };
 		62D218DF29E1D4690027ACD5 /* ItemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D218DE29E1D4690027ACD5 /* ItemStruct.swift */; };
 		62DADA1A29EAB5FD0080002F /* Spellbook Cry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62DADA1829EAB5FD0080002F /* Spellbook Cry.mp3 */; };
@@ -49,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45A01B1219E8903F80E52827 /* Pods_Dark_Corridor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dark_Corridor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6222C82729EB0A320090671F /* Battle Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Battle Music.mp3"; sourceTree = "<group>"; };
 		6222C82929EB0A3F0090671F /* Eerie Spell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Eerie Spell.mp3"; sourceTree = "<group>"; };
 		6222C82B29EB0A460090671F /* Battle Win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Battle Win.mp3"; sourceTree = "<group>"; };
@@ -84,12 +87,15 @@
 		62AC704C2AB63172006306CA /* InventoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryCell.xib; sourceTree = "<group>"; };
 		62AC704F2AB7363E006306CA /* PlayerStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStats.swift; sourceTree = "<group>"; };
 		62AC70512AB8A582006306CA /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		62AC70532ABB8451006306CA /* StatClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatClass.swift; sourceTree = "<group>"; };
 		62D218DC29E1B0560027ACD5 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		62D218DE29E1D4690027ACD5 /* ItemStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStruct.swift; sourceTree = "<group>"; };
 		62DADA1829EAB5FD0080002F /* Spellbook Cry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Spellbook Cry.mp3"; sourceTree = "<group>"; };
 		62DADA1929EAB5FD0080002F /* Pig Cry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Pig Cry.mp3"; sourceTree = "<group>"; };
 		62DADA2429EAB7F40080002F /* Charge.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Charge.mp3; sourceTree = "<group>"; };
 		62DADA2529EAB7F40080002F /* Slash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Slash.mp3; sourceTree = "<group>"; };
+		B80491EA68F0568332DA2F16 /* Pods-Dark Corridor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dark Corridor.debug.xcconfig"; path = "Target Support Files/Pods-Dark Corridor/Pods-Dark Corridor.debug.xcconfig"; sourceTree = "<group>"; };
+		DEB6131DB9927D0D33A11CB1 /* Pods-Dark Corridor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dark Corridor.release.xcconfig"; path = "Target Support Files/Pods-Dark Corridor/Pods-Dark Corridor.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				493239ED104BD2AAF6376E17 /* Pods_Dark_Corridor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +163,8 @@
 			children = (
 				629CD94029D0F06100489210 /* Dark Corridor */,
 				629CD93F29D0F06100489210 /* Products */,
+				A5C5C71D1E721750B1FF5B1D /* Pods */,
+				EB3D60672302BF0E26E961B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,6 +198,7 @@
 				62AC704B2AB63172006306CA /* InventoryCell.swift */,
 				629CD95929D0F3F500489210 /* Character.swift */,
 				62D218DE29E1D4690027ACD5 /* ItemStruct.swift */,
+				62AC70532ABB8451006306CA /* StatClass.swift */,
 				62AC70492AB3BCF5006306CA /* AttackStruct.swift */,
 				62AC70442AB39DE9006306CA /* EnemyStruct.swift */,
 				629CD95729D0F3D600489210 /* Items.swift */,
@@ -198,6 +208,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A5C5C71D1E721750B1FF5B1D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B80491EA68F0568332DA2F16 /* Pods-Dark Corridor.debug.xcconfig */,
+				DEB6131DB9927D0D33A11CB1 /* Pods-Dark Corridor.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EB3D60672302BF0E26E961B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45A01B1219E8903F80E52827 /* Pods_Dark_Corridor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,9 +232,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 629CD95229D0F06200489210 /* Build configuration list for PBXNativeTarget "Dark Corridor" */;
 			buildPhases = (
+				060414E7BF6BD51781C96428 /* [CP] Check Pods Manifest.lock */,
 				629CD93A29D0F06100489210 /* Sources */,
 				629CD93B29D0F06100489210 /* Frameworks */,
 				629CD93C29D0F06100489210 /* Resources */,
+				ED71EA9E109BD66E88B0E9FB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -289,11 +318,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		060414E7BF6BD51781C96428 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dark Corridor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED71EA9E109BD66E88B0E9FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dark Corridor/Pods-Dark Corridor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dark Corridor/Pods-Dark Corridor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dark Corridor/Pods-Dark Corridor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		629CD93A29D0F06100489210 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62AC70542ABB8451006306CA /* StatClass.swift in Sources */,
 				62AA037A29DCCE5E00AF660F /* SettingsViewController.swift in Sources */,
 				62AC704A2AB3BCF5006306CA /* AttackStruct.swift in Sources */,
 				6234FB8029D8CC3C008A23F8 /* BattleViewController.swift in Sources */,
@@ -452,6 +524,7 @@
 		};
 		629CD95329D0F06200489210 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B80491EA68F0568332DA2F16 /* Pods-Dark Corridor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -479,6 +552,7 @@
 		};
 		629CD95429D0F06200489210 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEB6131DB9927D0D33A11CB1 /* Pods-Dark Corridor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
