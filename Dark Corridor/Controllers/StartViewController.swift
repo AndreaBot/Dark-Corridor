@@ -20,8 +20,8 @@ class StartViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        AllEnemies.pig.timesDefeated = 0
-        AllEnemies.spellbook.timesDefeated = 0
+        AllEnemies.mutantPig.timesDefeated = 0
+        AllEnemies.possessedSpellbook.timesDefeated = 0
         items.resetQtys()
         Character.currentHealth = Character.health
     }

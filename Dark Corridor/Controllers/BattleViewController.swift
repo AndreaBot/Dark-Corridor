@@ -37,7 +37,7 @@ class BattleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        spawnedEnemy = [AllEnemies.pig, AllEnemies.spellbook].randomElement()!
+        spawnedEnemy = [AllEnemies.mutantPig, AllEnemies.possessedSpellbook, AllEnemies.hornedBat].randomElement()!
         spawnedEnemy!.currentHealth = spawnedEnemy!.totalHealth
         enemyNameLabel.text = spawnedEnemy!.name
         
@@ -183,10 +183,12 @@ class BattleViewController: UIViewController {
             potionButton.isEnabled = false
             
             if spawnedEnemy?.name == "Mutant Pig" {
-                AllEnemies.pig.timesDefeated += 1
+                AllEnemies.mutantPig.timesDefeated += 1
             } else if spawnedEnemy?.name == "Possessed Spellbook" {
-                AllEnemies.spellbook.timesDefeated += 1
+                AllEnemies.possessedSpellbook.timesDefeated += 1
             }
+            
+            addDefeatedCount(spawnedEnemy!.name)
            
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [self] in
@@ -195,6 +197,16 @@ class BattleViewController: UIViewController {
         }
     }
     
+    
+    func addDefeatedCount (_ enemyName: String) {
+        switch enemyName {
+        case "Mutant Pig": AllEnemies.mutantPig.timesDefeated += 1;
+        case "Possessed Spellbook": AllEnemies.possessedSpellbook.timesDefeated += 1;
+        case "Horned Bat": AllEnemies.hornedBat.timesDefeated += 1;
+        default:
+            print("Cant add stat")
+        }
+    }
     func playSound(soundName: String) {
         let url = Bundle.main.url(forResource: soundName, withExtension: "mp3")
         music = try! AVAudioPlayer(contentsOf: url!)

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		493239ED104BD2AAF6376E17 /* Pods_Dark_Corridor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A01B1219E8903F80E52827 /* Pods_Dark_Corridor.framework */; };
+		620BAF862ABEF49E00901406 /* Screech.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 620BAF852ABEF49E00901406 /* Screech.mp3 */; };
+		620BAF892ABEF4A700901406 /* HornedBat Cry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 620BAF872ABEF4A700901406 /* HornedBat Cry.mp3 */; };
+		620BAF8A2ABEF4A700901406 /* Ram.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 620BAF882ABEF4A700901406 /* Ram.mp3 */; };
 		6222C82829EB0A320090671F /* Battle Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6222C82729EB0A320090671F /* Battle Music.mp3 */; };
 		6222C82A29EB0A3F0090671F /* Eerie Spell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6222C82929EB0A3F0090671F /* Eerie Spell.mp3 */; };
 		6222C82C29EB0A460090671F /* Battle Win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6222C82B29EB0A460090671F /* Battle Win.mp3 */; };
@@ -52,6 +55,9 @@
 
 /* Begin PBXFileReference section */
 		45A01B1219E8903F80E52827 /* Pods_Dark_Corridor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dark_Corridor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		620BAF852ABEF49E00901406 /* Screech.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screech.mp3; sourceTree = "<group>"; };
+		620BAF872ABEF4A700901406 /* HornedBat Cry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "HornedBat Cry.mp3"; sourceTree = "<group>"; };
+		620BAF882ABEF4A700901406 /* Ram.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ram.mp3; sourceTree = "<group>"; };
 		6222C82729EB0A320090671F /* Battle Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Battle Music.mp3"; sourceTree = "<group>"; };
 		6222C82929EB0A3F0090671F /* Eerie Spell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Eerie Spell.mp3"; sourceTree = "<group>"; };
 		6222C82B29EB0A460090671F /* Battle Win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Battle Win.mp3"; sourceTree = "<group>"; };
@@ -146,10 +152,13 @@
 				6222C82F29EB0A560090671F /* Bite.mp3 */,
 				6222C82D29EB0A4E0090671F /* Tackle.mp3 */,
 				62DADA2429EAB7F40080002F /* Charge.mp3 */,
+				620BAF872ABEF4A700901406 /* HornedBat Cry.mp3 */,
+				620BAF882ABEF4A700901406 /* Ram.mp3 */,
 				62DADA2529EAB7F40080002F /* Slash.mp3 */,
 				62DADA1929EAB5FD0080002F /* Pig Cry.mp3 */,
 				62DADA1829EAB5FD0080002F /* Spellbook Cry.mp3 */,
 				625BE59E29E896FB00BC63F1 /* Dead Screen.mp3 */,
+				620BAF852ABEF49E00901406 /* Screech.mp3 */,
 				625BE5B329EA9CF100BC63F1 /* Dirt.mp3 */,
 				625BE5B129EA99AF00BC63F1 /* Coin.mp3 */,
 				625BE5A929E9ECE300BC63F1 /* Diamond.mp3 */,
@@ -293,6 +302,7 @@
 			files = (
 				6222C83029EB0A560090671F /* Bite.mp3 in Resources */,
 				6222C82A29EB0A3F0090671F /* Eerie Spell.mp3 in Resources */,
+				620BAF862ABEF49E00901406 /* Screech.mp3 in Resources */,
 				629CD94E29D0F06200489210 /* LaunchScreen.storyboard in Resources */,
 				625BE5AF29E9ECE400BC63F1 /* Potion.mp3 in Resources */,
 				6222C82C29EB0A460090671F /* Battle Win.mp3 in Resources */,
@@ -300,6 +310,7 @@
 				625BE5A029E896FB00BC63F1 /* Main Menu.mp3 in Resources */,
 				625BE5A129E896FB00BC63F1 /* Win Screen.mp3 in Resources */,
 				629CD94B29D0F06200489210 /* Assets.xcassets in Resources */,
+				620BAF8A2ABEF4A700901406 /* Ram.mp3 in Resources */,
 				62DADA2729EAB7F40080002F /* Slash.mp3 in Resources */,
 				62AC704E2AB63172006306CA /* InventoryCell.xib in Resources */,
 				629CD94929D0F06100489210 /* Main.storyboard in Resources */,
@@ -310,6 +321,7 @@
 				625BE5B429EA9CF100BC63F1 /* Dirt.mp3 in Resources */,
 				62DADA1B29EAB5FD0080002F /* Pig Cry.mp3 in Resources */,
 				62DADA2629EAB7F40080002F /* Charge.mp3 in Resources */,
+				620BAF892ABEF4A700901406 /* HornedBat Cry.mp3 in Resources */,
 				625BE5B229EA99AF00BC63F1 /* Coin.mp3 in Resources */,
 				6222C82E29EB0A4E0090671F /* Tackle.mp3 in Resources */,
 				6222C83229EB0A5F0090671F /* Spectral Force.mp3 in Resources */,

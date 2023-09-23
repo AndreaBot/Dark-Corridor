@@ -20,5 +20,6 @@ struct PlayerStats {
     static var dirtCollected = StatClass(name: "Dirt collected", value: 0, category: "Loot")
     static var mutantPigsDefeated = StatClass(name: "Mutant Pigs defeated", value: 0, category: "Enemies")
     static var possessedSpellbooksDefeated = StatClass(name: "Possessed Spellbooks defeated", value: 0, category: "Enemies")
+    static var hornedBatDefeated = StatClass(name: "Horned Bats defeated", value: 0, category: "Enemies")
     
 }
