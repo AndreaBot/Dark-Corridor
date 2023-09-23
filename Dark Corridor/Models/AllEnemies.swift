@@ -44,6 +44,18 @@ struct AllEnemies {
         crySoundName: "HornedBat Cry",
         souls: 1,
         timesDefeated: 0)
+    
+    static var deathsEmissary = EnemyStruct(
+        name: "Death's Emissary",
+        totalHealth: 20,
+        currentHealth: 20,
+        attack1: AttackStruct(name: "Schyte Swing", damage: 6),
+        attack2: AttackStruct(name: "Nightmare", damage: 4),
+        missChance: 0,
+        enemyImage: UIImage(named: "Death's Emissary")!,
+        crySoundName: "Death's Emissary Cry",
+        souls: 1,
+        timesDefeated: 0)
 }
 
 

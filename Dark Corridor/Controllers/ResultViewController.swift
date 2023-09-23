@@ -30,7 +30,8 @@ class ResultViewController: UIViewController {
         PlayerStats.dirtCollected,
         PlayerStats.mutantPigsDefeated,
         PlayerStats.possessedSpellbooksDefeated,
-        PlayerStats.hornedBatDefeated
+        PlayerStats.hornedBatDefeated,
+        PlayerStats.deathsEmissaryDefeated
     ]
     
     var allStatsRealm: Results<StatClass>?
@@ -102,6 +103,7 @@ class ResultViewController: UIViewController {
         PlayerStats.mutantPigsDefeated.value = AllEnemies.mutantPig.timesDefeated + PlayerStats.mutantPigsDefeated.value
         PlayerStats.possessedSpellbooksDefeated.value = AllEnemies.possessedSpellbook.timesDefeated + PlayerStats.possessedSpellbooksDefeated.value
         PlayerStats.hornedBatDefeated.value = AllEnemies.hornedBat.timesDefeated + PlayerStats.hornedBatDefeated.value
+        PlayerStats.deathsEmissaryDefeated.value = AllEnemies.deathsEmissary.timesDefeated + PlayerStats.deathsEmissaryDefeated.value
         
         if song == "Win Screen" {
             PlayerStats.successfulEscapes.value += 1
