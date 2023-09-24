@@ -10,18 +10,18 @@ import UIKit
 struct Character {
     
     static var playerName: String?
-    var up = 0
+    static var up = 0
     static var health = 20
     static var currentHealth = 20
-    var damage = 0
-    let attack1 = AttackStruct(name: "Slash", damage: 5)
-    let attack2 = AttackStruct(name: "Charge", damage: 3)
+    static var damage = 0
+    static var attack1 = AttackStruct(name: "Slash", damage: 5)
+    static var attack2 = AttackStruct(name: "Charge", damage: 3)
     
     mutating func moveUp()  {
-        up += 1
+        Character.up += 1
     }
     
-    func attackWorks() -> Bool {
+    static func attackWorks() -> Bool {
         let chance = Int.random(in: 1...10)
         if chance > 1 {
             return true

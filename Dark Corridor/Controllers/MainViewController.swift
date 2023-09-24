@@ -46,17 +46,17 @@ class MainViewController: UIViewController {
         for image in path {
             image.image = UIImage(named: "BlackTileNew")
         }
-        path[character1.up].image = UIImage(named: playerBack)
+        path[Character.up].image = UIImage(named: playerBack)
     }
     
     @IBAction func moveUp(_ sender: UIButton) {
-        if character1.up + 1 < 10 {
+        if Character.up + 1 < 10 {
             character1.moveUp()
             
             for image in path {
                 image.image = UIImage(named: "BlackTileNew")
             }
-            path[character1.up].image = UIImage(named: playerBack)
+            path[Character.up].image = UIImage(named: playerBack)
             leftButton.isEnabled = true
             rightButton.isEnabled = true
             tagLeft = 0
@@ -81,11 +81,11 @@ class MainViewController: UIViewController {
     @IBAction func roomEntered(_ sender: UIButton) {
 
         if sender.currentImage == UIImage(systemName: "arrowtriangle.backward") {
-            path[character1.up].image = UIImage(named: playerLeft)
+            path[Character.up].image = UIImage(named: playerLeft)
             tagLeft = 1
            
         } else if sender.currentImage == UIImage(systemName: "arrowtriangle.forward") {
-            path[character1.up].image = UIImage(named: playerRight)
+            path[Character.up].image = UIImage(named: playerRight)
             tagRight = 2
     
         }
@@ -119,7 +119,7 @@ class MainViewController: UIViewController {
         
         messageLabel.text = ""
         upButton.isEnabled = true
-        path[character1.up].image = UIImage(named: playerBack)
+        path[Character.up].image = UIImage(named: playerBack)
         
         if tagLeft == 1 && tagRight == 0 {
             rightButton.isEnabled = true
@@ -154,7 +154,6 @@ class MainViewController: UIViewController {
                 destinationVC.battleImage = "BlueHeroBackBig"
             }
             music.stop()
-            
         } 
     }
 }

@@ -18,6 +18,7 @@
 		620BAF992AC095F700901406 /* Creepy Lady Cry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 620BAF962AC095F700901406 /* Creepy Lady Cry.mp3 */; };
 		620BAF9A2AC095F700901406 /* Hair Whip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 620BAF972AC095F700901406 /* Hair Whip.mp3 */; };
 		620BAF9C2AC0A46400901406 /* General Item.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 620BAF9B2AC0A46400901406 /* General Item.mp3 */; };
+		620BAF9E2AC0AC5600901406 /* Power Up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 620BAF9D2AC0AC5600901406 /* Power Up.mp3 */; };
 		6222C82829EB0A320090671F /* Battle Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6222C82729EB0A320090671F /* Battle Music.mp3 */; };
 		6222C82A29EB0A3F0090671F /* Eerie Spell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6222C82929EB0A3F0090671F /* Eerie Spell.mp3 */; };
 		6222C82C29EB0A460090671F /* Battle Win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6222C82B29EB0A460090671F /* Battle Win.mp3 */; };
@@ -72,6 +73,7 @@
 		620BAF962AC095F700901406 /* Creepy Lady Cry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Creepy Lady Cry.mp3"; sourceTree = "<group>"; };
 		620BAF972AC095F700901406 /* Hair Whip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Hair Whip.mp3"; sourceTree = "<group>"; };
 		620BAF9B2AC0A46400901406 /* General Item.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "General Item.mp3"; sourceTree = "<group>"; };
+		620BAF9D2AC0AC5600901406 /* Power Up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Power Up.mp3"; sourceTree = "<group>"; };
 		6222C82729EB0A320090671F /* Battle Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Battle Music.mp3"; sourceTree = "<group>"; };
 		6222C82929EB0A3F0090671F /* Eerie Spell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Eerie Spell.mp3"; sourceTree = "<group>"; };
 		6222C82B29EB0A460090671F /* Battle Win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Battle Win.mp3"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				6222C82729EB0A320090671F /* Battle Music.mp3 */,
 				625BE59D29E896FB00BC63F1 /* Main Game .mp3 */,
 				6222C82B29EB0A460090671F /* Battle Win.mp3 */,
+				620BAF9D2AC0AC5600901406 /* Power Up.mp3 */,
 				620BAF9B2AC0A46400901406 /* General Item.mp3 */,
 				6222C82929EB0A3F0090671F /* Eerie Spell.mp3 */,
 				6222C83129EB0A5F0090671F /* Spectral Force.mp3 */,
@@ -352,6 +355,7 @@
 				620BAF892ABEF4A700901406 /* HornedBat Cry.mp3 in Resources */,
 				625BE5B229EA99AF00BC63F1 /* Coin.mp3 in Resources */,
 				6222C82E29EB0A4E0090671F /* Tackle.mp3 in Resources */,
+				620BAF9E2AC0AC5600901406 /* Power Up.mp3 in Resources */,
 				6222C83229EB0A5F0090671F /* Spectral Force.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

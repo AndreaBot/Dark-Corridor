@@ -20,10 +20,19 @@ class StartViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        
         AllEnemies.mutantPig.timesDefeated = 0
         AllEnemies.possessedSpellbook.timesDefeated = 0
+        AllEnemies.hornedBat.timesDefeated = 0
+        AllEnemies.deathsEmissary.timesDefeated = 0
+        AllEnemies.creepyLady.timesDefeated = 0
+        
         items.resetQtys()
+        
         Character.currentHealth = Character.health
+        Character.up = 0
+        Character.attack1.damage = 5
+        Character.attack2.damage = 3
     }
     
     @IBAction func startPressed(_ sender: UIButton) {
@@ -45,7 +54,6 @@ class StartViewController: UIViewController {
         if segue.identifier == "goToStory" {
             let destinationVC = segue.destination as! SettingsViewController
             destinationVC.music = music
-            
         }
     }
 }

@@ -13,6 +13,7 @@ struct Items {
     var player2: AVAudioPlayer!
     
     static var potion = ItemStruct(name: "Potion", qty: 3, value: 15)
+    static var powerUp = ItemStruct(name: "Power Up", qty: 0, value: 3)
     
     static var soul = ItemStruct(name: "Soul", qty: 0, value: 5)
     static var diamond = ItemStruct(name: "Diamond", qty: 0, value: 10)
@@ -28,6 +29,8 @@ struct Items {
         case "Gold" : Items.gold.qty += 1; Items.foundText = "You found gold!";
         case "Dirt" : Items.dirt.qty += 1; Items.foundText = "You found dirt...";
         case "Potion" : Items.potion.qty += 1; Items.foundText = "You found a potion!";
+        case "Power Up" : Items.foundText = "You found a Power Up! Attacks damage increased by \(Items.powerUp.value)"
+            Character.attack1.damage += 3; Character.attack2.damage += 3;
             
         default:
             print("item qty can't be updated")
@@ -36,7 +39,7 @@ struct Items {
     
     mutating func itemFound()  {
         
-        let itemFound = Int.random(in: 1...11)
+        let itemFound = Int.random(in: 1...12)
         
         if itemFound <= 6 {
             addLoot(Items.dirt)
@@ -50,6 +53,9 @@ struct Items {
         } else if itemFound == 11 {
             addLoot(Items.potion)
             playSoundFx(soundname: "General Item")
+        } else if itemFound == 12 {
+            addLoot(Items.powerUp)
+            playSoundFx(soundname: "Power Up")
         }
     }
     

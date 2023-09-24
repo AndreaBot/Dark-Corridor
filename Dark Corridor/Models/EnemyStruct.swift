@@ -37,4 +37,5 @@ struct EnemyStruct: Equatable {
         let actualDamage = possibleAttacks.randomElement()
         return actualDamage!
     }
+    
 }

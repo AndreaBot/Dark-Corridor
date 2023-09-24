@@ -25,7 +25,6 @@ class BattleViewController: UIViewController {
     var item = Items()
     var battleImage = ""
     var spawnedEnemy: EnemyStruct?
-    var character1 = Character()
     var items = Items()
     var attackName = ""
     var playerAtk = ""
@@ -67,27 +66,27 @@ class BattleViewController: UIViewController {
     @IBAction func attackIsPressed(_ sender: UIButton) {
         
         if sender.currentTitle == "SLASH" {
-            messageLabel.text = "You used slash for 5 damage!"
-            character1.damage = character1.attack1.damage
+            messageLabel.text = "You used slash for \(Character.attack1.damage) damage!"
+            Character.damage = Character.attack1.damage
             playerAtk =  "Slash"
  
         } else if sender.currentTitle == "CHARGE" {
-            messageLabel.text = "You charged for 3 damage!"
-            character1.damage = character1.attack2.damage
+            messageLabel.text = "You charged for \(Character.attack2.damage) damage!"
+            Character.damage = Character.attack2.damage
             playerAtk =  "Charge"
           
         } else {
-            character1.damage = 0
+            Character.damage = 0
         }
         slashButton.isEnabled = false
         chargeButton.isEnabled = false
         potionButton.isEnabled = false
         
-        if character1.damage > 0 {
+        if Character.damage > 0 {
             
-            if character1.attackWorks() {
+            if Character.attackWorks() {
                 playSoundFx(soundname: playerAtk)
-                spawnedEnemy?.currentHealth -= character1.damage
+                spawnedEnemy?.currentHealth -= Character.damage
                 enemyHP.text = "HP: \(String(describing: spawnedEnemy!.currentHealth)) / \(String(describing: spawnedEnemy!.totalHealth))"
                 Character.animateText(enemyHP, .red)
                 if spawnedEnemy!.currentHealth <= 0 {
