@@ -22,5 +22,5 @@ struct PlayerStats {
     static var possessedSpellbooksDefeated = StatClass(name: "Possessed Spellbooks defeated", value: 0, category: "Enemies")
     static var hornedBatDefeated = StatClass(name: "Horned Bats defeated", value: 0, category: "Enemies")
     static var deathsEmissaryDefeated = StatClass(name: "Death's Emissaries defeated", value: 0, category: "Enemies")
-    
+    static var creepyLadiesDefeated = StatClass(name: "Creepy Ladies defeated", value: 0, category: "Enemies")
 }

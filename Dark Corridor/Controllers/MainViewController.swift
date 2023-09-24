@@ -97,6 +97,7 @@ class MainViewController: UIViewController {
         func randomFound() {
             let randomRoom = ["item", "enemy", "empty"]
             let randomResult = randomRoom.randomElement()
+            
             if randomResult == "item" {
                 items.itemFound()
                 messageLabel.text = Items.foundText

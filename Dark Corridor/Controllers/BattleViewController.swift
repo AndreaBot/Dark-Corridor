@@ -37,7 +37,8 @@ class BattleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        spawnedEnemy = [AllEnemies.mutantPig, AllEnemies.possessedSpellbook, AllEnemies.hornedBat, AllEnemies.deathsEmissary].randomElement()!
+        spawnedEnemy = [AllEnemies.mutantPig, AllEnemies.possessedSpellbook, AllEnemies.hornedBat, AllEnemies.deathsEmissary, AllEnemies.creepyLady].randomElement()!
+        
         spawnedEnemy!.currentHealth = spawnedEnemy!.totalHealth
         enemyNameLabel.text = spawnedEnemy!.name
         
@@ -204,6 +205,7 @@ class BattleViewController: UIViewController {
         case "Possessed Spellbook": AllEnemies.possessedSpellbook.timesDefeated += 1;
         case "Horned Bat": AllEnemies.hornedBat.timesDefeated += 1;
         case "Death's Emissary": AllEnemies.deathsEmissary.timesDefeated += 1;
+        case "Creepy Lady": AllEnemies.creepyLady.timesDefeated += 1;
         default:
             print("Cant add stat")
         }

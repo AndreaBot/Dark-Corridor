@@ -56,6 +56,18 @@ struct AllEnemies {
         crySoundName: "Death's Emissary Cry",
         souls: 1,
         timesDefeated: 0)
+    
+    static var creepyLady = EnemyStruct(
+        name: "Creepy Lady",
+        totalHealth: 25,
+        currentHealth: 25,
+        attack1: AttackStruct(name: "Hair Whip", damage: 4),
+        attack2: AttackStruct(name: "Phantom Shadows", damage: 7),
+        missChance: 4,
+        enemyImage: UIImage(named: "Creepy Lady")!,
+        crySoundName: "Creepy Lady Cry",
+        souls: 2,
+        timesDefeated: 0)
 }
 
 
