@@ -232,7 +232,6 @@ class BattleViewController: UIViewController {
             destinationVC.song = "Dead Screen"
             music.stop()
             
-            
         } else {
             let destinationVC = segue.destination as! MainViewController
             destinationVC.exitButton.isEnabled = true

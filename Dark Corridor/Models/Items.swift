@@ -27,6 +27,7 @@ struct Items {
         case "Diamond" : Items.diamond.qty += 1; Items.foundText = "You found a diamond!";
         case "Gold" : Items.gold.qty += 1; Items.foundText = "You found gold!";
         case "Dirt" : Items.dirt.qty += 1; Items.foundText = "You found dirt...";
+        case "Potion" : Items.potion.qty += 1; Items.foundText = "You found a potion!";
             
         default:
             print("item qty can't be updated")
@@ -35,7 +36,7 @@ struct Items {
     
     mutating func itemFound()  {
         
-        let itemFound = Int.random(in: 1...10)
+        let itemFound = Int.random(in: 1...11)
         
         if itemFound <= 6 {
             addLoot(Items.dirt)
@@ -46,6 +47,9 @@ struct Items {
         } else if itemFound == 10 {
             addLoot(Items.diamond)
             playSoundFx(soundname: "Diamond")
+        } else if itemFound == 11 {
+            addLoot(Items.potion)
+            playSoundFx(soundname: "General Item")
         }
     }
     
