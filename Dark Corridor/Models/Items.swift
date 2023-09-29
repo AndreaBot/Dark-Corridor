@@ -15,6 +15,9 @@ struct Items {
     static var potion = ItemStruct(name: "Potion", qty: 3, value: 15)
     static var powerUp = ItemStruct(name: "Power Up", qty: 0, value: 3)
     
+    static var additionalPotions = 0
+    //static var additionalPowerUp = 0
+    
     static var soul = ItemStruct(name: "Soul", qty: 0, value: 5)
     static var diamond = ItemStruct(name: "Diamond", qty: 0, value: 10)
     static var gold = ItemStruct(name: "Gold", qty: 0, value: 3)
@@ -65,6 +68,7 @@ struct Items {
         Items.diamond.qty = 0
         Items.gold.qty = 0
         Items.dirt.qty = 0
+        Items.powerUp.qty = 0
     }
     
     mutating func usePotion(_ messageLabel: UILabel, _ hpLabel: UILabel, _ potionQtyLabel: UILabel?, _ potionButton: UIButton?) {

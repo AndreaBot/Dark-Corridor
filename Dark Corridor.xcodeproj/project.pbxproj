@@ -19,6 +19,11 @@
 		620BAF9A2AC095F700901406 /* Hair Whip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 620BAF972AC095F700901406 /* Hair Whip.mp3 */; };
 		620BAF9C2AC0A46400901406 /* General Item.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 620BAF9B2AC0A46400901406 /* General Item.mp3 */; };
 		620BAF9E2AC0AC5600901406 /* Power Up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 620BAF9D2AC0AC5600901406 /* Power Up.mp3 */; };
+		620BAFA02AC1EDB400901406 /* StoreItemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620BAF9F2AC1EDB400901406 /* StoreItemStruct.swift */; };
+		620BAFA22AC1EE7F00901406 /* StoreItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620BAFA12AC1EE7F00901406 /* StoreItems.swift */; };
+		620BAFA42AC1F12500901406 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620BAFA32AC1F12500901406 /* StoreViewController.swift */; };
+		620BAFA72AC1F2EC00901406 /* StoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620BAFA52AC1F2EC00901406 /* StoreCell.swift */; };
+		620BAFA82AC1F2EC00901406 /* StoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 620BAFA62AC1F2EC00901406 /* StoreCell.xib */; };
 		6222C82829EB0A320090671F /* Battle Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6222C82729EB0A320090671F /* Battle Music.mp3 */; };
 		6222C82A29EB0A3F0090671F /* Eerie Spell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6222C82929EB0A3F0090671F /* Eerie Spell.mp3 */; };
 		6222C82C29EB0A460090671F /* Battle Win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6222C82B29EB0A460090671F /* Battle Win.mp3 */; };
@@ -74,6 +79,11 @@
 		620BAF972AC095F700901406 /* Hair Whip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Hair Whip.mp3"; sourceTree = "<group>"; };
 		620BAF9B2AC0A46400901406 /* General Item.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "General Item.mp3"; sourceTree = "<group>"; };
 		620BAF9D2AC0AC5600901406 /* Power Up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Power Up.mp3"; sourceTree = "<group>"; };
+		620BAF9F2AC1EDB400901406 /* StoreItemStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemStruct.swift; sourceTree = "<group>"; };
+		620BAFA12AC1EE7F00901406 /* StoreItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItems.swift; sourceTree = "<group>"; };
+		620BAFA32AC1F12500901406 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		620BAFA52AC1F2EC00901406 /* StoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCell.swift; sourceTree = "<group>"; };
+		620BAFA62AC1F2EC00901406 /* StoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreCell.xib; sourceTree = "<group>"; };
 		6222C82729EB0A320090671F /* Battle Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Battle Music.mp3"; sourceTree = "<group>"; };
 		6222C82929EB0A3F0090671F /* Eerie Spell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Eerie Spell.mp3"; sourceTree = "<group>"; };
 		6222C82B29EB0A460090671F /* Battle Win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Battle Win.mp3"; sourceTree = "<group>"; };
@@ -142,6 +152,7 @@
 				62D218DC29E1B0560027ACD5 /* InventoryViewController.swift */,
 				6234FB7F29D8CC3C008A23F8 /* BattleViewController.swift */,
 				62AA037729DCCD9700AF660F /* ResultViewController.swift */,
+				620BAFA32AC1F12500901406 /* StoreViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -151,6 +162,7 @@
 			children = (
 				629CD94729D0F06100489210 /* Main.storyboard */,
 				62AC704C2AB63172006306CA /* InventoryCell.xib */,
+				620BAFA62AC1F2EC00901406 /* StoreCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,6 +249,9 @@
 				629CD95729D0F3D600489210 /* Items.swift */,
 				62AC70472AB3B491006306CA /* AllEnemies.swift */,
 				62AC704F2AB7363E006306CA /* PlayerStats.swift */,
+				620BAF9F2AC1EDB400901406 /* StoreItemStruct.swift */,
+				620BAFA12AC1EE7F00901406 /* StoreItems.swift */,
+				620BAFA52AC1F2EC00901406 /* StoreCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -333,6 +348,7 @@
 				62DADA1A29EAB5FD0080002F /* Spellbook Cry.mp3 in Resources */,
 				625BE5A029E896FB00BC63F1 /* Main Menu.mp3 in Resources */,
 				625BE5A129E896FB00BC63F1 /* Win Screen.mp3 in Resources */,
+				620BAFA82AC1F2EC00901406 /* StoreCell.xib in Resources */,
 				620BAF942ABF3E0900901406 /* Ram.mp3 in Resources */,
 				629CD94B29D0F06200489210 /* Assets.xcassets in Resources */,
 				620BAF922ABF3D6300901406 /* Nightmare.mp3 in Resources */,
@@ -413,7 +429,9 @@
 				62AA037A29DCCE5E00AF660F /* SettingsViewController.swift in Sources */,
 				62AC704A2AB3BCF5006306CA /* AttackStruct.swift in Sources */,
 				6234FB8029D8CC3C008A23F8 /* BattleViewController.swift in Sources */,
+				620BAFA02AC1EDB400901406 /* StoreItemStruct.swift in Sources */,
 				629CD95829D0F3D600489210 /* Items.swift in Sources */,
+				620BAFA22AC1EE7F00901406 /* StoreItems.swift in Sources */,
 				629CD94629D0F06100489210 /* MainViewController.swift in Sources */,
 				62AC70482AB3B491006306CA /* AllEnemies.swift in Sources */,
 				629CD95A29D0F3F500489210 /* Character.swift in Sources */,
@@ -424,9 +442,11 @@
 				62AC70522AB8A582006306CA /* StatsViewController.swift in Sources */,
 				62D218DD29E1B0560027ACD5 /* InventoryViewController.swift in Sources */,
 				62AC704D2AB63172006306CA /* InventoryCell.swift in Sources */,
+				620BAFA72AC1F2EC00901406 /* StoreCell.swift in Sources */,
 				62AC70452AB39DE9006306CA /* EnemyStruct.swift in Sources */,
 				62AA037829DCCD9700AF660F /* ResultViewController.swift in Sources */,
 				62D218DF29E1D4690027ACD5 /* ItemStruct.swift in Sources */,
+				620BAFA42AC1F12500901406 /* StoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

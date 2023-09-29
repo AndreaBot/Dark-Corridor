@@ -182,12 +182,6 @@ class BattleViewController: UIViewController {
             chargeButton.isEnabled = false
             potionButton.isEnabled = false
             
-            if spawnedEnemy?.name == "Mutant Pig" {
-                AllEnemies.mutantPig.timesDefeated += 1
-            } else if spawnedEnemy?.name == "Possessed Spellbook" {
-                AllEnemies.possessedSpellbook.timesDefeated += 1
-            }
-            
             addDefeatedCount(spawnedEnemy!.name)
            
         }

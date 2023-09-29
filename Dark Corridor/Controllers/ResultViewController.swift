@@ -18,6 +18,8 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var finalDirtQtyLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appending(path: "StoreItems.plist")
+    
     let realm = try! Realm()
     var allStats = [
         PlayerStats.points,
@@ -37,6 +39,7 @@ class ResultViewController: UIViewController {
     
     var allStatsRealm: Results<StatClass>?
     
+    var items = Items()
     var message = ""
     
     var totSoulPts = 0
@@ -79,6 +82,24 @@ class ResultViewController: UIViewController {
         } catch {
             print("Error: \(error)")
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        AllEnemies.mutantPig.timesDefeated = 0
+        AllEnemies.possessedSpellbook.timesDefeated = 0
+        AllEnemies.hornedBat.timesDefeated = 0
+        AllEnemies.deathsEmissary.timesDefeated = 0
+        AllEnemies.creepyLady.timesDefeated = 0
+        
+        items.resetQtys()
+        StoreItems.allItems[3].isPurchased = false
+        saveItems()
+        
+        Character.currentHealth = Character.health
+        Character.up = 0
+        Character.attack1.damage = 50
+        Character.attack2.damage = 3
     }
     
     func playSound(soundName: String) {
@@ -125,6 +146,18 @@ class ResultViewController: UIViewController {
             } else {
                 realm.add(stat)
             }
+        }
+    }
+    
+    func saveItems() {
+        
+        let encoder = PropertyListEncoder()
+        
+        do {
+            let data = try encoder.encode(StoreItems.allItems)
+            try data.write(to: dataFilePath!)
+        } catch {
+            print("error encoding item array, \(error)")
         }
     }
 }

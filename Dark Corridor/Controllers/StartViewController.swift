@@ -11,7 +11,6 @@ import AVFoundation
 class StartViewController: UIViewController {
     
     var music: AVAudioPlayer!
-    var items = Items()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,19 +19,7 @@ class StartViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
-        AllEnemies.mutantPig.timesDefeated = 0
-        AllEnemies.possessedSpellbook.timesDefeated = 0
-        AllEnemies.hornedBat.timesDefeated = 0
-        AllEnemies.deathsEmissary.timesDefeated = 0
-        AllEnemies.creepyLady.timesDefeated = 0
-        
-        items.resetQtys()
-        
-        Character.currentHealth = Character.health
-        Character.up = 0
-        Character.attack1.damage = 5
-        Character.attack2.damage = 3
+        Items.potion.qty += Items.additionalPotions
     }
     
     @IBAction func startPressed(_ sender: UIButton) {
