@@ -152,19 +152,27 @@ class BattleViewController: UIViewController {
                 playerHP.text = "HP: \(Character.currentHealth) / \(Character.health)"
                 Character.animateText(playerHP, .red)
                 
-                if Character.currentHealth <= 0 {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
-                        playerBattleImage.alpha = 0
-                        messageLabel.text = "You're dead..."
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [self] in
-                        
-                        self.performSegue(withIdentifier: "goToResult", sender: self)
-                    }
-                    
-                } else {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
-                        loopFight()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
+                    if Character.currentHealth <= 0 {
+                        if StoreItems.allItems[4].isPurchased == true {
+                            triggerSecondChance()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
+                                loopFight()
+                            }
+                        } else {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
+                                playerBattleImage.alpha = 0
+                                messageLabel.text = "You're dead..."
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [self] in
+                                
+                                self.performSegue(withIdentifier: "goToResult", sender: self)
+                            }
+                        }
+                    } else {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [self] in
+                            loopFight()
+                        }
                     }
                 }
             }
@@ -213,6 +221,15 @@ class BattleViewController: UIViewController {
         let url = Bundle.main.url(forResource: soundname, withExtension: "mp3")
         music2 = try! AVAudioPlayer(contentsOf: url!)
         music2.play()
+    }
+    
+    func triggerSecondChance() {
+        Character.currentHealth = Character.health
+        playerHP.text = "HP: \(Character.currentHealth) / \(Character.health)"
+        Character.animateText(playerHP, .green)
+        playSoundFx(soundname: "Second Chance")
+        StoreItems.allItems[4].isPurchased = false
+        messageLabel.text = "The second chance takes effect! Health fully restored."
     }
 
     

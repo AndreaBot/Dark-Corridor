@@ -83,19 +83,19 @@ class MainViewController: UIViewController {
         if sender.currentImage == UIImage(systemName: "arrowtriangle.backward") {
             path[Character.up].image = UIImage(named: playerLeft)
             tagLeft = 1
-           
+            
         } else if sender.currentImage == UIImage(systemName: "arrowtriangle.forward") {
             path[Character.up].image = UIImage(named: playerRight)
             tagRight = 2
-    
+            
         }
         leftButton.isEnabled = false
         rightButton.isEnabled = false
         upButton.isEnabled = false
         exitButton.isEnabled = true
-
+        
         func randomFound() {
-           let randomRoom = ["item", "enemy", "empty"]
+            let randomRoom = ["item", "enemy", "empty"]
             let randomResult = randomRoom.randomElement()
             
             if randomResult == "item" {

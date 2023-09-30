@@ -39,6 +39,7 @@
 		625BE5AF29E9ECE400BC63F1 /* Potion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE5AA29E9ECE300BC63F1 /* Potion.mp3 */; };
 		625BE5B229EA99AF00BC63F1 /* Coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE5B129EA99AF00BC63F1 /* Coin.mp3 */; };
 		625BE5B429EA9CF100BC63F1 /* Dirt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE5B329EA9CF100BC63F1 /* Dirt.mp3 */; };
+		626FD7F12AC86650005F7521 /* Second Chance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 626FD7F02AC86650005F7521 /* Second Chance.mp3 */; };
 		629CD94229D0F06100489210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD94129D0F06100489210 /* AppDelegate.swift */; };
 		629CD94429D0F06100489210 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD94329D0F06100489210 /* SceneDelegate.swift */; };
 		629CD94629D0F06100489210 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD94529D0F06100489210 /* MainViewController.swift */; };
@@ -99,6 +100,7 @@
 		625BE5AA29E9ECE300BC63F1 /* Potion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Potion.mp3; sourceTree = "<group>"; };
 		625BE5B129EA99AF00BC63F1 /* Coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Coin.mp3; sourceTree = "<group>"; };
 		625BE5B329EA9CF100BC63F1 /* Dirt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dirt.mp3; sourceTree = "<group>"; };
+		626FD7F02AC86650005F7521 /* Second Chance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Second Chance.mp3"; sourceTree = "<group>"; };
 		629CD93E29D0F06100489210 /* Dark Corridor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dark Corridor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		629CD94129D0F06100489210 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		629CD94329D0F06100489210 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				620BAF9B2AC0A46400901406 /* General Item.mp3 */,
 				6222C82929EB0A3F0090671F /* Eerie Spell.mp3 */,
 				6222C83129EB0A5F0090671F /* Spectral Force.mp3 */,
+				626FD7F02AC86650005F7521 /* Second Chance.mp3 */,
 				620BAF8B2ABF3A8300901406 /* Death's Emissary Cry.mp3 */,
 				620BAF912ABF3D6300901406 /* Nightmare.mp3 */,
 				620BAF8D2ABF3A8300901406 /* Schyte Swing.mp3 */,
@@ -339,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				626FD7F12AC86650005F7521 /* Second Chance.mp3 in Resources */,
 				6222C83029EB0A560090671F /* Bite.mp3 in Resources */,
 				6222C82A29EB0A3F0090671F /* Eerie Spell.mp3 in Resources */,
 				620BAF862ABEF49E00901406 /* Screech.mp3 in Resources */,

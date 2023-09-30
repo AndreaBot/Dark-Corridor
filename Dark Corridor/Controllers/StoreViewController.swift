@@ -116,20 +116,20 @@ extension StoreViewController: UITableViewDelegate, UITableViewDataSource {
         cell.itemImage.image = UIImage(named: item.itemImageName)
         cell.itemNameLabel.text = item.itemName
         cell.itemPriceLabel.text = String(item.price)
-        cell.explanationButton.alpha = item.itemName == "Power Up" ? 1 : 0
-        cell.purchaseButton.isEnabled = item.isPurchased ? false : true
-        if item.isPurchased == true && (item.itemName == "Green Hero" || item.itemName == "Dark Hero" || item.itemName == "Power Up")  {
-            cell.purchaseButton.setTitle("√", for: .disabled)
-            cell.purchaseButton.setTitleColor(.white, for: .disabled)
+        cell.explanationButton.alpha = item.needsExplaining ? 1 : 0
+
+        if item.isPurchased {
+            cell.purchaseButton.isUserInteractionEnabled = false
+            cell.purchaseButton.setImage(UIImage(systemName: "checkmark.circle")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            cell.purchaseButton.setTitle("", for: .normal)
             cell.purchaseButton.layer.borderColor = CGColor(gray: 5, alpha: 0)
         } else {
+            cell.purchaseButton.isUserInteractionEnabled = true
             cell.purchaseButton.setTitle("BUY", for: .normal)
+            cell.purchaseButton.setImage(nil, for: .normal)
             cell.purchaseButton.layer.borderColor = CGColor(red: 0, green: 0.3, blue: 1, alpha: 1)
         }
-        
-        cell.purchaseButton.backgroundColor = .clear
-        cell.purchaseButton.layer.borderWidth = 2
-        cell.purchaseButton.layer.cornerRadius = cell.purchaseButton.frame.height/2
+
         cell.backgroundColor = .clear
         
         return cell
@@ -137,8 +137,9 @@ extension StoreViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension StoreViewController: StoreCellDelegate {
-    func showAlert(_ title: String, _ message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    
+    func showAlert(_ title: String) {
+        let alert = UIAlertController(title: title, message: findExplanationText(title), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
@@ -154,7 +155,7 @@ extension StoreViewController: StoreCellDelegate {
             }))
             present(alert, animated: true) }
         else {
-            self.showAlert("Warning", "You do not have enough points to buy this item.")
+            self.showAlert("Warning")
         }
     }
     
@@ -172,7 +173,8 @@ extension StoreViewController: StoreCellDelegate {
         case "Green Hero": buyGreenHero();
         case "Dark Hero": buyDarkHero();
         case "Potion": buyPotion();
-        case "Power Up": buyPowerUp()
+        case "Power Up": buyPowerUp();
+        case "Second Chance": buySecondChance()
         default:
             print("item not found")
         }
@@ -198,7 +200,22 @@ extension StoreViewController: StoreCellDelegate {
             Character.attack1.damage += 3; Character.attack2.damage += 3
         }
         
+        func buySecondChance() {
+            StoreItems.allItems[4].isPurchased = true
+            saveItems()
+        }
+        
         storeTableView.reloadData()
     }
     
+    func findExplanationText(_ title: String) -> String {
+        
+        switch title {
+        case "Potion": return StoreItems.allItems[2].explanation!;
+        case "Power Up": return StoreItems.allItems[3].explanation!;
+        case "Second Chance": return StoreItems.allItems[4].explanation!;
+        case "Warning": return "You do not have enough points to buy this item."
+        default: return "Item not found"
+        }
+    }
 }

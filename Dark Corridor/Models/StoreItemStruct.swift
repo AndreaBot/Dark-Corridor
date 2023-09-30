@@ -9,8 +9,11 @@ import Foundation
 
 struct StoreItemStruct : Codable {
     
-    var itemImageName: String
-    var itemName: String
-    var price: Int
+    let itemImageName: String
+    let itemName: String
+    let price: Int
     var isPurchased: Bool
+    let needsExplaining: Bool
+    let explanation: String?
+    
 }

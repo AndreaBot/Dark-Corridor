@@ -9,11 +9,11 @@ import UIKit
 
 protocol StoreCellDelegate {
     func processPurchase(_ item: String, _ price: Int)
-    func showAlert(_ title: String, _ message: String)
+    func showAlert(_ title: String)
 }
 
 class StoreCell: UITableViewCell {
-
+    
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemPriceLabel: UILabel!
@@ -30,6 +30,9 @@ class StoreCell: UITableViewCell {
         
         itemNameLabel.textColor = .white
         itemPriceLabel.textColor = .white
+        
+        purchaseButton.layer.cornerRadius = purchaseButton.frame.height/2
+        purchaseButton.layer.borderWidth = 2
     }
     
     @IBAction func buyButtonPressed(_ sender: UIButton) {
@@ -38,9 +41,11 @@ class StoreCell: UITableViewCell {
         let price = Int(itemPriceLabel.text!)!
         StoreCell.delegate?.processPurchase(selectedItem, price)
     }
-
+    
     
     @IBAction func explain(_ sender: UIButton) {
-        StoreCell.delegate?.showAlert("Power Up", "Increase your attacks damage by 3 points. \nYou can only buy one of these per game")
+        
+        let selectedItem = itemNameLabel.text!
+        StoreCell.delegate?.showAlert(selectedItem)
     }
 }
