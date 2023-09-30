@@ -98,7 +98,7 @@ class ResultViewController: UIViewController {
         
         Character.currentHealth = Character.health
         Character.up = 0
-        Character.attack1.damage = 5
+        Character.attack1.damage = 50
         Character.attack2.damage = 3
     }
     

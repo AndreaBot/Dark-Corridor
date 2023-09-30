@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct StoreItemStruct : Codable {
+struct StoreItemStruct: Codable {
     
     var itemImageName: String
     var itemName: String
     var price: Int
     var isPurchased: Bool
+    var qty: Int?
 }
