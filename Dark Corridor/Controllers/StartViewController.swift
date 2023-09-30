@@ -10,6 +10,7 @@ import AVFoundation
 
 class StartViewController: UIViewController {
 
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appending(path: "StoreItems.plist")
     var music: AVAudioPlayer!
     
     override func viewDidLoad() {
@@ -19,7 +20,9 @@ class StartViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        Items.potion.qty += Items.additionalPotions
+        loadItems()
+        //Items.potion.qty = StoreItems.allItems[2].qty!
+        
     }
     
     @IBAction func startPressed(_ sender: UIButton) {
@@ -35,6 +38,20 @@ class StartViewController: UIViewController {
         let url = Bundle.main.url(forResource: "Main Menu", withExtension: "mp3")
         music = try! AVAudioPlayer(contentsOf: url!)
         music.play()
+    }
+    
+    func loadItems() {
+        
+        if let data = try? Data(contentsOf: dataFilePath!) {
+            let decoder = PropertyListDecoder()
+            do{
+                StoreItems.allItems = try decoder.decode([StoreItemStruct].self, from: data)
+            } catch {
+                print("error decoding item array, \(error)")
+            }
+        } else {
+            return
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

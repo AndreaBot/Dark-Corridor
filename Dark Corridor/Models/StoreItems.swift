@@ -10,6 +10,7 @@ import Foundation
 struct StoreItems {
     
     static var allItems = [
+
         StoreItemStruct(itemImageName: "GreenHeroFront", itemName: "Green Hero", price: 1, isPurchased: false, needsExplaining: false, explanation: nil),
         StoreItemStruct(itemImageName: "DarkHeroFront", itemName: "Dark Hero", price: 2, isPurchased: false, needsExplaining: false, explanation: nil),
         StoreItemStruct(itemImageName: "Potion", itemName: "Potion", price: 3, isPurchased: false, needsExplaining: true, explanation: "A restorative drink that heals you by \(Items.potion.value) HP"),

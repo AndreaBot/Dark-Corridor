@@ -12,10 +12,8 @@ struct Items {
     
     var player2: AVAudioPlayer!
     
-    static var potion = ItemStruct(name: "Potion", qty: 3, value: 15)
+    static var potion = ItemStruct(name: "Potion", qty: 0, value: 15)
     static var powerUp = ItemStruct(name: "Power Up", qty: 0, value: 3)
-    
-    static var additionalPotions = 0
     
     static var soul = ItemStruct(name: "Soul", qty: 0, value: 5)
     static var diamond = ItemStruct(name: "Diamond", qty: 0, value: 10)
@@ -66,7 +64,7 @@ struct Items {
     }
     
     mutating func resetQtys() {
-        Items.potion.qty = 3
+        //Items.potion.qty = 2
         Items.soul.qty = 0
         Items.diamond.qty = 0
         Items.gold.qty = 0

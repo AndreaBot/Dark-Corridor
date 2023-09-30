@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StoreItemStruct : Codable {
+struct StoreItemStruct: Codable {
     
     let itemImageName: String
     let itemName: String
@@ -15,5 +15,4 @@ struct StoreItemStruct : Codable {
     var isPurchased: Bool
     let needsExplaining: Bool
     let explanation: String?
-    
 }
