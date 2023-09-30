@@ -147,12 +147,12 @@
 			children = (
 				62AA037B29DCCE8800AF660F /* StartViewController.swift */,
 				62AC70512AB8A582006306CA /* StatsViewController.swift */,
+				620BAFA32AC1F12500901406 /* StoreViewController.swift */,
 				62AA037929DCCE5E00AF660F /* SettingsViewController.swift */,
 				629CD94529D0F06100489210 /* MainViewController.swift */,
 				62D218DC29E1B0560027ACD5 /* InventoryViewController.swift */,
 				6234FB7F29D8CC3C008A23F8 /* BattleViewController.swift */,
 				62AA037729DCCD9700AF660F /* ResultViewController.swift */,
-				620BAFA32AC1F12500901406 /* StoreViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

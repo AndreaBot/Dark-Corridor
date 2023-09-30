@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 
 class StartViewController: UIViewController {
-    
+
     var music: AVAudioPlayer!
     
     override func viewDidLoad() {
@@ -44,3 +44,4 @@ class StartViewController: UIViewController {
         }
     }
 }
+

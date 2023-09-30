@@ -23,7 +23,6 @@ class StoreViewController: UIViewController {
         }
     }
     
-    
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appending(path: "StoreItems.plist")
     
     override func viewDidLoad() {
@@ -34,12 +33,16 @@ class StoreViewController: UIViewController {
         do {
             try self.realm.write {
                 realmStats = realm.objects(StatClass.self)
-                pointsAmount = realmStats![0].value
+                if realmStats!.count > 1 {
+                    pointsAmount = realmStats![0].value
+                } else {
+                    pointsAmount = 0
+                }
             }
         } catch {
             print(error)
+            
         }
-        
         
         storeTableView.delegate = self
         storeTableView.dataSource = self
@@ -47,16 +50,19 @@ class StoreViewController: UIViewController {
         storeTableView.rowHeight = 70
         
         StoreCell.delegate = self
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         do {
-            if let stats = realmStats {
+            if let stats = realmStats, stats.count > 1 {
                 let points = stats[0]
                 try self.realm.write {
                     points.value = pointsAmount
                 }
+            } else {
+                return
             }
         } catch {
             print("Error: \(error)")
