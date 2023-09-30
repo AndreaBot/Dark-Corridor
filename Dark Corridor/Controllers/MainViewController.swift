@@ -96,7 +96,6 @@ class MainViewController: UIViewController {
 
         func randomFound() {
            let randomRoom = ["item", "enemy", "empty"]
-            //let randomRoom = ["item"]
             let randomResult = randomRoom.randomElement()
             
             if randomResult == "item" {

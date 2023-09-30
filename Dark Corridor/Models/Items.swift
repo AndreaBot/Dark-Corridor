@@ -16,7 +16,7 @@ struct Items {
     static var powerUp = ItemStruct(name: "Power Up", qty: 0, value: 3)
     
     static var additionalPotions = 0
-    //static var additionalPowerUp = 0
+    static var powerUpFound = false
     
     static var soul = ItemStruct(name: "Soul", qty: 0, value: 5)
     static var diamond = ItemStruct(name: "Diamond", qty: 0, value: 10)
@@ -56,9 +56,13 @@ struct Items {
         } else if itemFound == 11 {
             addLoot(Items.potion)
             playSoundFx(soundname: "General Item")
-        } else if itemFound == 12 {
+        } else if itemFound == 12 && Items.powerUpFound == false {
             addLoot(Items.powerUp)
             playSoundFx(soundname: "Power Up")
+            Items.powerUpFound = true
+        } else if itemFound == 12 && Items.powerUpFound == true {
+            addLoot(Items.dirt)
+            playSoundFx(soundname: "Dirt")
         }
     }
     
@@ -68,7 +72,7 @@ struct Items {
         Items.diamond.qty = 0
         Items.gold.qty = 0
         Items.dirt.qty = 0
-        Items.powerUp.qty = 0
+        Items.powerUpFound = false
     }
     
     mutating func usePotion(_ messageLabel: UILabel, _ hpLabel: UILabel, _ potionQtyLabel: UILabel?, _ potionButton: UIButton?) {
