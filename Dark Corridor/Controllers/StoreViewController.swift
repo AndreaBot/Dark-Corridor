@@ -191,7 +191,7 @@ extension StoreViewController: StoreCellDelegate {
         
         func buyPotion() {
             Items.potion.qty += 1
-            //StoreItems.allItems[2].qty! = Items.potion.qty
+            StoreItems.allItems[2].qty! = Items.potion.qty
             saveItems()
         }
         

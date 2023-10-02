@@ -11,6 +11,7 @@ struct StoreItemStruct: Codable {
     
     let itemImageName: String
     let itemName: String
+    var qty: Int?
     let price: Int
     var isPurchased: Bool
     let needsExplaining: Bool

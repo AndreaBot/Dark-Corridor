@@ -94,6 +94,7 @@ class ResultViewController: UIViewController {
         
         items.resetQtys()
         StoreItems.allItems[3].isPurchased = false
+        StoreItems.allItems[2].qty = Items.potion.qty
         saveItems()
         
         Character.currentHealth = Character.health

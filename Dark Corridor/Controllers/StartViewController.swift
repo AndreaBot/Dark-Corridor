@@ -21,8 +21,7 @@ class StartViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         loadItems()
-        //Items.potion.qty = StoreItems.allItems[2].qty!
-        
+        Items.potion.qty = StoreItems.allItems[2].qty!
     }
     
     @IBAction func startPressed(_ sender: UIButton) {
