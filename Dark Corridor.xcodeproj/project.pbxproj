@@ -33,13 +33,14 @@
 		6234FB8029D8CC3C008A23F8 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6234FB7F29D8CC3C008A23F8 /* BattleViewController.swift */; };
 		625BE5A029E896FB00BC63F1 /* Main Menu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE59B29E896FB00BC63F1 /* Main Menu.mp3 */; };
 		625BE5A129E896FB00BC63F1 /* Win Screen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE59C29E896FB00BC63F1 /* Win Screen.mp3 */; };
-		625BE5A229E896FB00BC63F1 /* Main Game .mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE59D29E896FB00BC63F1 /* Main Game .mp3 */; };
+		625BE5A229E896FB00BC63F1 /* Main Game.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE59D29E896FB00BC63F1 /* Main Game.mp3 */; };
 		625BE5A329E896FB00BC63F1 /* Dead Screen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE59E29E896FB00BC63F1 /* Dead Screen.mp3 */; };
 		625BE5AE29E9ECE400BC63F1 /* Diamond.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE5A929E9ECE300BC63F1 /* Diamond.mp3 */; };
 		625BE5AF29E9ECE400BC63F1 /* Potion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE5AA29E9ECE300BC63F1 /* Potion.mp3 */; };
 		625BE5B229EA99AF00BC63F1 /* Coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE5B129EA99AF00BC63F1 /* Coin.mp3 */; };
 		625BE5B429EA9CF100BC63F1 /* Dirt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE5B329EA9CF100BC63F1 /* Dirt.mp3 */; };
 		626FD7F12AC86650005F7521 /* Second Chance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 626FD7F02AC86650005F7521 /* Second Chance.mp3 */; };
+		626FD7F52ACB53AD005F7521 /* Enemy Found.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 626FD7F42ACB53AD005F7521 /* Enemy Found.mp3 */; };
 		629CD94229D0F06100489210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD94129D0F06100489210 /* AppDelegate.swift */; };
 		629CD94429D0F06100489210 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD94329D0F06100489210 /* SceneDelegate.swift */; };
 		629CD94629D0F06100489210 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD94529D0F06100489210 /* MainViewController.swift */; };
@@ -94,13 +95,14 @@
 		6234FB7F29D8CC3C008A23F8 /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		625BE59B29E896FB00BC63F1 /* Main Menu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Main Menu.mp3"; sourceTree = "<group>"; };
 		625BE59C29E896FB00BC63F1 /* Win Screen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Win Screen.mp3"; sourceTree = "<group>"; };
-		625BE59D29E896FB00BC63F1 /* Main Game .mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Main Game .mp3"; sourceTree = "<group>"; };
+		625BE59D29E896FB00BC63F1 /* Main Game.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Main Game.mp3"; sourceTree = "<group>"; };
 		625BE59E29E896FB00BC63F1 /* Dead Screen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Dead Screen.mp3"; sourceTree = "<group>"; };
 		625BE5A929E9ECE300BC63F1 /* Diamond.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Diamond.mp3; sourceTree = "<group>"; };
 		625BE5AA29E9ECE300BC63F1 /* Potion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Potion.mp3; sourceTree = "<group>"; };
 		625BE5B129EA99AF00BC63F1 /* Coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Coin.mp3; sourceTree = "<group>"; };
 		625BE5B329EA9CF100BC63F1 /* Dirt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dirt.mp3; sourceTree = "<group>"; };
 		626FD7F02AC86650005F7521 /* Second Chance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Second Chance.mp3"; sourceTree = "<group>"; };
+		626FD7F42ACB53AD005F7521 /* Enemy Found.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Enemy Found.mp3"; sourceTree = "<group>"; };
 		629CD93E29D0F06100489210 /* Dark Corridor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dark Corridor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		629CD94129D0F06100489210 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		629CD94329D0F06100489210 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,11 +177,12 @@
 				625BE59B29E896FB00BC63F1 /* Main Menu.mp3 */,
 				625BE59C29E896FB00BC63F1 /* Win Screen.mp3 */,
 				6222C82729EB0A320090671F /* Battle Music.mp3 */,
-				625BE59D29E896FB00BC63F1 /* Main Game .mp3 */,
+				625BE59D29E896FB00BC63F1 /* Main Game.mp3 */,
 				6222C82B29EB0A460090671F /* Battle Win.mp3 */,
 				620BAF9D2AC0AC5600901406 /* Power Up.mp3 */,
 				620BAF9B2AC0A46400901406 /* General Item.mp3 */,
 				6222C82929EB0A3F0090671F /* Eerie Spell.mp3 */,
+				626FD7F42ACB53AD005F7521 /* Enemy Found.mp3 */,
 				6222C83129EB0A5F0090671F /* Spectral Force.mp3 */,
 				626FD7F02AC86650005F7521 /* Second Chance.mp3 */,
 				620BAF8B2ABF3A8300901406 /* Death's Emissary Cry.mp3 */,
@@ -352,6 +355,7 @@
 				62DADA1A29EAB5FD0080002F /* Spellbook Cry.mp3 in Resources */,
 				625BE5A029E896FB00BC63F1 /* Main Menu.mp3 in Resources */,
 				625BE5A129E896FB00BC63F1 /* Win Screen.mp3 in Resources */,
+				626FD7F52ACB53AD005F7521 /* Enemy Found.mp3 in Resources */,
 				620BAFA82AC1F2EC00901406 /* StoreCell.xib in Resources */,
 				620BAF942ABF3E0900901406 /* Ram.mp3 in Resources */,
 				629CD94B29D0F06200489210 /* Assets.xcassets in Resources */,
@@ -367,7 +371,7 @@
 				620BAF982AC095F700901406 /* Phantom Shadows.mp3 in Resources */,
 				620BAF8E2ABF3A8300901406 /* Death's Emissary Cry.mp3 in Resources */,
 				620BAF992AC095F700901406 /* Creepy Lady Cry.mp3 in Resources */,
-				625BE5A229E896FB00BC63F1 /* Main Game .mp3 in Resources */,
+				625BE5A229E896FB00BC63F1 /* Main Game.mp3 in Resources */,
 				625BE5B429EA9CF100BC63F1 /* Dirt.mp3 in Resources */,
 				62DADA1B29EAB5FD0080002F /* Pig Cry.mp3 in Resources */,
 				62DADA2629EAB7F40080002F /* Charge.mp3 in Resources */,

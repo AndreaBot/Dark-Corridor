@@ -245,9 +245,7 @@ class BattleViewController: UIViewController {
         } else {
             let destinationVC = segue.destination as! MainViewController
             destinationVC.exitButton.isEnabled = true
-            destinationVC.messageLabel.text = ""
             music.stop()
-            destinationVC.playSound()
         }
     }
 }

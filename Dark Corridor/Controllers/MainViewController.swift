@@ -32,21 +32,24 @@ class MainViewController: UIViewController {
     var colorExit = ""
     
     var music: AVAudioPlayer!
-    
-    var pigsDefeated = 0
-    var spellbooksDefeated = 0
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playSound()
-        messageLabel.text = ""
         exitButton.isEnabled = false
         
         for image in path {
             image.image = UIImage(named: "BlackTileNew")
         }
         path[Character.up].image = UIImage(named: playerBack)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        view.backgroundColor = .black
+        playSound("Main Game")
+        messageLabel.text = ""
+        messageLabel.textColor = .white
     }
     
     @IBAction func moveUp(_ sender: UIButton) {
@@ -95,8 +98,7 @@ class MainViewController: UIViewController {
         exitButton.isEnabled = true
         
         func randomFound() {
-//            let randomRoom = ["item", "enemy", "empty"]
-            let randomRoom = ["item", "empty"]
+            let randomRoom = ["item", "enemy", "empty"]
             let randomResult = randomRoom.randomElement()
             
             if randomResult == "item" {
@@ -105,8 +107,11 @@ class MainViewController: UIViewController {
                 
             } else if randomResult == "enemy" {
                 messageLabel.text = "An enemy attacks you!"
+                playSound("Enemy Found")
+                view.backgroundColor = .red
+                messageLabel.textColor = .black
                 exitButton.isEnabled = false
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) { [self] in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) { [self] in
                     self.performSegue(withIdentifier: "goToBattle", sender: self)
                 }
             } else {
@@ -132,8 +137,8 @@ class MainViewController: UIViewController {
 
     }
     
-    func playSound() {
-        let url = Bundle.main.url(forResource: "Main Game ", withExtension: "mp3")
+    func playSound(_ soundFile: String) {
+        let url = Bundle.main.url(forResource: soundFile, withExtension: "mp3")
         music = try! AVAudioPlayer(contentsOf: url!)
         music.play()
     }
