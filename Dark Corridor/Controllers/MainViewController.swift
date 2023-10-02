@@ -95,7 +95,8 @@ class MainViewController: UIViewController {
         exitButton.isEnabled = true
         
         func randomFound() {
-            let randomRoom = ["item", "enemy", "empty"]
+//            let randomRoom = ["item", "enemy", "empty"]
+            let randomRoom = ["item", "empty"]
             let randomResult = randomRoom.randomElement()
             
             if randomResult == "item" {
@@ -144,6 +145,7 @@ class MainViewController: UIViewController {
         if segue.identifier == "goToResult" {
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.song = "Win Screen"
+            destinationVC.message = "SUCCESS! \nYou've escaped the Dark Corridor!"
             music.stop()
     
         } else if segue.identifier == "goToBattle" {
