@@ -41,6 +41,7 @@
 		625BE5B429EA9CF100BC63F1 /* Dirt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE5B329EA9CF100BC63F1 /* Dirt.mp3 */; };
 		626FD7F12AC86650005F7521 /* Second Chance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 626FD7F02AC86650005F7521 /* Second Chance.mp3 */; };
 		626FD7F52ACB53AD005F7521 /* Enemy Found.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 626FD7F42ACB53AD005F7521 /* Enemy Found.mp3 */; };
+		626FD7F72ACB66BD005F7521 /* EnemyAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626FD7F62ACB66BD005F7521 /* EnemyAnimations.swift */; };
 		629CD94229D0F06100489210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD94129D0F06100489210 /* AppDelegate.swift */; };
 		629CD94429D0F06100489210 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD94329D0F06100489210 /* SceneDelegate.swift */; };
 		629CD94629D0F06100489210 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD94529D0F06100489210 /* MainViewController.swift */; };
@@ -103,6 +104,7 @@
 		625BE5B329EA9CF100BC63F1 /* Dirt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dirt.mp3; sourceTree = "<group>"; };
 		626FD7F02AC86650005F7521 /* Second Chance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Second Chance.mp3"; sourceTree = "<group>"; };
 		626FD7F42ACB53AD005F7521 /* Enemy Found.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Enemy Found.mp3"; sourceTree = "<group>"; };
+		626FD7F62ACB66BD005F7521 /* EnemyAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyAnimations.swift; sourceTree = "<group>"; };
 		629CD93E29D0F06100489210 /* Dark Corridor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dark Corridor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		629CD94129D0F06100489210 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		629CD94329D0F06100489210 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				62AC70532ABB8451006306CA /* StatClass.swift */,
 				62AC70492AB3BCF5006306CA /* AttackStruct.swift */,
 				62AC70442AB39DE9006306CA /* EnemyStruct.swift */,
+				626FD7F62ACB66BD005F7521 /* EnemyAnimations.swift */,
 				629CD95729D0F3D600489210 /* Items.swift */,
 				62AC70472AB3B491006306CA /* AllEnemies.swift */,
 				62AC704F2AB7363E006306CA /* PlayerStats.swift */,
@@ -433,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				626FD7F72ACB66BD005F7521 /* EnemyAnimations.swift in Sources */,
 				62AC70542ABB8451006306CA /* StatClass.swift in Sources */,
 				62AA037A29DCCE5E00AF660F /* SettingsViewController.swift in Sources */,
 				62AC704A2AB3BCF5006306CA /* AttackStruct.swift in Sources */,

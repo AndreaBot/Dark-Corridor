@@ -22,6 +22,9 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var enemyImage: UIImageView!
     @IBOutlet weak var potionButton: UIButton!
     
+    
+    @IBOutlet weak var enemyStackView: UIStackView!
+    
     var item = Items()
     var battleImage = ""
     var spawnedEnemy: EnemyStruct?
@@ -35,7 +38,10 @@ class BattleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        slashButton.isEnabled = false
+        chargeButton.isEnabled = false
+        potionButton.isEnabled = false
+
         spawnedEnemy = [AllEnemies.mutantPig, AllEnemies.possessedSpellbook, AllEnemies.hornedBat, AllEnemies.deathsEmissary, AllEnemies.creepyLady].randomElement()!
         
         spawnedEnemy!.currentHealth = spawnedEnemy!.totalHealth
@@ -57,9 +63,19 @@ class BattleViewController: UIViewController {
             potionButton.isEnabled = true
         }
         potionButton.setTitle("USE POTION: \(Items.potion.qty)", for: .normal)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
+        
+        enemyImage.alpha = 0
+        enemyHP.alpha = 0
+        enemyNameLabel.alpha = 0
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [self] in
+            EnemyStruct.spawnAnimation(spawnedEnemy!, view, enemyImage, enemyHP, enemyNameLabel, enemyStackView)
+
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) { [self] in
             playSoundFx(soundname: spawnedEnemy!.crySoundName)
-            
+            slashButton.isEnabled = true
+            chargeButton.isEnabled = true
+            potionButton.isEnabled = true
         }
     }
     
@@ -246,6 +262,7 @@ class BattleViewController: UIViewController {
             let destinationVC = segue.destination as! MainViewController
             destinationVC.exitButton.isEnabled = true
             music.stop()
+            destinationVC.playSound("Main Game")
         }
     }
 }

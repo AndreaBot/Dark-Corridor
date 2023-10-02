@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
     @IBOutlet var path: [UIImageView]!
     @IBOutlet weak var exitTile: UIImageView!
     
+    
     var character1 = Character()
     var items = Items()
     
@@ -36,6 +37,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        playSound("Main Game")
         exitButton.isEnabled = false
         
         for image in path {
@@ -47,7 +49,6 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         view.backgroundColor = .black
-        playSound("Main Game")
         messageLabel.text = ""
         messageLabel.textColor = .white
     }
@@ -98,7 +99,8 @@ class MainViewController: UIViewController {
         exitButton.isEnabled = true
         
         func randomFound() {
-            let randomRoom = ["item", "enemy", "empty"]
+//            let randomRoom = ["item", "enemy", "empty"]
+            let randomRoom = ["enemy"]
             let randomResult = randomRoom.randomElement()
             
             if randomResult == "item" {

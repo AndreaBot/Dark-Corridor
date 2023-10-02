@@ -771,6 +771,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rMr-8H-8fZ">
+                                <rect key="frame" x="98" y="332" width="196.33333333333337" height="188"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="IoQ-J1-sfb" userLabel="General Stack View">
                                 <rect key="frame" x="0.0" y="60" width="393" height="792"/>
                                 <subviews>
@@ -781,16 +785,16 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="188"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-80" translatesAutoresizingMaskIntoConstraints="NO" id="Kad-qO-MUX" userLabel="Enemy HP Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="188"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="188"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enemy Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWO-Aj-uHa">
-                                                                <rect key="frame" x="39.999999999999993" y="0.0" width="116.33333333333331" height="134"/>
+                                                                <rect key="frame" x="138.33333333333334" y="0.0" width="116.33333333333334" height="134"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hu9-EO-P3E">
-                                                                <rect key="frame" x="74.333333333333329" y="54" width="48" height="134"/>
+                                                                <rect key="frame" x="172.66666666666666" y="54" width="47.999999999999972" height="134"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -798,9 +802,6 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </stackView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rMr-8H-8fZ">
-                                                        <rect key="frame" x="196.66666666666663" y="0.0" width="196.33333333333337" height="188"/>
-                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
@@ -927,6 +928,7 @@
                         <outlet property="enemyHP" destination="Hu9-EO-P3E" id="cjc-2w-8JM"/>
                         <outlet property="enemyImage" destination="rMr-8H-8fZ" id="74f-dy-x1v"/>
                         <outlet property="enemyNameLabel" destination="uWO-Aj-uHa" id="ZUp-qQ-E0N"/>
+                        <outlet property="enemyStackView" destination="l15-AF-M3u" id="RbP-Qc-40Y"/>
                         <outlet property="exitButton" destination="9HR-fl-Csl" id="pN2-Fr-5Gw"/>
                         <outlet property="messageLabel" destination="Jpt-eM-q11" id="4g3-zN-rUT"/>
                         <outlet property="name" destination="98L-Lx-GYT" id="n7g-VX-6Ss"/>
@@ -1215,7 +1217,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pak-5p-IY6"/>
+        <segue reference="QFf-Id-L37"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BlackTileNew" width="16" height="16"/>
