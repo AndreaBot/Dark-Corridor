@@ -40,11 +40,11 @@ struct EnemyStruct: Equatable {
     
     static func spawnAnimation(_ enemy: EnemyStruct, _ view: UIView, _ enemyImage: UIImageView, _ enemyHP: UILabel, _ enemyNameLabel: UILabel, _ stackView: UIStackView) {
         switch enemy.name {
-        case AllEnemies.mutantPig.name: EnemyAnimations.slideFromBottom(view, enemyImage, enemyHP, enemyNameLabel, stackView);
-        case AllEnemies.possessedSpellbook.name: EnemyAnimations.fadeIn(view, enemyImage, enemyHP, enemyNameLabel, stackView);
-        case AllEnemies.hornedBat.name: EnemyAnimations.slideFromTop(view, enemyImage, enemyHP, enemyNameLabel, stackView);
-        case AllEnemies.deathsEmissary.name: EnemyAnimations.fadeIn(view, enemyImage, enemyHP, enemyNameLabel, stackView);
-        case AllEnemies.creepyLady.name: EnemyAnimations.slideFromRight(view, enemyImage, enemyHP, enemyNameLabel, stackView);
+        case AllEnemies.mutantPig.name: CharacterAnimations.slideFromBottom(view, enemyImage, enemyHP, enemyNameLabel, stackView);
+        case AllEnemies.possessedSpellbook.name: CharacterAnimations.fadeIn(view, enemyImage, enemyHP, enemyNameLabel, stackView);
+        case AllEnemies.hornedBat.name: CharacterAnimations.slideFromTop(view, enemyImage, enemyHP, enemyNameLabel, stackView);
+        case AllEnemies.deathsEmissary.name: CharacterAnimations.fadeIn(view, enemyImage, enemyHP, enemyNameLabel, stackView);
+        case AllEnemies.creepyLady.name: CharacterAnimations.slideFromRight(view, enemyImage, enemyHP, enemyNameLabel, stackView);
         default:
             print("No animation found")
         }

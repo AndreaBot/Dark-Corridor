@@ -24,6 +24,7 @@ class BattleViewController: UIViewController {
     
     
     @IBOutlet weak var enemyStackView: UIStackView!
+    @IBOutlet weak var playerStackView: UIStackView!
     
     var item = Items()
     var battleImage = ""
@@ -67,7 +68,13 @@ class BattleViewController: UIViewController {
         enemyImage.alpha = 0
         enemyHP.alpha = 0
         enemyNameLabel.alpha = 0
+        
+        playerBattleImage.alpha = 0
+        playerHP.alpha = 0
+        name.alpha = 0
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [self] in
+            CharacterAnimations.slideFromLeft(view, playerBattleImage, playerHP, name, playerStackView)
             EnemyStruct.spawnAnimation(spawnedEnemy!, view, enemyImage, enemyHP, enemyNameLabel, enemyStackView)
 
         }
@@ -176,11 +183,12 @@ class BattleViewController: UIViewController {
                                 loopFight()
                             }
                         } else {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
-                                playerBattleImage.alpha = 0
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
+                                playSound(soundName: "Defeat")
+                                CharacterAnimations.dropDown(playerStackView, playerBattleImage)
                                 messageLabel.text = "You're dead..."
                             }
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [self] in
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
                                 
                                 self.performSegue(withIdentifier: "goToResult", sender: self)
                             }
@@ -196,7 +204,11 @@ class BattleViewController: UIViewController {
     }
         
     func battleWin() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [self] in
+            CharacterAnimations.dropDown(enemyStackView, enemyImage)
+            playSoundFx(soundname: spawnedEnemy!.crySoundName)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) { [self] in
             music.stop()
             playSound(soundName: "Battle Win")
             enemyImage.alpha = 0
@@ -209,7 +221,7 @@ class BattleViewController: UIViewController {
             addDefeatedCount(spawnedEnemy!.name)
            
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) { [self] in
             messageLabel.text = "You got the \(spawnedEnemy!.name)'s soul!"
             exitButton.isEnabled = true
         }

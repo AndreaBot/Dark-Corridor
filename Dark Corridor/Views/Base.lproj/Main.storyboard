@@ -775,6 +775,10 @@
                                 <rect key="frame" x="98" y="332" width="196.33333333333337" height="188"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uk6-we-ayP">
+                                <rect key="frame" x="98" y="332" width="196.66666666666663" height="188"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="IoQ-J1-sfb" userLabel="General Stack View">
                                 <rect key="frame" x="0.0" y="60" width="393" height="792"/>
                                 <subviews>
@@ -794,7 +798,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hu9-EO-P3E">
-                                                                <rect key="frame" x="172.66666666666666" y="54" width="47.999999999999972" height="134"/>
+                                                                <rect key="frame" x="172.66666666666666" y="54" width="48" height="134"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -808,20 +812,17 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AuZ-yA-eA0" userLabel="P Stack View">
                                                 <rect key="frame" x="0.0" y="188" width="393" height="188"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uk6-we-ayP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="188"/>
-                                                    </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-80" translatesAutoresizingMaskIntoConstraints="NO" id="dea-FN-RCx" userLabel="Player HP Stack View">
-                                                        <rect key="frame" x="196.66666666666663" y="0.0" width="196.33333333333337" height="188"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="188"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98L-Lx-GYT">
-                                                                <rect key="frame" x="71.000000000000028" y="0.0" width="54" height="134"/>
+                                                                <rect key="frame" x="169.66666666666666" y="0.0" width="54" height="134"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tic-dv-paH">
-                                                                <rect key="frame" x="74.000000000000028" y="54" width="48" height="134"/>
+                                                                <rect key="frame" x="172.66666666666666" y="54" width="48" height="134"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -934,6 +935,7 @@
                         <outlet property="name" destination="98L-Lx-GYT" id="n7g-VX-6Ss"/>
                         <outlet property="playerBattleImage" destination="Uk6-we-ayP" id="eP9-Dt-n6z"/>
                         <outlet property="playerHP" destination="Tic-dv-paH" id="x2b-Ar-gw9"/>
+                        <outlet property="playerStackView" destination="AuZ-yA-eA0" id="jaL-dV-DDu"/>
                         <outlet property="potionButton" destination="sTT-UT-Wcb" id="K9a-w9-hxV"/>
                         <outlet property="slashButton" destination="UAi-m7-1NB" id="Cm7-n4-VDv"/>
                         <segue destination="cj3-eX-s2X" kind="presentation" identifier="goToResult" modalPresentationStyle="fullScreen" id="QFf-Id-L37"/>
