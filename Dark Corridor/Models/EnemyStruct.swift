@@ -49,5 +49,4 @@ struct EnemyStruct: Equatable {
             print("No animation found")
         }
     }
-    
 }

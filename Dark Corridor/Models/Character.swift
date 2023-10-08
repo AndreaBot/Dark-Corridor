@@ -14,7 +14,7 @@ struct Character {
     static var health = 20
     static var currentHealth = 20
     static var damage = 0
-    static var attack1 = AttackStruct(name: "Slash", damage: 50)
+    static var attack1 = AttackStruct(name: "Slash", damage: 5)
     static var attack2 = AttackStruct(name: "Charge", damage: 3)
     
     mutating func moveUp()  {

@@ -138,14 +138,6 @@ extension StoreViewController: StoreCellDelegate {
     
     func confirmPurchase(_ item: String, _ price: Int) {
         
-//        do {
-//            try self.realm.write {
-//                pointsAmount -= price
-//            }
-//        } catch {
-//            print(error)
-//        }
-        
         pointsAmount -= price
 
         switch item {

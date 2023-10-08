@@ -42,7 +42,7 @@ class StatsViewController: UIViewController {
     }
 }
 
-// MARK: - Table view data source
+// MARK: - Table View Delegate and Data Source
 
 extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
     

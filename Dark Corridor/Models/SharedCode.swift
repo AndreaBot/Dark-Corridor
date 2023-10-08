@@ -63,12 +63,6 @@ struct SharedCode {
             }
         }
     }
-    
-    struct RealmCode {
-        
-       
-        
-    }
 }
 
 

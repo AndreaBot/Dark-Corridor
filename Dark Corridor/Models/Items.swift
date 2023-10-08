@@ -36,8 +36,7 @@ struct Items {
     
     mutating func itemFound()  {
         
-//        let itemFound = Int.random(in: 1...12)
-        let itemFound = 12
+        let itemFound = Int.random(in: 1...12)
         
         if itemFound <= 6 {
             addLoot(Items.dirt)
