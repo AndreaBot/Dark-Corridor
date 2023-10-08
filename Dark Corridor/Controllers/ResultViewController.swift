@@ -50,6 +50,7 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         
         SharedCode.Audio.playSound(song)
         messageLabel.text = message
@@ -99,8 +100,6 @@ class ResultViewController: UIViewController {
         Character.up = 0
         Character.attack1.damage = 5
         Character.attack2.damage = 3
-        
-        //SharedCode.Audio.playSound("Main Menu")
     }
     
     func calculatePoints() -> Int {
@@ -145,8 +144,9 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func backToStart(_ sender: UIButton) {
-        
+        navigationController?.popToRootViewController(animated: true)
         SharedCode.Audio.playSound("Main Menu")
+        
     }
     
 }

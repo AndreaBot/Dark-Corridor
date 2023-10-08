@@ -23,15 +23,5 @@ class StartViewController: UIViewController {
         SharedCode.PList.loadItems()
         Items.potion.qty = StoreItems.allItems[2].qty!
     }
-    
-    @IBAction func startPressed(_ sender: UIButton) {
-        
-        self.performSegue(withIdentifier: "goToStory", sender: self)
-    }
-    
-    @IBAction func unwindToStartViewController(_ sender: UIStoryboardSegue) {
-        SharedCode.Audio.playSound("Main Menu")
-        
-    }
 }
 

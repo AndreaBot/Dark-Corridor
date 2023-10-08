@@ -76,10 +76,6 @@ class StoreViewController: UIViewController {
         }
 
     }
-    
-    @IBAction func exitButton(_ sender: UIButton) {
-        dismiss(animated: true)
-    }
 }
 
 

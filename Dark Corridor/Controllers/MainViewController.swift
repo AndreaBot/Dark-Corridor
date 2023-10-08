@@ -34,6 +34,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         exitButton.isEnabled = false
         
         for image in path {
@@ -96,8 +97,7 @@ class MainViewController: UIViewController {
         exitButton.isEnabled = true
         
         func randomFound() {
-          //  let randomRoom = ["item", "enemy", "empty"]
-            let randomRoom = ["item"]
+            let randomRoom = ["item", "enemy", "empty"]
             let randomResult = randomRoom.randomElement()
             
             if randomResult == "item" {

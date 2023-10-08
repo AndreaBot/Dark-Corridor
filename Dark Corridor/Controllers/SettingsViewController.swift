@@ -125,11 +125,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             return false
         }
     }
-    
-    @IBAction func backButtonPressed(_ sender: UIButton) {
-        dismiss(animated: true)
-    }
-    
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToGame" {

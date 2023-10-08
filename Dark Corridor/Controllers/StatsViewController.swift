@@ -40,10 +40,6 @@ class StatsViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func dismissButtonPressed(_ sender: UIButton) {
-        dismiss(animated: true)
-    }
 }
 
 // MARK: - Table view data source
