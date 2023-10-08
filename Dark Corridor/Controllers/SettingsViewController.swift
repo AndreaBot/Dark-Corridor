@@ -17,19 +17,16 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var blueHero: UIButton!
     @IBOutlet weak var greenHero: UIButton!
     @IBOutlet weak var darkHero: UIButton!
-    
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appending(path: "StoreItems.plist")
+
     
     var playerBack = ""
     var playerLeft = ""
     var playerRight = ""
     var colorExit = ""
-    
-    var music: AVAudioPlayer!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadItems()
         
         nameField.delegate = self
         redHero.alpha = 0.6
@@ -102,20 +99,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         playerRight = "DarkHeroRight"
         colorExit = "Dark Exit"
     }
-    
-    func loadItems() {
-        
-        if let data = try? Data(contentsOf: dataFilePath!) {
-            let decoder = PropertyListDecoder()
-            do{
-                StoreItems.allItems = try decoder.decode([StoreItemStruct].self, from: data)
-            } catch {
-                print("error decoding item array, \(error)")
-            }
-        } else {
-            return
-        }
-    }
+
     
     @IBAction func continuePressed(_ sender: UIButton) {
         
@@ -123,7 +107,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         if Character.playerName == "" {
             Character.playerName = "Player"
         }
-        music.stop()
+        SharedCode.Audio.musicPlayer.stop()
         self.performSegue(withIdentifier: "goToGame", sender: self)
         
     }

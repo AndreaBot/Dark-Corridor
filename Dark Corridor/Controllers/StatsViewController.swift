@@ -111,8 +111,6 @@ extension StatsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-
-
 }
 
 

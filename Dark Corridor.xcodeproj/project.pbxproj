@@ -43,6 +43,7 @@
 		626FD7F72ACB66BD005F7521 /* CharacterAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626FD7F62ACB66BD005F7521 /* CharacterAnimations.swift */; };
 		626FD7F92ACC7A2C005F7521 /* Defeat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 626FD7F82ACC7A2C005F7521 /* Defeat.mp3 */; };
 		626FD7FB2ACC7B20005F7521 /* Dead Screen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 626FD7FA2ACC7B20005F7521 /* Dead Screen.mp3 */; };
+		626FD7FD2ACF488E005F7521 /* SharedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626FD7FC2ACF488D005F7521 /* SharedCode.swift */; };
 		629CD94229D0F06100489210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD94129D0F06100489210 /* AppDelegate.swift */; };
 		629CD94429D0F06100489210 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD94329D0F06100489210 /* SceneDelegate.swift */; };
 		629CD94629D0F06100489210 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD94529D0F06100489210 /* MainViewController.swift */; };
@@ -107,6 +108,7 @@
 		626FD7F62ACB66BD005F7521 /* CharacterAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAnimations.swift; sourceTree = "<group>"; };
 		626FD7F82ACC7A2C005F7521 /* Defeat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Defeat.mp3; sourceTree = "<group>"; };
 		626FD7FA2ACC7B20005F7521 /* Dead Screen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Dead Screen.mp3"; sourceTree = "<group>"; };
+		626FD7FC2ACF488D005F7521 /* SharedCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCode.swift; sourceTree = "<group>"; };
 		629CD93E29D0F06100489210 /* Dark Corridor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dark Corridor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		629CD94129D0F06100489210 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		629CD94329D0F06100489210 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 		629CD95B29D0F45A00489210 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				626FD7FC2ACF488D005F7521 /* SharedCode.swift */,
 				62AC704B2AB63172006306CA /* InventoryCell.swift */,
 				629CD95929D0F3F500489210 /* Character.swift */,
 				62D218DE29E1D4690027ACD5 /* ItemStruct.swift */,
@@ -461,6 +464,7 @@
 				620BAFA72AC1F2EC00901406 /* StoreCell.swift in Sources */,
 				62AC70452AB39DE9006306CA /* EnemyStruct.swift in Sources */,
 				62AA037829DCCD9700AF660F /* ResultViewController.swift in Sources */,
+				626FD7FD2ACF488E005F7521 /* SharedCode.swift in Sources */,
 				62D218DF29E1D4690027ACD5 /* ItemStruct.swift in Sources */,
 				620BAFA42AC1F12500901406 /* StoreViewController.swift in Sources */,
 			);

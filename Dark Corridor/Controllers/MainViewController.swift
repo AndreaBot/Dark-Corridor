@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 class MainViewController: UIViewController {
     
@@ -31,13 +30,10 @@ class MainViewController: UIViewController {
     var playerLeft = ""
     var playerRight = ""
     var colorExit = ""
-    
-    var music: AVAudioPlayer!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playSound("Main Game")
         exitButton.isEnabled = false
         
         for image in path {
@@ -48,6 +44,7 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        SharedCode.Audio.playSound("Main Game")
         view.backgroundColor = .black
         messageLabel.text = ""
         messageLabel.textColor = .white
@@ -99,7 +96,8 @@ class MainViewController: UIViewController {
         exitButton.isEnabled = true
         
         func randomFound() {
-            let randomRoom = ["item", "enemy", "empty"]
+          //  let randomRoom = ["item", "enemy", "empty"]
+            let randomRoom = ["item"]
             let randomResult = randomRoom.randomElement()
             
             if randomResult == "item" {
@@ -108,7 +106,7 @@ class MainViewController: UIViewController {
                 
             } else if randomResult == "enemy" {
                 messageLabel.text = "An enemy attacks you!"
-                playSound("Enemy Found")
+                SharedCode.Audio.playSound("Enemy Found")
                 view.backgroundColor = .red
                 messageLabel.textColor = .black
                 exitButton.isEnabled = false
@@ -138,13 +136,6 @@ class MainViewController: UIViewController {
 
     }
     
-    func playSound(_ soundFile: String) {
-        let url = Bundle.main.url(forResource: soundFile, withExtension: "mp3")
-        music = try! AVAudioPlayer(contentsOf: url!)
-        music.play()
-    }
-    
-    
     @IBAction func unwindToPreviousViewController(_ sender: UIStoryboardSegue) {}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -152,7 +143,6 @@ class MainViewController: UIViewController {
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.song = "Win Screen"
             destinationVC.message = "SUCCESS! \nYou've escaped the Dark Corridor!"
-            music.stop()
     
         } else if segue.identifier == "goToBattle" {
             let destinationVC = segue.destination as! BattleViewController
@@ -165,8 +155,7 @@ class MainViewController: UIViewController {
             }  else if playerBack == "DarkHeroBack" {
                 destinationVC.battleImage = "DarkHeroBackBig"
             }
-            music.stop()
-        } 
+        }
     }
 }
 

@@ -6,11 +6,8 @@
 //
 
 import UIKit
-import AVFoundation
 
 struct Items {
-    
-    var player2: AVAudioPlayer!
     
     static var potion = ItemStruct(name: "Potion", qty: 2, value: 15)
     static var powerUp = ItemStruct(name: "Power Up", qty: 0, value: 3)
@@ -43,23 +40,23 @@ struct Items {
         
         if itemFound <= 6 {
             addLoot(Items.dirt)
-            playSoundFx(soundname: "Dirt")
+            SharedCode.Audio.playSoundFx("Dirt")
         } else if itemFound > 6 && itemFound <= 9 {
             addLoot(Items.gold)
-            playSoundFx(soundname: "Coin")
+            SharedCode.Audio.playSoundFx("Coin")
         } else if itemFound == 10 {
             addLoot(Items.diamond)
-            playSoundFx(soundname: "Diamond")
+            SharedCode.Audio.playSoundFx("Diamond")
         } else if itemFound == 11 {
             addLoot(Items.potion)
-            playSoundFx(soundname: "General Item")
+            SharedCode.Audio.playSoundFx("General Item")
         } else if itemFound == 12 && Items.powerUp.qty == 0 {
             addLoot(Items.powerUp)
-            playSoundFx(soundname: "Power Up")
+            SharedCode.Audio.playSoundFx("Power Up")
             Items.powerUp.qty = 1
         } else if itemFound == 12 && Items.powerUp.qty == 1 {
             addLoot(Items.dirt)
-            playSoundFx(soundname: "Dirt")
+            SharedCode.Audio.playSoundFx("Dirt")
         }
     }
     
@@ -75,9 +72,9 @@ struct Items {
     }
     
     mutating func usePotion(_ messageLabel: UILabel, _ hpLabel: UILabel, _ potionQtyLabel: UILabel?, _ potionButton: UIButton?) {
-        playSoundFx(soundname: "Potion")
+        SharedCode.Audio.playSoundFx("Potion")
         Items.potion.qty -= 1
-        Character.animateText(hpLabel, .green)
+        SharedCode.animateText(hpLabel, .green)
         
         if Character.health - Character.currentHealth >= Items.potion.value {
             messageLabel.text = "You drank a potion for \(Items.potion.value) HP"
@@ -88,20 +85,12 @@ struct Items {
         }
         hpLabel.text?.append(contentsOf: " HP \(Character.currentHealth) / \(Character.health)")
         
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             messageLabel.text = ""
         }
         
         potionQtyLabel?.text = "Potions: \(Items.potion.qty)"
         potionButton?.setTitle("USE POTION: \(Items.potion.qty)", for: .normal)
-    }
-    
-    
-    mutating func playSoundFx(soundname: String) {
-        let url = Bundle.main.url(forResource: soundname, withExtension: "mp3")
-        player2 = try! AVAudioPlayer(contentsOf: url!)
-        player2.play()
     }
 }
 

@@ -18,8 +18,6 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var finalDirtQtyLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appending(path: "StoreItems.plist")
-    
     let realm = try! Realm()
     var allStats = [
         PlayerStats.points,
@@ -53,7 +51,7 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        playSound(soundName: song)
+        SharedCode.Audio.playSound(song)
         messageLabel.text = message
         let result = calculatePoints()
         
@@ -95,18 +93,14 @@ class ResultViewController: UIViewController {
         items.resetQtys()
         StoreItems.allItems[3].isPurchased = false
         StoreItems.allItems[2].qty = Items.potion.qty
-        saveItems()
+        SharedCode.PList.saveItems()
         
         Character.currentHealth = Character.health
         Character.up = 0
         Character.attack1.damage = 5
         Character.attack2.damage = 3
-    }
-    
-    func playSound(soundName: String) {
-        let url = Bundle.main.url(forResource: soundName, withExtension: "mp3")
-        music = try! AVAudioPlayer(contentsOf: url!)
-        music.play()
+        
+        //SharedCode.Audio.playSound("Main Menu")
     }
     
     func calculatePoints() -> Int {
@@ -150,16 +144,10 @@ class ResultViewController: UIViewController {
         }
     }
     
-    func saveItems() {
+    @IBAction func backToStart(_ sender: UIButton) {
         
-        let encoder = PropertyListEncoder()
-        
-        do {
-            let data = try encoder.encode(StoreItems.allItems)
-            try data.write(to: dataFilePath!)
-        } catch {
-            print("error encoding item array, \(error)")
-        }
+        SharedCode.Audio.playSound("Main Menu")
     }
+    
 }
 

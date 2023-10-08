@@ -14,7 +14,15 @@ class StoreViewController: UIViewController {
     @IBOutlet weak var storeTableView: UITableView!
     
     let realm = try! Realm()
-    var realmStats: Results<StatClass>?
+    var realmStats: Results<StatClass>? {
+        didSet {
+            if realmStats!.count > 1 {
+                pointsAmount = realmStats![0].value
+            } else {
+                pointsAmount = 0
+            }
+        }
+    }
     
     var pointsAmount: Int = 0 {
         didSet {
@@ -23,12 +31,11 @@ class StoreViewController: UIViewController {
         }
     }
     
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appending(path: "StoreItems.plist")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadItems()
+
+        SharedCode.PList.loadItems()
         
         do {
             try self.realm.write {
@@ -41,7 +48,7 @@ class StoreViewController: UIViewController {
             }
         } catch {
             print(error)
-            
+
         }
         
         storeTableView.delegate = self
@@ -67,37 +74,11 @@ class StoreViewController: UIViewController {
         } catch {
             print("Error: \(error)")
         }
+
     }
     
     @IBAction func exitButton(_ sender: UIButton) {
         dismiss(animated: true)
-    }
-    
-    
-    func saveItems() {
-        
-        let encoder = PropertyListEncoder()
-        
-        do {
-            let data = try encoder.encode(StoreItems.allItems)
-            try data.write(to: dataFilePath!)
-        } catch {
-            print("error encoding item array, \(error)")
-        }
-    }
-    
-    func loadItems() {
-        
-        if let data = try? Data(contentsOf: dataFilePath!) {
-            let decoder = PropertyListDecoder()
-            do{
-                StoreItems.allItems = try decoder.decode([StoreItemStruct].self, from: data)
-            } catch {
-                print("error decoding item array, \(error)")
-            }
-        } else {
-            return
-        }
     }
 }
 
@@ -161,14 +142,16 @@ extension StoreViewController: StoreCellDelegate {
     
     func confirmPurchase(_ item: String, _ price: Int) {
         
-        do {
-            try self.realm.write {
-                pointsAmount -= price
-            }
-        } catch {
-            print(error)
-        }
+//        do {
+//            try self.realm.write {
+//                pointsAmount -= price
+//            }
+//        } catch {
+//            print(error)
+//        }
         
+        pointsAmount -= price
+
         switch item {
         case "Green Hero": buyGreenHero();
         case "Dark Hero": buyDarkHero();
@@ -181,31 +164,27 @@ extension StoreViewController: StoreCellDelegate {
         
         func buyGreenHero() {
             StoreItems.allItems[0].isPurchased = true
-            saveItems()
         }
         
         func buyDarkHero() {
            StoreItems.allItems[1].isPurchased = true
-            saveItems()
         }
         
         func buyPotion() {
             Items.potion.qty += 1
             StoreItems.allItems[2].qty! = Items.potion.qty
-            saveItems()
         }
         
         func buyPowerUp() {
             StoreItems.allItems[3].isPurchased = true
-            saveItems()
             Character.attack1.damage += 3; Character.attack2.damage += 3
         }
         
         func buySecondChance() {
             StoreItems.allItems[4].isPurchased = true
-            saveItems()
         }
         
+        SharedCode.PList.saveItems()
         storeTableView.reloadData()
     }
     

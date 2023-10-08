@@ -32,10 +32,7 @@ class BattleViewController: UIViewController {
     var items = Items()
     var attackName = ""
     var playerAtk = ""
-    
-    var music: AVAudioPlayer!
-    var music2: AVAudioPlayer!
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +45,7 @@ class BattleViewController: UIViewController {
         spawnedEnemy!.currentHealth = spawnedEnemy!.totalHealth
         enemyNameLabel.text = spawnedEnemy!.name
         
-        playSound(soundName: "Battle Music")
+        SharedCode.Audio.playSound("Battle Music")
         messageLabel.text = "Prepare to fight! Choose an Attack"
         exitButton.isEnabled = false
         name.text = Character.playerName ?? "Player"
@@ -79,7 +76,7 @@ class BattleViewController: UIViewController {
 
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) { [self] in
-            playSoundFx(soundname: spawnedEnemy!.crySoundName)
+            SharedCode.Audio.playSoundFx(spawnedEnemy!.crySoundName)
             slashButton.isEnabled = true
             chargeButton.isEnabled = true
             potionButton.isEnabled = true
@@ -108,10 +105,10 @@ class BattleViewController: UIViewController {
         if Character.damage > 0 {
             
             if Character.attackWorks() {
-                playSoundFx(soundname: playerAtk)
+                SharedCode.Audio.playSoundFx(playerAtk)
                 spawnedEnemy?.currentHealth -= Character.damage
                 enemyHP.text = "HP: \(String(describing: spawnedEnemy!.currentHealth)) / \(String(describing: spawnedEnemy!.totalHealth))"
-                Character.animateText(enemyHP, .red)
+                SharedCode.animateText(enemyHP, .red)
                 if spawnedEnemy!.currentHealth <= 0 {
                     enemyHP.text = "HP: 0 / \(spawnedEnemy!.totalHealth)"
                     battleWin()
@@ -164,16 +161,15 @@ class BattleViewController: UIViewController {
                 let enemyDamage = spawnedEnemy!.fight()
                 if enemyDamage == spawnedEnemy!.attack1.damage {
                     attackName = spawnedEnemy!.attack1.name
-                    playSoundFx(soundname: attackName)
                 } else if enemyDamage == spawnedEnemy!.attack2.damage {
                     attackName = spawnedEnemy!.attack2.name
-                    playSoundFx(soundname: attackName)
                 }
+                SharedCode.Audio.playSoundFx(attackName)
                 
                 messageLabel.text = "The \(spawnedEnemy!.name) used \(attackName) for \(enemyDamage) damage!"
                 Character.currentHealth -= enemyDamage
                 playerHP.text = "HP: \(Character.currentHealth) / \(Character.health)"
-                Character.animateText(playerHP, .red)
+                SharedCode.animateText(playerHP, .red)
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
                     if Character.currentHealth <= 0 {
@@ -184,7 +180,7 @@ class BattleViewController: UIViewController {
                             }
                         } else {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
-                                playSound(soundName: "Defeat")
+                                SharedCode.Audio.playSound("Defeat")
                                 CharacterAnimations.dropDown(playerStackView, playerBattleImage)
                                 messageLabel.text = "You're dead..."
                             }
@@ -206,11 +202,10 @@ class BattleViewController: UIViewController {
     func battleWin() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [self] in
             CharacterAnimations.dropDown(enemyStackView, enemyImage)
-            playSoundFx(soundname: spawnedEnemy!.crySoundName)
+            SharedCode.Audio.playSoundFx(spawnedEnemy!.crySoundName)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) { [self] in
-            music.stop()
-            playSound(soundName: "Battle Win")
+            SharedCode.Audio.playSound("Battle Win")
             enemyImage.alpha = 0
             messageLabel.text = "Woo-hoo! You defeated the \(spawnedEnemy!.name)!"
             Items.soul.qty += spawnedEnemy!.souls
@@ -239,23 +234,12 @@ class BattleViewController: UIViewController {
             print("Cant add stat")
         }
     }
-    func playSound(soundName: String) {
-        let url = Bundle.main.url(forResource: soundName, withExtension: "mp3")
-        music = try! AVAudioPlayer(contentsOf: url!)
-        music.play()
-    }
-    
-    func playSoundFx(soundname: String) {
-        let url = Bundle.main.url(forResource: soundname, withExtension: "mp3")
-        music2 = try! AVAudioPlayer(contentsOf: url!)
-        music2.play()
-    }
     
     func triggerSecondChance() {
         Character.currentHealth = Character.health
         playerHP.text = "HP: \(Character.currentHealth) / \(Character.health)"
-        Character.animateText(playerHP, .green)
-        playSoundFx(soundname: "Second Chance")
+        SharedCode.animateText(playerHP, .yellow)
+        SharedCode.Audio.playSoundFx("Second Chance")
         StoreItems.allItems[4].isPurchased = false
         messageLabel.text = "The second chance takes effect! Health fully restored."
     }
@@ -268,13 +252,10 @@ class BattleViewController: UIViewController {
             destinationVC.message = "You died"
             items.resetQtys()
             destinationVC.song = "Dead Screen"
-            music.stop()
             
         } else {
             let destinationVC = segue.destination as! MainViewController
             destinationVC.exitButton.isEnabled = true
-            music.stop()
-            destinationVC.playSound("Main Game")
         }
     }
 }
