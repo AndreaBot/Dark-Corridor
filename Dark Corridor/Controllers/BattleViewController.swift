@@ -38,7 +38,6 @@ class BattleViewController: UIViewController {
         super.viewDidLoad()
         slashButton.isEnabled = false
         chargeButton.isEnabled = false
-        potionButton.isEnabled = false
 
         spawnedEnemy = [AllEnemies.mutantPig, AllEnemies.possessedSpellbook, AllEnemies.hornedBat, AllEnemies.deathsEmissary, AllEnemies.creepyLady].randomElement()!
         
@@ -79,7 +78,7 @@ class BattleViewController: UIViewController {
             SharedCode.Audio.playSoundFx(spawnedEnemy!.crySoundName)
             slashButton.isEnabled = true
             chargeButton.isEnabled = true
-            potionButton.isEnabled = true
+            //potionButton.isEnabled = true
         }
     }
     

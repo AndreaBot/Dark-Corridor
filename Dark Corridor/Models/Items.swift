@@ -61,7 +61,7 @@ struct Items {
     }
     
     mutating func resetQtys() {
-        if Items.potion.qty < 2 {
+        if Items.potion.qty <= 2 {
             Items.potion.qty = 2
         }
         Items.soul.qty = 0

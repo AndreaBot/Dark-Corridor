@@ -74,7 +74,6 @@ class StoreViewController: UIViewController {
         } catch {
             print("Error: \(error)")
         }
-
     }
 }
 
@@ -138,7 +137,13 @@ extension StoreViewController: StoreCellDelegate {
     
     func confirmPurchase(_ item: String, _ price: Int) {
         
-        pointsAmount -= price
+        do {
+            try self.realm.write {
+                pointsAmount -= price
+            }
+        } catch {
+            print(error)
+        }
 
         switch item {
         case "Green Hero": buyGreenHero();
@@ -172,6 +177,7 @@ extension StoreViewController: StoreCellDelegate {
             StoreItems.allItems[4].isPurchased = true
         }
         
+        SharedCode.animateText(pointsLabel, .red)
         SharedCode.PList.saveItems()
         storeTableView.reloadData()
     }

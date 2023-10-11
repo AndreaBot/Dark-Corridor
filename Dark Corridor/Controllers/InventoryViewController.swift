@@ -52,12 +52,6 @@ class InventoryViewController: UIViewController {
             usePotionButton.isEnabled = true
         }
     }
-
-    func playSoundFx(soundname: String) {
-        let url = Bundle.main.url(forResource: soundname, withExtension: "mp3")
-        music = try! AVAudioPlayer(contentsOf: url!)
-        music.play()
-    }
 }
 
 
