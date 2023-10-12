@@ -19,7 +19,7 @@ class StartViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        navigationController?.navigationBar.isHidden = false
+        
         SharedCode.PList.loadItems()
         if StoreItems.allItems[2].qty! > 2 {
             Items.potion.qty = StoreItems.allItems[2].qty!
@@ -32,6 +32,4 @@ class StartViewController: UIViewController {
     @IBAction func unwindToStartViewController(_ sender: UIStoryboardSegue) {
         
     }
-    
-    @IBAction func unwindToStartVC( _ sender: UIStoryboardSegue) {}
 }

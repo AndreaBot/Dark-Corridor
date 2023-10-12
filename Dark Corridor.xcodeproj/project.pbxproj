@@ -38,6 +38,7 @@
 		625BE5AF29E9ECE400BC63F1 /* Potion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE5AA29E9ECE300BC63F1 /* Potion.mp3 */; };
 		625BE5B229EA99AF00BC63F1 /* Coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE5B129EA99AF00BC63F1 /* Coin.mp3 */; };
 		625BE5B429EA9CF100BC63F1 /* Dirt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625BE5B329EA9CF100BC63F1 /* Dirt.mp3 */; };
+		625D926E2AD886D800E0BA2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625D926D2AD886D800E0BA2E /* Main.storyboard */; };
 		626FD7F12AC86650005F7521 /* Second Chance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 626FD7F02AC86650005F7521 /* Second Chance.mp3 */; };
 		626FD7F52ACB53AD005F7521 /* Enemy Found.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 626FD7F42ACB53AD005F7521 /* Enemy Found.mp3 */; };
 		626FD7F72ACB66BD005F7521 /* CharacterAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626FD7F62ACB66BD005F7521 /* CharacterAnimations.swift */; };
@@ -47,7 +48,6 @@
 		629CD94229D0F06100489210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD94129D0F06100489210 /* AppDelegate.swift */; };
 		629CD94429D0F06100489210 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD94329D0F06100489210 /* SceneDelegate.swift */; };
 		629CD94629D0F06100489210 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD94529D0F06100489210 /* MainViewController.swift */; };
-		629CD94929D0F06100489210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629CD94729D0F06100489210 /* Main.storyboard */; };
 		629CD94B29D0F06200489210 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629CD94A29D0F06200489210 /* Assets.xcassets */; };
 		629CD94E29D0F06200489210 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629CD94C29D0F06200489210 /* LaunchScreen.storyboard */; };
 		629CD95829D0F3D600489210 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CD95729D0F3D600489210 /* Items.swift */; };
@@ -103,6 +103,7 @@
 		625BE5AA29E9ECE300BC63F1 /* Potion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Potion.mp3; sourceTree = "<group>"; };
 		625BE5B129EA99AF00BC63F1 /* Coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Coin.mp3; sourceTree = "<group>"; };
 		625BE5B329EA9CF100BC63F1 /* Dirt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dirt.mp3; sourceTree = "<group>"; };
+		625D926D2AD886D800E0BA2E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		626FD7F02AC86650005F7521 /* Second Chance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Second Chance.mp3"; sourceTree = "<group>"; };
 		626FD7F42ACB53AD005F7521 /* Enemy Found.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Enemy Found.mp3"; sourceTree = "<group>"; };
 		626FD7F62ACB66BD005F7521 /* CharacterAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAnimations.swift; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 		629CD94129D0F06100489210 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		629CD94329D0F06100489210 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		629CD94529D0F06100489210 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		629CD94829D0F06100489210 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		629CD94A29D0F06200489210 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		629CD94D29D0F06200489210 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		629CD94F29D0F06200489210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		6234FB8329D8CCAC008A23F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				629CD94729D0F06100489210 /* Main.storyboard */,
+				625D926D2AD886D800E0BA2E /* Main.storyboard */,
 				62AC704C2AB63172006306CA /* InventoryCell.xib */,
 				620BAFA62AC1F2EC00901406 /* StoreCell.xib */,
 			);
@@ -360,6 +360,7 @@
 				620BAF862ABEF49E00901406 /* Screech.mp3 in Resources */,
 				629CD94E29D0F06200489210 /* LaunchScreen.storyboard in Resources */,
 				625BE5AF29E9ECE400BC63F1 /* Potion.mp3 in Resources */,
+				625D926E2AD886D800E0BA2E /* Main.storyboard in Resources */,
 				6222C82C29EB0A460090671F /* Battle Win.mp3 in Resources */,
 				62DADA1A29EAB5FD0080002F /* Spellbook Cry.mp3 in Resources */,
 				625BE5A029E896FB00BC63F1 /* Main Menu.mp3 in Resources */,
@@ -375,7 +376,6 @@
 				626FD7FB2ACC7B20005F7521 /* Dead Screen.mp3 in Resources */,
 				626FD7F92ACC7A2C005F7521 /* Defeat.mp3 in Resources */,
 				620BAF902ABF3A8300901406 /* Schyte Swing.mp3 in Resources */,
-				629CD94929D0F06100489210 /* Main.storyboard in Resources */,
 				6222C82829EB0A320090671F /* Battle Music.mp3 in Resources */,
 				625BE5AE29E9ECE400BC63F1 /* Diamond.mp3 in Resources */,
 				620BAF982AC095F700901406 /* Phantom Shadows.mp3 in Resources */,
@@ -473,14 +473,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		629CD94729D0F06100489210 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				629CD94829D0F06100489210 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		629CD94C29D0F06200489210 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

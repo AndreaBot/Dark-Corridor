@@ -38,14 +38,6 @@ class BattleViewController: UIViewController {
         super.viewDidLoad()
         slashButton.isEnabled = false
         chargeButton.isEnabled = false
-        exitButton.isEnabled = false
-        
-        if Character.currentHealth == Character.health || Items.potion.qty == 0 {
-            potionButton.isEnabled = false
-        } else if Character.currentHealth < Character.health && Items.potion.qty > 0 {
-            potionButton.isEnabled = true
-        }
-        potionButton.setTitle("USE POTION: \(Items.potion.qty)", for: .normal)
 
         spawnedEnemy = [AllEnemies.mutantPig, AllEnemies.possessedSpellbook, AllEnemies.hornedBat, AllEnemies.deathsEmissary, AllEnemies.creepyLady].randomElement()!
         
@@ -54,7 +46,7 @@ class BattleViewController: UIViewController {
         
         SharedCode.Audio.playSound("Battle Music")
         messageLabel.text = "Prepare to fight! Choose an Attack"
-        
+        exitButton.isEnabled = false
         name.text = Character.playerName ?? "Player"
         playerBattleImage.image = UIImage(named: battleImage)
         playerHP.text = "HP: \(Character.currentHealth) / \(Character.health)"
@@ -62,6 +54,12 @@ class BattleViewController: UIViewController {
         enemyHP.text = "HP: \(spawnedEnemy!.currentHealth) / \(spawnedEnemy!.totalHealth)"
         enemyImage.image = spawnedEnemy!.enemyImage
         
+        if Character.currentHealth == Character.health || Items.potion.qty == 0 {
+            potionButton.isEnabled = false
+        } else if Character.currentHealth < Character.health && Items.potion.qty > 0 {
+            potionButton.isEnabled = true
+        }
+        potionButton.setTitle("USE POTION: \(Items.potion.qty)", for: .normal)
         
         enemyImage.alpha = 0
         enemyHP.alpha = 0
