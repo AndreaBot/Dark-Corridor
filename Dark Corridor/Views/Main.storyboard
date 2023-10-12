@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U2a-kL-Fet">
-
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rhe-dw-2h0">
->>>>>>> parent of b7148e9 (Present alert if selected hero is not available in settingsVC)
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -37,9 +33,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="START"/>
                                         <connections>
-
                                             <segue destination="N7I-gq-sPX" kind="show" identifier="goToSettings" id="qhZ-F0-uDb"/>
-
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9FV-TD-pV2">
@@ -77,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viF-UZ-Elz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-677.60000000000002" y="3.1484257871064472"/>
+            <point key="canvasLocation" x="248.09160305343511" y="2.8169014084507045"/>
         </scene>
         <!--Stats View Controller-->
         <scene sceneID="xzt-sK-5fo">
@@ -119,9 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IoO-Kj-l1w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="-265" y="825"/>
-
         </scene>
         <!--Store View Controller-->
         <scene sceneID="aeo-Hl-Aei">
@@ -190,9 +182,8 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QXD-vp-Oe8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="453" y="826"/>
-
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="jNE-OQ-S6r">
             <objects>
@@ -231,7 +222,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-30" translatesAutoresizingMaskIntoConstraints="NO" id="V9T-BR-org" userLabel="Hero Selection Stack View">
-                                                <rect key="frame" x="0.0" y="49" width="333" height="327.33333333333331"/>
+                                                <rect key="frame" x="0.0" y="49" width="333" height="327.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7Um-5T-l8r" userLabel="Red Blue Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="333" height="178.66666666666666"/>
@@ -328,14 +319,12 @@
                         <outlet property="greenHero" destination="viu-pp-jIG" id="cYh-Bx-lhN"/>
                         <outlet property="nameField" destination="i92-ug-QPM" id="aN1-EQ-Fgk"/>
                         <outlet property="redHero" destination="O1Y-Ys-tcn" id="4qG-s5-4Tg"/>
-
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToGame" id="m6j-co-hXV"/>
-
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5CG-Yx-JEQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="101.59999999999999" y="3.1484257871064472"/>
+            <point key="canvasLocation" x="1028.2442748091603" y="2.8169014084507045"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -731,14 +720,12 @@
                         <outletCollection property="path" destination="In2-Av-ekm" collectionClass="NSMutableArray" id="C7t-fc-kc6"/>
                         <outletCollection property="path" destination="D7K-jA-Sbz" collectionClass="NSMutableArray" id="Bq5-oQ-aH0"/>
                         <segue destination="UJZ-MF-xKn" kind="presentation" identifier="goToBattle" modalPresentationStyle="fullScreen" id="piV-I7-4UC"/>
-
                         <segue destination="cj3-eX-s2X" kind="show" identifier="goToResult" id="Txi-y0-zno"/>
-
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1011" y="3"/>
+            <point key="canvasLocation" x="1936.6412213740457" y="2.8169014084507045"/>
         </scene>
         <!--Battle View Controller-->
         <scene sceneID="lme-Bn-A2i">
@@ -922,7 +909,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IRB-Zh-0QF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Btd-dm-k96" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1888.8" y="-373.76311844077964"/>
+            <point key="canvasLocation" x="2814.5038167938928" y="-373.94366197183098"/>
         </scene>
         <!--Inventory View Controller-->
         <scene sceneID="IeU-nh-hYm">
@@ -1037,9 +1024,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZJn-j0-827" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="xMR-ej-O8Q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-
             <point key="canvasLocation" x="1937" y="772"/>
-
         </scene>
         <!--Result View Controller-->
         <scene sceneID="6RJ-et-JgI">
@@ -1059,9 +1044,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="BfB-0O-MFI" userLabel="Loot Stack View">
-
                                         <rect key="frame" x="20" y="89" width="353" height="280.66666666666663"/>
-
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="-150" translatesAutoresizingMaskIntoConstraints="NO" id="fur-zB-tHJ" userLabel="Soul Stack View">
                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="104.33333333333333"/>
@@ -1164,9 +1147,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="BACK HOME"/>
                                         <connections>
-
                                             <segue destination="OgV-Da-FZ7" kind="unwind" unwindAction="unwindToStartVC:" id="eUk-qB-DjQ"/>
-
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1201,37 +1182,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7I5-8g-gHu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="OgV-Da-FZ7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1888.8" y="336.88155922038982"/>
+            <point key="canvasLocation" x="2814.5038167938928" y="336.61971830985919"/>
         </scene>
         <!--Navigation Controller-->
-
         <scene sceneID="UzF-Re-W9G">
-
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rhe-dw-2h0" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="U2a-kL-Fet" sceneMemberID="viewController">
                     <toolbarItems/>
-
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mVP-m9-OOI">
-
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-
                         <segue destination="SPF-AU-jL1" kind="relationship" relationship="rootViewController" id="guJ-em-GdE"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Do-j5-8xh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-
             </objects>
-            <point key="canvasLocation" x="-1616.8" y="3.1484257871064472"/>
+            <point key="canvasLocation" x="-678.62595419847321" y="2.8169014084507045"/>
         </scene>
-   
+    </scenes>
     <inferredMetricsTieBreakers>
-
         <segue reference="Txi-y0-zno"/>
-
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BlackTileNew" width="16" height="16"/>
@@ -1256,3 +1229,4 @@
         </systemColor>
     </resources>
 </document>
+

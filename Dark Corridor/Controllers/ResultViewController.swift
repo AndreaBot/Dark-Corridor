@@ -142,13 +142,5 @@ class ResultViewController: UIViewController {
             }
         }
     }
-
-    
-    @IBAction func backToStart(_ sender: UIButton) {
-        SharedCode.Audio.playSound("Main Menu")
-        
-    }
-
-  
 }
 
