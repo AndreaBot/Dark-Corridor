@@ -144,8 +144,8 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func backToStart(_ sender: UIButton) {
-        navigationController?.popToRootViewController(animated: true)
         SharedCode.Audio.playSound("Main Menu")
+        
     }
     
 }

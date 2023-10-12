@@ -54,7 +54,7 @@ class MainViewController: UIViewController {
     @IBAction func moveUp(_ sender: UIButton) {
         if Character.up + 1 < 10 {
             character1.moveUp()
-            
+
             for image in path {
                 image.image = UIImage(named: "BlackTileNew")
             }
@@ -136,7 +136,6 @@ class MainViewController: UIViewController {
 
     }
     
-    @IBAction func unwindToPreviousViewController(_ sender: UIStoryboardSegue) {}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult" {

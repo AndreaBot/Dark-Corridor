@@ -26,5 +26,10 @@ class StartViewController: UIViewController {
         } else {
             Items.potion.qty = 2
         }
+       
+    }
+    
+    @IBAction func unwindToStartViewController(_ sender: UIStoryboardSegue) {
+        
     }
 }

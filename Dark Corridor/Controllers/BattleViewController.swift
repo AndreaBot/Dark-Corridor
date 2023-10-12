@@ -78,7 +78,6 @@ class BattleViewController: UIViewController {
             SharedCode.Audio.playSoundFx(spawnedEnemy!.crySoundName)
             slashButton.isEnabled = true
             chargeButton.isEnabled = true
-            //potionButton.isEnabled = true
         }
     }
     
@@ -128,6 +127,10 @@ class BattleViewController: UIViewController {
                 enemyAttacks()
             }
         }
+    }
+    
+    @IBAction func exitBattle(_ sender: UIButton) {
+        dismiss(animated: true)
     }
     
     func loopFight() {

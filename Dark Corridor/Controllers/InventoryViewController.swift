@@ -52,6 +52,11 @@ class InventoryViewController: UIViewController {
             usePotionButton.isEnabled = true
         }
     }
+    
+    @IBAction func exitInventory(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
 }
 
 
