@@ -18,6 +18,12 @@ struct SharedCode {
         }
     }
     
+    static func heroSelectionAlert() -> UIAlertController {
+        let alert = UIAlertController(title: "Alert", message: "Buy this Hero from the store to unlock it!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        return alert
+    }
+    
     struct Audio {
         
         static var musicPlayer: AVAudioPlayer!

@@ -19,7 +19,11 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var darkHero: UIButton!
 
     
-    var playerBack = ""
+    var playerBack = "" {
+        didSet {
+            continueButton.isEnabled = true
+        }
+    }
     var playerLeft = ""
     var playerRight = ""
     var colorExit = ""
@@ -48,12 +52,11 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         switch sender.currentTitle {
         case "red": setRedHero()
         case "blue": setBlueHero()
-        case "green": setGreenHero()
-        case "dark": setDarkHero()
+        case "green": StoreItems.allItems[0].isPurchased ? setGreenHero() : present(SharedCode.heroSelectionAlert(), animated: true)
+        case "dark": StoreItems.allItems[0].isPurchased ? setDarkHero() : present(SharedCode.heroSelectionAlert(), animated: true)
         case .none: setRedHero()
         case .some(_): setRedHero()
         }
-        continueButton.isEnabled = true
     }
     
     func setRedHero() {

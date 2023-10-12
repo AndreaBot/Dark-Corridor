@@ -30,6 +30,6 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func unwindToStartViewController(_ sender: UIStoryboardSegue) {
-        
+        SharedCode.Audio.playSound("Main Menu")
     }
 }
