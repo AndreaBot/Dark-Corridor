@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sTq-0h-KjU">
-                                <rect key="frame" x="10" y="10" width="373" height="647"/>
+                                <rect key="frame" x="0.0" y="10" width="393" height="647"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Start Screen 2" translatesAutoresizingMaskIntoConstraints="NO" id="3uh-7g-M4B">
-                                        <rect key="frame" x="0.0" y="0.0" width="373" height="437"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Start Screen 2" translatesAutoresizingMaskIntoConstraints="NO" id="3uh-7g-M4B">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="437"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1lZ-LQ-klE" userLabel="Buttons Stack View">
-                                        <rect key="frame" x="118.66666666666666" y="437" width="136" height="210"/>
+                                        <rect key="frame" x="128.66666666666666" y="437" width="135.99999999999997" height="210"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xm-RI-OlM">
                                                 <rect key="frame" x="23" y="0.0" width="90" height="70"/>
@@ -67,8 +67,8 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="sTq-0h-KjU" secondAttribute="bottom" constant="40" id="Ffj-Sl-9gV"/>
                             <constraint firstItem="sTq-0h-KjU" firstAttribute="top" secondItem="n5c-6N-ntl" secondAttribute="top" constant="10" id="KeJ-Ic-HHg"/>
-                            <constraint firstItem="sTq-0h-KjU" firstAttribute="leading" secondItem="n5c-6N-ntl" secondAttribute="leading" constant="10" id="ira-3g-YSy"/>
-                            <constraint firstAttribute="trailing" secondItem="sTq-0h-KjU" secondAttribute="trailing" constant="10" id="xB1-tS-fGJ"/>
+                            <constraint firstItem="sTq-0h-KjU" firstAttribute="leading" secondItem="n5c-6N-ntl" secondAttribute="leading" id="ira-3g-YSy"/>
+                            <constraint firstAttribute="trailing" secondItem="sTq-0h-KjU" secondAttribute="trailing" id="xB1-tS-fGJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eka-LZ-Xqy"/>
@@ -1193,7 +1193,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="U2a-kL-Fet" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" largeTitles="YES" id="mVP-m9-OOI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" largeTitles="YES" id="mVP-m9-OOI">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
