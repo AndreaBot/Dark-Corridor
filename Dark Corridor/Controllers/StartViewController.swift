@@ -10,8 +10,6 @@ import AVFoundation
 
 class StartViewController: UIViewController {
     
-    var items = Items()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         SharedCode.Audio.playSound("Main Menu")
@@ -19,14 +17,13 @@ class StartViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
+        navigationController?.navigationBar.isHidden = false
         SharedCode.PList.loadItems()
         if StoreItems.allItems[2].qty! > 2 {
             Items.potion.qty = StoreItems.allItems[2].qty!
         } else {
             Items.potion.qty = 2
         }
-       
     }
     
     @IBAction func unwindToStartViewController(_ sender: UIStoryboardSegue) {

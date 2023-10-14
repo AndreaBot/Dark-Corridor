@@ -38,10 +38,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         greenHero.alpha = 0.6
         darkHero.alpha = 0.6
         continueButton.isEnabled = false
-        
-        greenHero.isEnabled = StoreItems.allItems[0].isPurchased ? true : false
-        darkHero.isEnabled = StoreItems.allItems[1].isPurchased ? true : false
-           
+
         let exitKeyboard = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(exitKeyboard)
     }
@@ -52,8 +49,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         switch sender.currentTitle {
         case "red": setRedHero()
         case "blue": setBlueHero()
-        case "green": StoreItems.allItems[0].isPurchased ? setGreenHero() : present(SharedCode.heroSelectionAlert(), animated: true)
-        case "dark": StoreItems.allItems[0].isPurchased ? setDarkHero() : present(SharedCode.heroSelectionAlert(), animated: true)
+        case "green": StoreItems.allItems[0].isPurchased ? setGreenHero() : present(SharedCode.Alerts.showOkAlert("Alert", "Buy this Hero from the store to unlock it!"), animated: true)
+        case "dark": StoreItems.allItems[1].isPurchased ? setDarkHero() : present(SharedCode.Alerts.showOkAlert("Alert", "Buy this Hero from the store to unlock it!"), animated: true)
         case .none: setRedHero()
         case .some(_): setRedHero()
         }

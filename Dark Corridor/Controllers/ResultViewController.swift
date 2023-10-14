@@ -50,7 +50,6 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
         
         SharedCode.Audio.playSound(song)
         messageLabel.text = message

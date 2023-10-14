@@ -18,10 +18,24 @@ struct SharedCode {
         }
     }
     
-    static func heroSelectionAlert() -> UIAlertController {
-        let alert = UIAlertController(title: "Alert", message: "Buy this Hero from the store to unlock it!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        return alert
+    struct Alerts {
+        
+        static func showOkAlert(_ title: String, _ message: String) -> UIAlertController {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            return alert
+        }
+        
+        static func purchaseAlert(_ item: String, _ price: Int, _ purchaseFunc: @escaping (String, Int) -> Void) -> UIAlertController {
+            let alert = UIAlertController(title: item, message: "Are you sure you want to buy this item for \(price) points?", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+            alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { _ in
+                purchaseFunc(item, price)
+            }))
+            
+            return alert
+        }
     }
     
     struct Audio {

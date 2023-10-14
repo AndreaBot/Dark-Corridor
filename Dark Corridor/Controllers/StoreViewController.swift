@@ -34,7 +34,7 @@ class StoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Store"
         SharedCode.PList.loadItems()
         
         do {
@@ -114,24 +114,18 @@ extension StoreViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension StoreViewController: StoreCellDelegate {
     
-    func showAlert(_ title: String) {
-        let alert = UIAlertController(title: title, message: findExplanationText(title), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
+    func showExplanationAlert(_ title: String) {
+        present(SharedCode.Alerts.showOkAlert(title, StoreItems.findExplanationText(title)), animated: true)
     }
     
     func processPurchase(_ item: String, _ price: Int) {
         
         if self.pointsAmount >= price {
-            
-            let alert = UIAlertController(title: item , message: "Are you sure you want to buy this item for \(price) points?", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Cancel", style: .destructive))
-            alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { confirm in
-                self.confirmPurchase(item, price)
-            }))
-            present(alert, animated: true) }
-        else {
-            self.showAlert("Warning")
+            present(SharedCode.Alerts.purchaseAlert(item, price, { itemName, itemPrice in
+                self.confirmPurchase(itemName, itemPrice)
+            }), animated: true)
+        } else {
+            present(SharedCode.Alerts.showOkAlert("Warning", "You do not have enough points to buy this item."), animated: true)
         }
     }
     
@@ -180,16 +174,5 @@ extension StoreViewController: StoreCellDelegate {
         SharedCode.animateText(pointsLabel, .red)
         SharedCode.PList.saveItems()
         storeTableView.reloadData()
-    }
-    
-    func findExplanationText(_ title: String) -> String {
-        
-        switch title {
-        case "Potion": return StoreItems.allItems[2].explanation!;
-        case "Power Up": return StoreItems.allItems[3].explanation!;
-        case "Second Chance": return StoreItems.allItems[4].explanation!;
-        case "Warning": return "You do not have enough points to buy this item."
-        default: return "Item not found"
-        }
     }
 }

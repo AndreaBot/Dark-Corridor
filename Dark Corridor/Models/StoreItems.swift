@@ -17,6 +17,16 @@ struct StoreItems {
         StoreItemStruct(itemImageName: "PowerUp", itemName: "Power Up", price: 300, isPurchased: false, needsExplaining: true, explanation: "Increase your attacks damage by 3 points. \nYou can only buy one of these per game"),
         StoreItemStruct(itemImageName: "SecondChance", itemName: "Second Chance", price: 300, isPurchased: false, needsExplaining: true, explanation: "Brings you back to life if you fall in battle. Single use, you can only hold one of these")
     ]
+    
+    static func findExplanationText(_ title: String) -> String {
+        
+        switch title {
+        case "Potion": return StoreItems.allItems[2].explanation!;
+        case "Power Up": return StoreItems.allItems[3].explanation!;
+        case "Second Chance": return StoreItems.allItems[4].explanation!;
+        default: return "Item not found"
+        }
+    }
 }
 
 

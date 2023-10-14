@@ -9,7 +9,7 @@ import UIKit
 
 protocol StoreCellDelegate {
     func processPurchase(_ item: String, _ price: Int)
-    func showAlert(_ title: String)
+    func showExplanationAlert(_ title: String)
 }
 
 class StoreCell: UITableViewCell {
@@ -46,6 +46,6 @@ class StoreCell: UITableViewCell {
     @IBAction func explain(_ sender: UIButton) {
         
         let selectedItem = itemNameLabel.text!
-        StoreCell.delegate?.showAlert(selectedItem)
+        StoreCell.delegate?.showExplanationAlert(selectedItem)
     }
 }

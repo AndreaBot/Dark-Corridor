@@ -20,11 +20,11 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "My Stats"
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 60
         tableView.backgroundColor = .black
-        
         tableView.register(UINib(nibName: "InventoryCell", bundle: nil), forCellReuseIdentifier: "inventoryCell")
         
         allStats = realm.objects(StatClass.self)
