@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class SettingsViewController: UIViewController, UITextFieldDelegate {
+class SettingsViewController: UIViewController {
     
 
     @IBOutlet weak var continueButton: UIButton!
@@ -31,19 +31,21 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         nameField.delegate = self
         redHero.alpha = 0.6
         blueHero.alpha = 0.6
         greenHero.alpha = 0.6
         darkHero.alpha = 0.6
         continueButton.isEnabled = false
-
-        let exitKeyboard = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+        let exitKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(exitKeyboard)
     }
     
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
     
+
     @IBAction func heroSelected(_ sender: UIButton) {
         
         switch sender.currentTitle {
@@ -111,22 +113,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         self.performSegue(withIdentifier: "goToGame", sender: self)
         
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        nameField.endEditing(true)
-        return true
-    }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if textField.text != "" {
-            return true
-        } else {
-            textField.placeholder = "Type the hero's name"
-            return false
-        }
-    }
 
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToGame" {
             let destinationVC = segue.destination as! MainViewController
@@ -135,5 +122,13 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             destinationVC.playerRight = playerRight
             destinationVC.colorExit = colorExit
         }
+    }
+}
+
+extension SettingsViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameField.endEditing(true)
+        return true
     }
 }

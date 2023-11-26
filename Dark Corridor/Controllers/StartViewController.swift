@@ -10,6 +10,10 @@ import AVFoundation
 
 class StartViewController: UIViewController {
     
+    
+    @IBOutlet var allButtons: [UIButton]!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         SharedCode.Audio.playSound("Main Menu")

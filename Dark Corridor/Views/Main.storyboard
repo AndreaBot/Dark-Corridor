@@ -17,17 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="697"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sTq-0h-KjU">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sTq-0h-KjU">
                                 <rect key="frame" x="0.0" y="10" width="393" height="647"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Start Screen 2" translatesAutoresizingMaskIntoConstraints="NO" id="3uh-7g-M4B">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="437"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="427"/>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1lZ-LQ-klE" userLabel="Buttons Stack View">
-                                        <rect key="frame" x="128.66666666666666" y="437" width="135.99999999999997" height="210"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1lZ-LQ-klE" userLabel="Buttons Stack View">
+                                        <rect key="frame" x="0.0" y="427" width="393" height="220"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xm-RI-OlM">
-                                                <rect key="frame" x="23" y="0.0" width="90" height="70"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="fhH-zd-oyn"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="yBr-jx-hFb"/>
@@ -35,24 +35,33 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="START"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="START">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="N7I-gq-sPX" kind="show" identifier="goToSettings" id="qhZ-F0-uDb"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9FV-TD-pV2">
-                                                <rect key="frame" x="0.0" y="70" width="136" height="70"/>
+                                                <rect key="frame" x="0.0" y="75" width="393" height="70"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="MY STATS"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="MY STATS">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="7Nm-J9-RDG" kind="show" id="Fcz-AE-u4u"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6o-yE-Bef">
-                                                <rect key="frame" x="22" y="140" width="92" height="70"/>
+                                                <rect key="frame" x="0.0" y="150" width="393" height="70"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="STORE"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="STORE">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="gfU-Fl-lYK" kind="show" id="oDY-OE-Qo1"/>
                                                 </connections>
@@ -72,6 +81,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eka-LZ-Xqy"/>
+                    <connections>
+                        <outletCollection property="allButtons" destination="0xm-RI-OlM" collectionClass="NSMutableArray" id="LPD-xr-xrw"/>
+                        <outletCollection property="allButtons" destination="9FV-TD-pV2" collectionClass="NSMutableArray" id="KFO-S7-Rdt"/>
+                        <outletCollection property="allButtons" destination="F6o-yE-Bef" collectionClass="NSMutableArray" id="MqF-qY-mCp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viF-UZ-Elz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -200,16 +214,16 @@
                                 <rect key="frame" x="30" y="20" width="333" height="623"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="3PX-Mm-LO2" userLabel="Name Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="333" height="109.33333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="111"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4di-qs-NRO">
-                                                <rect key="frame" x="0.0" y="0.0" width="333" height="45.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="46"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Default: Player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i92-ug-QPM">
-                                                <rect key="frame" x="0.0" y="45.333333333333343" width="333" height="64"/>
+                                                <rect key="frame" x="0.0" y="46" width="333" height="65"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue"/>
                                             </textField>
@@ -217,22 +231,22 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="nw0-io-bTk" userLabel="Hero Stack View">
-                                        <rect key="frame" x="0.0" y="129.33333333333329" width="333" height="347.66666666666674"/>
+                                        <rect key="frame" x="0.0" y="130.99999999999997" width="333" height="351.33333333333326"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your hero" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g82-PI-wol">
-                                                <rect key="frame" x="0.0" y="0.0" width="333" height="45.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="45.666666666666664"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-30" translatesAutoresizingMaskIntoConstraints="NO" id="V9T-BR-org" userLabel="Hero Selection Stack View">
-                                                <rect key="frame" x="0.0" y="45.333333333333371" width="333" height="302.33333333333331"/>
+                                                <rect key="frame" x="0.0" y="45.666666666666686" width="333" height="305.66666666666669"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7Um-5T-l8r" userLabel="Red Blue Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="333" height="166.33333333333334"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="333" height="168"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1Y-Ys-tcn">
-                                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="166.33333333333334"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="168"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -244,7 +258,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpv-7z-tQh">
-                                                                <rect key="frame" x="166.66666666666663" y="0.0" width="166.33333333333337" height="166.33333333333334"/>
+                                                                <rect key="frame" x="166.66666666666663" y="0.0" width="166.33333333333337" height="168"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -259,10 +273,10 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="THN-rX-9xZ" userLabel="Green Dark Stack View">
-                                                        <rect key="frame" x="0.0" y="136.33333333333331" width="333" height="166"/>
+                                                        <rect key="frame" x="0.0" y="138" width="333" height="167.66666666666663"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viu-pp-jIG" userLabel="Green Hero">
-                                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="166"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="167.66666666666666"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="green" image="GreenHeroFront">
@@ -273,7 +287,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rC-VY-KeH" userLabel="Dark Hero">
-                                                                <rect key="frame" x="166.66666666666663" y="0.0" width="166.33333333333337" height="166"/>
+                                                                <rect key="frame" x="166.66666666666663" y="0.0" width="166.33333333333337" height="167.66666666666666"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="dark" image="DarkHeroFront">
@@ -293,11 +307,14 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzi-OR-O5E">
-                                        <rect key="frame" x="0.0" y="497" width="333" height="126"/>
+                                        <rect key="frame" x="0.0" y="502.33333333333343" width="333" height="120.66666666666669"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="CONTINUE"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="CONTINUE">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="continuePressed:" destination="N7I-gq-sPX" eventType="touchUpInside" id="7b3-rq-Jfr"/>
                                         </connections>
