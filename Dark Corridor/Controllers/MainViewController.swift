@@ -49,6 +49,7 @@ class MainViewController: UIViewController {
         view.backgroundColor = .black
         messageLabel.text = ""
         messageLabel.textColor = .white
+        exitButton.isEnabled = true
     }
     
     @IBAction func moveUp(_ sender: UIButton) {
@@ -97,7 +98,7 @@ class MainViewController: UIViewController {
         exitButton.isEnabled = true
         
         func randomFound() {
-            let randomRoom = ["item", "enemy", "empty"]
+            let randomRoom = ["item", "empty", "enemy"]
             let randomResult = randomRoom.randomElement()
             
             if randomResult == "item" {

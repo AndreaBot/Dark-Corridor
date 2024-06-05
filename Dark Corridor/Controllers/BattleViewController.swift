@@ -254,10 +254,6 @@ class BattleViewController: UIViewController {
             destinationVC.message = "You died"
             items.resetQtys()
             destinationVC.song = "Dead Screen"
-            
-        } else {
-            let destinationVC = segue.destination as! MainViewController
-            destinationVC.exitButton.isEnabled = true
         }
     }
 }
